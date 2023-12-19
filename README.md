@@ -16,4 +16,4 @@ An example of a simple radio control program. Requires omnirig to be installed. 
 
 <hr/>
 
-I provide both modules with source codes.
+I provide both modules with C# source codes.
