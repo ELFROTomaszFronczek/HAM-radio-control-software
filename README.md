@@ -1,4 +1,4 @@
-A simple example of controlling an amateur radio.
+A C# simple example of controlling an amateur radio.
 Requires Omnirig software to work
 
 <img src="Pictures/snapshot1.png" />
