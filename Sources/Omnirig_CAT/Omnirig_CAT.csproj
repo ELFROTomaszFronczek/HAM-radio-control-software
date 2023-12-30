@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DopplerCalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DopplerCalculator.Designer.cs">
+      <DependentUpon>DopplerCalculator.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,9 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UDP.cs" />
+    <EmbeddedResource Include="DopplerCalculator.resx">
+      <DependentUpon>DopplerCalculator.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
