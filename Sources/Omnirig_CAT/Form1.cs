@@ -572,7 +572,7 @@ namespace Omnirig_CAT
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            timerDoppler.Stop(); 
+            timerDoppler.Stop();
             stopWorker = true;
             Application.DoEvents();
             stopUDP_SERVER();
@@ -983,8 +983,8 @@ namespace Omnirig_CAT
 
         private void showDoplerEffectModuleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (showDoplerEffectModuleToolStripMenuItem.Checked) 
-            
+            if (showDoplerEffectModuleToolStripMenuItem.Checked)
+
             {
                 int dh = Height - ClientRectangle.Height;
                 Height = dh + panelDoppler.Height + panelDoppler.Top + 8;
@@ -1052,6 +1052,26 @@ namespace Omnirig_CAT
             }
         }
 
+        private void antenaTunerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+            currentRig.SendCustomCommand("AC001;", 0, "");
+
+
+        }
+
+        private void offTRXToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (FastQuestion.ShowQuestion("Are You sure to switch off TRX ", "Attention !!!") == FastQuestionResult.button1)
+                currentRig.SendCustomCommand("PS0;", 0, "");
+        }
+
+        private void oNTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("PS1;", 0, "");
+        }
+
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
             if (dwn)
@@ -1078,4 +1098,5 @@ namespace Omnirig_CAT
 
     }
 }
+
 

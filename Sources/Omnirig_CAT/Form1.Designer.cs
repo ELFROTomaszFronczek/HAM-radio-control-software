@@ -31,6 +31,18 @@
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelDoppler = new System.Windows.Forms.Panel();
+            this.labelDopplerFrequency = new System.Windows.Forms.Label();
+            this.labelDopplerTime = new System.Windows.Forms.Label();
+            this.buttonHide = new System.Windows.Forms.Button();
+            this.buttonCalculate = new System.Windows.Forms.Button();
+            this.buttonStopDoppler = new System.Windows.Forms.Button();
+            this.buttonStartDoppler = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.trackBarDopplerTime = new System.Windows.Forms.TrackBar();
+            this.label4 = new System.Windows.Forms.Label();
+            this.trackBarDopplerFrequency = new System.Windows.Forms.TrackBar();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonMenu = new System.Windows.Forms.Button();
             this.buttonTX = new System.Windows.Forms.Button();
@@ -43,6 +55,7 @@
             this.transponderModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.workWithTransponderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transponderOfffsetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showDoplerEffectModuleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
             this.hideInTaskBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,20 +82,11 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timerNTP = new System.Windows.Forms.Timer(this.components);
-            this.panelDoppler = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.trackBarDopplerFrequency = new System.Windows.Forms.TrackBar();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.trackBarDopplerTime = new System.Windows.Forms.TrackBar();
-            this.buttonStartDoppler = new System.Windows.Forms.Button();
-            this.buttonStopDoppler = new System.Windows.Forms.Button();
-            this.buttonCalculate = new System.Windows.Forms.Button();
-            this.buttonHide = new System.Windows.Forms.Button();
-            this.showDoplerEffectModuleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.labelDopplerTime = new System.Windows.Forms.Label();
-            this.labelDopplerFrequency = new System.Windows.Forms.Label();
             this.timerDoppler = new System.Windows.Forms.Timer(this.components);
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
+            this.tRXCommandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.antenaTunnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.offTRXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.s11 = new Omnirig_CAT.SevenSegment();
             this.s10 = new Omnirig_CAT.SevenSegment();
             this.s9 = new Omnirig_CAT.SevenSegment();
@@ -97,11 +101,11 @@
             this.s0 = new Omnirig_CAT.SevenSegment();
             this.sDot = new Omnirig_CAT.SevenSegment();
             this.panel1.SuspendLayout();
+            this.panelDoppler.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarDopplerTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarDopplerFrequency)).BeginInit();
             this.panel2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            this.panelDoppler.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarDopplerFrequency)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarDopplerTime)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -134,6 +138,150 @@
             this.panel1.MouseLeave += new System.EventHandler(this.Form1_MouseLeave);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
+            // 
+            // panelDoppler
+            // 
+            this.panelDoppler.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelDoppler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panelDoppler.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelDoppler.Controls.Add(this.labelDopplerFrequency);
+            this.panelDoppler.Controls.Add(this.labelDopplerTime);
+            this.panelDoppler.Controls.Add(this.buttonHide);
+            this.panelDoppler.Controls.Add(this.buttonCalculate);
+            this.panelDoppler.Controls.Add(this.buttonStopDoppler);
+            this.panelDoppler.Controls.Add(this.buttonStartDoppler);
+            this.panelDoppler.Controls.Add(this.label5);
+            this.panelDoppler.Controls.Add(this.trackBarDopplerTime);
+            this.panelDoppler.Controls.Add(this.label4);
+            this.panelDoppler.Controls.Add(this.trackBarDopplerFrequency);
+            this.panelDoppler.Controls.Add(this.label1);
+            this.panelDoppler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panelDoppler.Location = new System.Drawing.Point(11, 172);
+            this.panelDoppler.Name = "panelDoppler";
+            this.panelDoppler.Size = new System.Drawing.Size(803, 271);
+            this.panelDoppler.TabIndex = 52;
+            // 
+            // labelDopplerFrequency
+            // 
+            this.labelDopplerFrequency.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelDopplerFrequency.Location = new System.Drawing.Point(595, 133);
+            this.labelDopplerFrequency.Name = "labelDopplerFrequency";
+            this.labelDopplerFrequency.Size = new System.Drawing.Size(176, 20);
+            this.labelDopplerFrequency.TabIndex = 55;
+            this.labelDopplerFrequency.Text = "label7";
+            this.labelDopplerFrequency.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // labelDopplerTime
+            // 
+            this.labelDopplerTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelDopplerTime.Location = new System.Drawing.Point(595, 48);
+            this.labelDopplerTime.Name = "labelDopplerTime";
+            this.labelDopplerTime.Size = new System.Drawing.Size(176, 20);
+            this.labelDopplerTime.TabIndex = 54;
+            this.labelDopplerTime.Text = "label6";
+            this.labelDopplerTime.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // buttonHide
+            // 
+            this.buttonHide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonHide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonHide.Location = new System.Drawing.Point(613, 217);
+            this.buttonHide.Name = "buttonHide";
+            this.buttonHide.Size = new System.Drawing.Size(158, 31);
+            this.buttonHide.TabIndex = 53;
+            this.buttonHide.Text = "Hide module";
+            this.buttonHide.UseVisualStyleBackColor = true;
+            this.buttonHide.Click += new System.EventHandler(this.buttonHide_Click);
+            // 
+            // buttonCalculate
+            // 
+            this.buttonCalculate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonCalculate.Location = new System.Drawing.Point(311, 217);
+            this.buttonCalculate.Name = "buttonCalculate";
+            this.buttonCalculate.Size = new System.Drawing.Size(98, 31);
+            this.buttonCalculate.TabIndex = 52;
+            this.buttonCalculate.Text = "Calculate";
+            this.buttonCalculate.UseVisualStyleBackColor = true;
+            this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
+            // 
+            // buttonStopDoppler
+            // 
+            this.buttonStopDoppler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonStopDoppler.Location = new System.Drawing.Point(174, 217);
+            this.buttonStopDoppler.Name = "buttonStopDoppler";
+            this.buttonStopDoppler.Size = new System.Drawing.Size(98, 31);
+            this.buttonStopDoppler.TabIndex = 51;
+            this.buttonStopDoppler.Text = "Stop";
+            this.buttonStopDoppler.UseVisualStyleBackColor = true;
+            this.buttonStopDoppler.Click += new System.EventHandler(this.buttonStopDoppler_Click);
+            // 
+            // buttonStartDoppler
+            // 
+            this.buttonStartDoppler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonStartDoppler.Location = new System.Drawing.Point(29, 217);
+            this.buttonStartDoppler.Name = "buttonStartDoppler";
+            this.buttonStartDoppler.Size = new System.Drawing.Size(98, 31);
+            this.buttonStartDoppler.TabIndex = 50;
+            this.buttonStartDoppler.Text = "Start";
+            this.buttonStartDoppler.UseVisualStyleBackColor = true;
+            this.buttonStartDoppler.Click += new System.EventHandler(this.buttonStartDoppler_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(10, 45);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(98, 20);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Every Time:";
+            // 
+            // trackBarDopplerTime
+            // 
+            this.trackBarDopplerTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.trackBarDopplerTime.Location = new System.Drawing.Point(14, 71);
+            this.trackBarDopplerTime.Maximum = 1000;
+            this.trackBarDopplerTime.Minimum = 100;
+            this.trackBarDopplerTime.Name = "trackBarDopplerTime";
+            this.trackBarDopplerTime.Size = new System.Drawing.Size(768, 56);
+            this.trackBarDopplerTime.TabIndex = 6;
+            this.trackBarDopplerTime.Value = 100;
+            this.trackBarDopplerTime.Scroll += new System.EventHandler(this.trackBarDopplerTime_Scroll);
+            this.trackBarDopplerTime.ValueChanged += new System.EventHandler(this.trackBarDopplerTime_Scroll);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 130);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(154, 20);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Change Frequency:";
+            // 
+            // trackBarDopplerFrequency
+            // 
+            this.trackBarDopplerFrequency.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.trackBarDopplerFrequency.Location = new System.Drawing.Point(14, 156);
+            this.trackBarDopplerFrequency.Maximum = 100;
+            this.trackBarDopplerFrequency.Minimum = -100;
+            this.trackBarDopplerFrequency.Name = "trackBarDopplerFrequency";
+            this.trackBarDopplerFrequency.Size = new System.Drawing.Size(768, 56);
+            this.trackBarDopplerFrequency.TabIndex = 3;
+            this.trackBarDopplerFrequency.Scroll += new System.EventHandler(this.trackBarDopplerTime_Scroll);
+            this.trackBarDopplerFrequency.ValueChanged += new System.EventHandler(this.trackBarDopplerTime_Scroll);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label1.Location = new System.Drawing.Point(3, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(197, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Doppler Effect Module";
             // 
             // panel2
             // 
@@ -213,8 +361,10 @@
             this.transponderModeToolStripMenuItem,
             this.showDoplerEffectModuleToolStripMenuItem,
             this.toolStripMenuItem5,
-            this.hideInTaskBarToolStripMenuItem,
+            this.tRXCommandsToolStripMenuItem,
+            this.toolStripMenuItem6,
             this.alwaysOnTopToolStripMenuItem,
+            this.hideInTaskBarToolStripMenuItem,
             this.hideWindowHeaderToolStripMenuItem,
             this.cameraModuleToolStripMenuItem,
             this.runNTPTimeSyncOnStartToolStripMenuItem,
@@ -226,7 +376,7 @@
             this.toolStripMenuItem4,
             this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(467, 370);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(467, 428);
             // 
             // selectRig1ToolStripMenuItem
             // 
@@ -279,6 +429,14 @@
             this.transponderOfffsetToolStripMenuItem.Size = new System.Drawing.Size(253, 26);
             this.transponderOfffsetToolStripMenuItem.Text = "Transponder offset: 0 Hz";
             this.transponderOfffsetToolStripMenuItem.Click += new System.EventHandler(this.transponderOfffsetToolStripMenuItem_Click);
+            // 
+            // showDoplerEffectModuleToolStripMenuItem
+            // 
+            this.showDoplerEffectModuleToolStripMenuItem.CheckOnClick = true;
+            this.showDoplerEffectModuleToolStripMenuItem.Name = "showDoplerEffectModuleToolStripMenuItem";
+            this.showDoplerEffectModuleToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
+            this.showDoplerEffectModuleToolStripMenuItem.Text = "Show Doppler Effect Module";
+            this.showDoplerEffectModuleToolStripMenuItem.Click += new System.EventHandler(this.showDoplerEffectModuleToolStripMenuItem_Click);
             // 
             // toolStripMenuItem5
             // 
@@ -514,161 +672,37 @@
             this.timerNTP.Interval = 500;
             this.timerNTP.Tick += new System.EventHandler(this.timerNTP_Tick);
             // 
-            // panelDoppler
-            // 
-            this.panelDoppler.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelDoppler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.panelDoppler.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelDoppler.Controls.Add(this.labelDopplerFrequency);
-            this.panelDoppler.Controls.Add(this.labelDopplerTime);
-            this.panelDoppler.Controls.Add(this.buttonHide);
-            this.panelDoppler.Controls.Add(this.buttonCalculate);
-            this.panelDoppler.Controls.Add(this.buttonStopDoppler);
-            this.panelDoppler.Controls.Add(this.buttonStartDoppler);
-            this.panelDoppler.Controls.Add(this.label5);
-            this.panelDoppler.Controls.Add(this.trackBarDopplerTime);
-            this.panelDoppler.Controls.Add(this.label4);
-            this.panelDoppler.Controls.Add(this.trackBarDopplerFrequency);
-            this.panelDoppler.Controls.Add(this.label1);
-            this.panelDoppler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panelDoppler.Location = new System.Drawing.Point(11, 172);
-            this.panelDoppler.Name = "panelDoppler";
-            this.panelDoppler.Size = new System.Drawing.Size(803, 271);
-            this.panelDoppler.TabIndex = 52;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(3, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Doppler Effect Module";
-            // 
-            // trackBarDopplerFrequency
-            // 
-            this.trackBarDopplerFrequency.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBarDopplerFrequency.Location = new System.Drawing.Point(14, 156);
-            this.trackBarDopplerFrequency.Maximum = 100;
-            this.trackBarDopplerFrequency.Minimum = -100;
-            this.trackBarDopplerFrequency.Name = "trackBarDopplerFrequency";
-            this.trackBarDopplerFrequency.Size = new System.Drawing.Size(768, 56);
-            this.trackBarDopplerFrequency.TabIndex = 3;
-            this.trackBarDopplerFrequency.Scroll += new System.EventHandler(this.trackBarDopplerTime_Scroll);
-            this.trackBarDopplerFrequency.ValueChanged += new System.EventHandler(this.trackBarDopplerTime_Scroll);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 130);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 20);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Change Frequency:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 45);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 20);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Every Time:";
-            // 
-            // trackBarDopplerTime
-            // 
-            this.trackBarDopplerTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBarDopplerTime.Location = new System.Drawing.Point(14, 71);
-            this.trackBarDopplerTime.Maximum = 1000;
-            this.trackBarDopplerTime.Minimum = 100;
-            this.trackBarDopplerTime.Name = "trackBarDopplerTime";
-            this.trackBarDopplerTime.Size = new System.Drawing.Size(768, 56);
-            this.trackBarDopplerTime.TabIndex = 6;
-            this.trackBarDopplerTime.Value = 100;
-            this.trackBarDopplerTime.Scroll += new System.EventHandler(this.trackBarDopplerTime_Scroll);
-            this.trackBarDopplerTime.ValueChanged += new System.EventHandler(this.trackBarDopplerTime_Scroll);
-            // 
-            // buttonStartDoppler
-            // 
-            this.buttonStartDoppler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonStartDoppler.Location = new System.Drawing.Point(29, 217);
-            this.buttonStartDoppler.Name = "buttonStartDoppler";
-            this.buttonStartDoppler.Size = new System.Drawing.Size(98, 31);
-            this.buttonStartDoppler.TabIndex = 50;
-            this.buttonStartDoppler.Text = "Start";
-            this.buttonStartDoppler.UseVisualStyleBackColor = true;
-            this.buttonStartDoppler.Click += new System.EventHandler(this.buttonStartDoppler_Click);
-            // 
-            // buttonStopDoppler
-            // 
-            this.buttonStopDoppler.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonStopDoppler.Location = new System.Drawing.Point(174, 217);
-            this.buttonStopDoppler.Name = "buttonStopDoppler";
-            this.buttonStopDoppler.Size = new System.Drawing.Size(98, 31);
-            this.buttonStopDoppler.TabIndex = 51;
-            this.buttonStopDoppler.Text = "Stop";
-            this.buttonStopDoppler.UseVisualStyleBackColor = true;
-            this.buttonStopDoppler.Click += new System.EventHandler(this.buttonStopDoppler_Click);
-            // 
-            // buttonCalculate
-            // 
-            this.buttonCalculate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonCalculate.Location = new System.Drawing.Point(311, 217);
-            this.buttonCalculate.Name = "buttonCalculate";
-            this.buttonCalculate.Size = new System.Drawing.Size(98, 31);
-            this.buttonCalculate.TabIndex = 52;
-            this.buttonCalculate.Text = "Calculate";
-            this.buttonCalculate.UseVisualStyleBackColor = true;
-            this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
-            // 
-            // buttonHide
-            // 
-            this.buttonHide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonHide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonHide.Location = new System.Drawing.Point(613, 217);
-            this.buttonHide.Name = "buttonHide";
-            this.buttonHide.Size = new System.Drawing.Size(158, 31);
-            this.buttonHide.TabIndex = 53;
-            this.buttonHide.Text = "Hide module";
-            this.buttonHide.UseVisualStyleBackColor = true;
-            this.buttonHide.Click += new System.EventHandler(this.buttonHide_Click);
-            // 
-            // showDoplerEffectModuleToolStripMenuItem
-            // 
-            this.showDoplerEffectModuleToolStripMenuItem.CheckOnClick = true;
-            this.showDoplerEffectModuleToolStripMenuItem.Name = "showDoplerEffectModuleToolStripMenuItem";
-            this.showDoplerEffectModuleToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
-            this.showDoplerEffectModuleToolStripMenuItem.Text = "Show Doppler Effect Module";
-            this.showDoplerEffectModuleToolStripMenuItem.Click += new System.EventHandler(this.showDoplerEffectModuleToolStripMenuItem_Click);
-            // 
-            // labelDopplerTime
-            // 
-            this.labelDopplerTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelDopplerTime.Location = new System.Drawing.Point(595, 48);
-            this.labelDopplerTime.Name = "labelDopplerTime";
-            this.labelDopplerTime.Size = new System.Drawing.Size(176, 20);
-            this.labelDopplerTime.TabIndex = 54;
-            this.labelDopplerTime.Text = "label6";
-            this.labelDopplerTime.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // labelDopplerFrequency
-            // 
-            this.labelDopplerFrequency.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelDopplerFrequency.Location = new System.Drawing.Point(595, 133);
-            this.labelDopplerFrequency.Name = "labelDopplerFrequency";
-            this.labelDopplerFrequency.Size = new System.Drawing.Size(176, 20);
-            this.labelDopplerFrequency.TabIndex = 55;
-            this.labelDopplerFrequency.Text = "label7";
-            this.labelDopplerFrequency.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // timerDoppler
             // 
             this.timerDoppler.Tick += new System.EventHandler(this.timerDoppler_Tick);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(463, 6);
+            // 
+            // tRXCommandsToolStripMenuItem
+            // 
+            this.tRXCommandsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.antenaTunnerToolStripMenuItem,
+            this.offTRXToolStripMenuItem});
+            this.tRXCommandsToolStripMenuItem.Name = "tRXCommandsToolStripMenuItem";
+            this.tRXCommandsToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
+            this.tRXCommandsToolStripMenuItem.Text = "Yaesu TRXs Commands";
+            // 
+            // antenaTunnerToolStripMenuItem
+            // 
+            this.antenaTunnerToolStripMenuItem.Name = "antenaTunnerToolStripMenuItem";
+            this.antenaTunnerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.antenaTunnerToolStripMenuItem.Text = "Antena Tuner";
+            this.antenaTunnerToolStripMenuItem.Click += new System.EventHandler(this.antenaTunerToolStripMenuItem_Click);
+            // 
+            // offTRXToolStripMenuItem
+            // 
+            this.offTRXToolStripMenuItem.Name = "offTRXToolStripMenuItem";
+            this.offTRXToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.offTRXToolStripMenuItem.Text = "Off TRX";
+            this.offTRXToolStripMenuItem.Click += new System.EventHandler(this.offTRXToolStripMenuItem_Click);
             // 
             // s11
             // 
@@ -986,12 +1020,12 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
             this.panelDoppler.ResumeLayout(false);
             this.panelDoppler.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarDopplerFrequency)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarDopplerTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarDopplerFrequency)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1064,6 +1098,10 @@
         private System.Windows.Forms.Label labelDopplerFrequency;
         private System.Windows.Forms.Label labelDopplerTime;
         private System.Windows.Forms.Timer timerDoppler;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem tRXCommandsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem antenaTunnerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem offTRXToolStripMenuItem;
     }
 }
 
