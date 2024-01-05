@@ -44,6 +44,19 @@
             this.trackBarDopplerFrequency = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.s11 = new Omnirig_CAT.SevenSegment();
+            this.s10 = new Omnirig_CAT.SevenSegment();
+            this.s9 = new Omnirig_CAT.SevenSegment();
+            this.s8 = new Omnirig_CAT.SevenSegment();
+            this.s7 = new Omnirig_CAT.SevenSegment();
+            this.s6 = new Omnirig_CAT.SevenSegment();
+            this.s5 = new Omnirig_CAT.SevenSegment();
+            this.s4 = new Omnirig_CAT.SevenSegment();
+            this.s3 = new Omnirig_CAT.SevenSegment();
+            this.s2 = new Omnirig_CAT.SevenSegment();
+            this.s1 = new Omnirig_CAT.SevenSegment();
+            this.s0 = new Omnirig_CAT.SevenSegment();
+            this.sDot = new Omnirig_CAT.SevenSegment();
             this.buttonMenu = new System.Windows.Forms.Button();
             this.buttonTX = new System.Windows.Forms.Button();
             this.labelRig = new System.Windows.Forms.Label();
@@ -57,8 +70,41 @@
             this.transponderOfffsetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showDoplerEffectModuleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
-            this.hideInTaskBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tRXCommandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.antenaTunnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OnAntenaTunerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.offAntenaTunerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tuningNownotWorkedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.antenaNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.antena1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.antena2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.antena3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.preAmpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aMP1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aMP2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RFAttenuatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.oFFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dBToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dBToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aGCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agcOFFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aGCFASTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aGCMIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aGCSLOWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aGCAUTOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.roofingFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem12kHz = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem3kHz = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem1_2kHz = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem600Hz = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem300Hz = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
+            this.offTRXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
             this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hideInTaskBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideWindowHeaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cameraModuleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.runCameraModuleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,23 +129,7 @@
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timerNTP = new System.Windows.Forms.Timer(this.components);
             this.timerDoppler = new System.Windows.Forms.Timer(this.components);
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
-            this.tRXCommandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.antenaTunnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.offTRXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.s11 = new Omnirig_CAT.SevenSegment();
-            this.s10 = new Omnirig_CAT.SevenSegment();
-            this.s9 = new Omnirig_CAT.SevenSegment();
-            this.s8 = new Omnirig_CAT.SevenSegment();
-            this.s7 = new Omnirig_CAT.SevenSegment();
-            this.s6 = new Omnirig_CAT.SevenSegment();
-            this.s5 = new Omnirig_CAT.SevenSegment();
-            this.s4 = new Omnirig_CAT.SevenSegment();
-            this.s3 = new Omnirig_CAT.SevenSegment();
-            this.s2 = new Omnirig_CAT.SevenSegment();
-            this.s1 = new Omnirig_CAT.SevenSegment();
-            this.s0 = new Omnirig_CAT.SevenSegment();
-            this.sDot = new Omnirig_CAT.SevenSegment();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
             this.panel1.SuspendLayout();
             this.panelDoppler.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarDopplerTime)).BeginInit();
@@ -304,405 +334,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(669, 86);
             this.panel2.TabIndex = 50;
-            // 
-            // buttonMenu
-            // 
-            this.buttonMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonMenu.Location = new System.Drawing.Point(748, 114);
-            this.buttonMenu.Name = "buttonMenu";
-            this.buttonMenu.Size = new System.Drawing.Size(72, 31);
-            this.buttonMenu.TabIndex = 49;
-            this.buttonMenu.Text = "Menu";
-            this.buttonMenu.UseVisualStyleBackColor = true;
-            this.buttonMenu.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // buttonTX
-            // 
-            this.buttonTX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonTX.BackColor = System.Drawing.Color.Green;
-            this.buttonTX.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonTX.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.buttonTX.Location = new System.Drawing.Point(767, 38);
-            this.buttonTX.Name = "buttonTX";
-            this.buttonTX.Size = new System.Drawing.Size(51, 64);
-            this.buttonTX.TabIndex = 48;
-            this.buttonTX.Text = "TX";
-            this.buttonTX.UseVisualStyleBackColor = false;
-            this.buttonTX.Click += new System.EventHandler(this.buttonTX_Click);
-            this.buttonTX.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
-            this.buttonTX.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button1_MouseUp);
-            // 
-            // labelRig
-            // 
-            this.labelRig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.labelRig.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelRig.ContextMenuStrip = this.contextMenuStrip1;
-            this.labelRig.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelRig.ForeColor = System.Drawing.Color.Silver;
-            this.labelRig.Location = new System.Drawing.Point(11, 3);
-            this.labelRig.Name = "labelRig";
-            this.labelRig.Size = new System.Drawing.Size(312, 20);
-            this.labelRig.TabIndex = 47;
-            this.labelRig.Text = "***";
-            this.labelRig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelRig.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
-            this.labelRig.MouseLeave += new System.EventHandler(this.Form1_MouseLeave);
-            this.labelRig.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
-            this.labelRig.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.selectRig1ToolStripMenuItem,
-            this.selectRig2ToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.displayToolStripMenuItem,
-            this.transponderModeToolStripMenuItem,
-            this.showDoplerEffectModuleToolStripMenuItem,
-            this.toolStripMenuItem5,
-            this.tRXCommandsToolStripMenuItem,
-            this.toolStripMenuItem6,
-            this.alwaysOnTopToolStripMenuItem,
-            this.hideInTaskBarToolStripMenuItem,
-            this.hideWindowHeaderToolStripMenuItem,
-            this.cameraModuleToolStripMenuItem,
-            this.runNTPTimeSyncOnStartToolStripMenuItem,
-            this.toolStripMenuItem2,
-            this.tXOnlyWhenPressedToolStripMenuItem,
-            this.tXOnCharToolStripMenuItem,
-            this.toolStripMenuItem3,
-            this.onBandChangedSlelectDefaultSSBModeToolStripMenuItem,
-            this.toolStripMenuItem4,
-            this.exitToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(467, 428);
-            // 
-            // selectRig1ToolStripMenuItem
-            // 
-            this.selectRig1ToolStripMenuItem.CheckOnClick = true;
-            this.selectRig1ToolStripMenuItem.Name = "selectRig1ToolStripMenuItem";
-            this.selectRig1ToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
-            this.selectRig1ToolStripMenuItem.Text = "Select Rig 1";
-            this.selectRig1ToolStripMenuItem.Click += new System.EventHandler(this.selectRig1ToolStripMenuItem_Click);
-            // 
-            // selectRig2ToolStripMenuItem
-            // 
-            this.selectRig2ToolStripMenuItem.CheckOnClick = true;
-            this.selectRig2ToolStripMenuItem.Name = "selectRig2ToolStripMenuItem";
-            this.selectRig2ToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
-            this.selectRig2ToolStripMenuItem.Text = "Select Rig 2";
-            this.selectRig2ToolStripMenuItem.Click += new System.EventHandler(this.selectRig2ToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(463, 6);
-            // 
-            // displayToolStripMenuItem
-            // 
-            this.displayToolStripMenuItem.CheckOnClick = true;
-            this.displayToolStripMenuItem.Name = "displayToolStripMenuItem";
-            this.displayToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
-            this.displayToolStripMenuItem.Text = "Display with GHz";
-            this.displayToolStripMenuItem.Click += new System.EventHandler(this.displayToolStripMenuItem_Click);
-            // 
-            // transponderModeToolStripMenuItem
-            // 
-            this.transponderModeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.workWithTransponderToolStripMenuItem,
-            this.transponderOfffsetToolStripMenuItem});
-            this.transponderModeToolStripMenuItem.Name = "transponderModeToolStripMenuItem";
-            this.transponderModeToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
-            this.transponderModeToolStripMenuItem.Text = "Transponder Mode";
-            // 
-            // workWithTransponderToolStripMenuItem
-            // 
-            this.workWithTransponderToolStripMenuItem.CheckOnClick = true;
-            this.workWithTransponderToolStripMenuItem.Name = "workWithTransponderToolStripMenuItem";
-            this.workWithTransponderToolStripMenuItem.Size = new System.Drawing.Size(253, 26);
-            this.workWithTransponderToolStripMenuItem.Text = "Work With Transponder";
-            // 
-            // transponderOfffsetToolStripMenuItem
-            // 
-            this.transponderOfffsetToolStripMenuItem.Name = "transponderOfffsetToolStripMenuItem";
-            this.transponderOfffsetToolStripMenuItem.Size = new System.Drawing.Size(253, 26);
-            this.transponderOfffsetToolStripMenuItem.Text = "Transponder offset: 0 Hz";
-            this.transponderOfffsetToolStripMenuItem.Click += new System.EventHandler(this.transponderOfffsetToolStripMenuItem_Click);
-            // 
-            // showDoplerEffectModuleToolStripMenuItem
-            // 
-            this.showDoplerEffectModuleToolStripMenuItem.CheckOnClick = true;
-            this.showDoplerEffectModuleToolStripMenuItem.Name = "showDoplerEffectModuleToolStripMenuItem";
-            this.showDoplerEffectModuleToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
-            this.showDoplerEffectModuleToolStripMenuItem.Text = "Show Doppler Effect Module";
-            this.showDoplerEffectModuleToolStripMenuItem.Click += new System.EventHandler(this.showDoplerEffectModuleToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(463, 6);
-            // 
-            // hideInTaskBarToolStripMenuItem
-            // 
-            this.hideInTaskBarToolStripMenuItem.CheckOnClick = true;
-            this.hideInTaskBarToolStripMenuItem.Name = "hideInTaskBarToolStripMenuItem";
-            this.hideInTaskBarToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
-            this.hideInTaskBarToolStripMenuItem.Text = "Hide in Task Bar";
-            this.hideInTaskBarToolStripMenuItem.Click += new System.EventHandler(this.hideInTaskBarToolStripMenuItem_Click);
-            // 
-            // alwaysOnTopToolStripMenuItem
-            // 
-            this.alwaysOnTopToolStripMenuItem.CheckOnClick = true;
-            this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
-            this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
-            this.alwaysOnTopToolStripMenuItem.Text = "Always On Top";
-            this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopToolStripMenuItem_Click);
-            // 
-            // hideWindowHeaderToolStripMenuItem
-            // 
-            this.hideWindowHeaderToolStripMenuItem.CheckOnClick = true;
-            this.hideWindowHeaderToolStripMenuItem.Name = "hideWindowHeaderToolStripMenuItem";
-            this.hideWindowHeaderToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
-            this.hideWindowHeaderToolStripMenuItem.Text = "Hide Window Header";
-            this.hideWindowHeaderToolStripMenuItem.Click += new System.EventHandler(this.hideWindowHeaderToolStripMenuItem_Click);
-            // 
-            // cameraModuleToolStripMenuItem
-            // 
-            this.cameraModuleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.runCameraModuleToolStripMenuItem,
-            this.configureControlUDPPortToolStripMenuItem});
-            this.cameraModuleToolStripMenuItem.Name = "cameraModuleToolStripMenuItem";
-            this.cameraModuleToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
-            this.cameraModuleToolStripMenuItem.Text = "Camera module";
-            // 
-            // runCameraModuleToolStripMenuItem
-            // 
-            this.runCameraModuleToolStripMenuItem.CheckOnClick = true;
-            this.runCameraModuleToolStripMenuItem.Name = "runCameraModuleToolStripMenuItem";
-            this.runCameraModuleToolStripMenuItem.Size = new System.Drawing.Size(386, 26);
-            this.runCameraModuleToolStripMenuItem.Text = "On start and exit run/close Camera module";
-            // 
-            // configureControlUDPPortToolStripMenuItem
-            // 
-            this.configureControlUDPPortToolStripMenuItem.Name = "configureControlUDPPortToolStripMenuItem";
-            this.configureControlUDPPortToolStripMenuItem.Size = new System.Drawing.Size(386, 26);
-            this.configureControlUDPPortToolStripMenuItem.Text = "Configure control UDP port (restart needed):";
-            this.configureControlUDPPortToolStripMenuItem.Click += new System.EventHandler(this.configureControlUDPPortToolStripMenuItem_Click);
-            // 
-            // runNTPTimeSyncOnStartToolStripMenuItem
-            // 
-            this.runNTPTimeSyncOnStartToolStripMenuItem.CheckOnClick = true;
-            this.runNTPTimeSyncOnStartToolStripMenuItem.Name = "runNTPTimeSyncOnStartToolStripMenuItem";
-            this.runNTPTimeSyncOnStartToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
-            this.runNTPTimeSyncOnStartToolStripMenuItem.Text = "Run NTP Time sync on start (if was not sync in last 10hours)";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(463, 6);
-            // 
-            // tXOnlyWhenPressedToolStripMenuItem
-            // 
-            this.tXOnlyWhenPressedToolStripMenuItem.CheckOnClick = true;
-            this.tXOnlyWhenPressedToolStripMenuItem.Name = "tXOnlyWhenPressedToolStripMenuItem";
-            this.tXOnlyWhenPressedToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
-            this.tXOnlyWhenPressedToolStripMenuItem.Text = "TX only when pressed";
-            // 
-            // tXOnCharToolStripMenuItem
-            // 
-            this.tXOnCharToolStripMenuItem.CheckOnClick = true;
-            this.tXOnCharToolStripMenuItem.Name = "tXOnCharToolStripMenuItem";
-            this.tXOnCharToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
-            this.tXOnCharToolStripMenuItem.Text = "TX on \"\\\" keyboard pressed";
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(463, 6);
-            // 
-            // onBandChangedSlelectDefaultSSBModeToolStripMenuItem
-            // 
-            this.onBandChangedSlelectDefaultSSBModeToolStripMenuItem.CheckOnClick = true;
-            this.onBandChangedSlelectDefaultSSBModeToolStripMenuItem.Name = "onBandChangedSlelectDefaultSSBModeToolStripMenuItem";
-            this.onBandChangedSlelectDefaultSSBModeToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
-            this.onBandChangedSlelectDefaultSSBModeToolStripMenuItem.Text = "On User Band changed select default SSB Mode";
-            // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(463, 6);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // comboBoxMode
-            // 
-            this.comboBoxMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMode.FormattingEnabled = true;
-            this.comboBoxMode.Items.AddRange(new object[] {
-            "",
-            "CW LSB",
-            "CW USB",
-            "SSB LSB",
-            "SSB USB",
-            "DIGI LSB",
-            "DIGI USB",
-            "AM",
-            "FM"});
-            this.comboBoxMode.Location = new System.Drawing.Point(562, 118);
-            this.comboBoxMode.Name = "comboBoxMode";
-            this.comboBoxMode.Size = new System.Drawing.Size(118, 28);
-            this.comboBoxMode.TabIndex = 44;
-            this.comboBoxMode.DropDown += new System.EventHandler(this.comboBoxMode_DropDown);
-            this.comboBoxMode.SelectedIndexChanged += new System.EventHandler(this.comboBoxMode_SelectedIndexChanged);
-            this.comboBoxMode.DropDownClosed += new System.EventHandler(this.comboBoxMode_DropDownClosed);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(496, 130);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 16);
-            this.label3.TabIndex = 43;
-            this.label3.Text = "MODE:";
-            // 
-            // comboBoxBand
-            // 
-            this.comboBoxBand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxBand.FormattingEnabled = true;
-            this.comboBoxBand.Items.AddRange(new object[] {
-            "",
-            "160m",
-            "80m",
-            "60m",
-            "40m",
-            "30m",
-            "20m",
-            "17m",
-            "15m",
-            "12m",
-            "10m",
-            "6m",
-            "4m",
-            "2m",
-            "70cm",
-            ""});
-            this.comboBoxBand.Location = new System.Drawing.Point(70, 118);
-            this.comboBoxBand.Name = "comboBoxBand";
-            this.comboBoxBand.Size = new System.Drawing.Size(118, 28);
-            this.comboBoxBand.TabIndex = 42;
-            this.comboBoxBand.DropDown += new System.EventHandler(this.comboBoxBand_DropDown);
-            this.comboBoxBand.SelectedIndexChanged += new System.EventHandler(this.comboBoxBand_SelectedIndexChanged);
-            this.comboBoxBand.DropDownClosed += new System.EventHandler(this.comboBoxBand_DropDownClosed);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(11, 130);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 16);
-            this.label2.TabIndex = 41;
-            this.label2.Text = "BAND:";
-            // 
-            // button500
-            // 
-            this.button500.Location = new System.Drawing.Point(686, 74);
-            this.button500.Name = "button500";
-            this.button500.Size = new System.Drawing.Size(53, 28);
-            this.button500.TabIndex = 40;
-            this.button500.Text = "500";
-            this.button500.UseVisualStyleBackColor = true;
-            this.button500.Click += new System.EventHandler(this.button500_Click);
-            // 
-            // button000
-            // 
-            this.button000.Location = new System.Drawing.Point(686, 38);
-            this.button000.Name = "button000";
-            this.button000.Size = new System.Drawing.Size(53, 28);
-            this.button000.TabIndex = 39;
-            this.button000.Text = "000";
-            this.button000.UseVisualStyleBackColor = true;
-            this.button000.Click += new System.EventHandler(this.button000_Click);
-            // 
-            // labelMode
-            // 
-            this.labelMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelMode.ForeColor = System.Drawing.Color.Silver;
-            this.labelMode.Location = new System.Drawing.Point(523, 4);
-            this.labelMode.Name = "labelMode";
-            this.labelMode.Size = new System.Drawing.Size(159, 20);
-            this.labelMode.TabIndex = 11;
-            this.labelMode.Text = "***";
-            this.labelMode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // labelErr
-            // 
-            this.labelErr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelErr.AutoSize = true;
-            this.labelErr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.labelErr.Location = new System.Drawing.Point(728, 2);
-            this.labelErr.Name = "labelErr";
-            this.labelErr.Size = new System.Drawing.Size(92, 20);
-            this.labelErr.TabIndex = 51;
-            this.labelErr.Text = "Some ERR";
-            this.labelErr.Visible = false;
-            this.labelErr.Click += new System.EventHandler(this.labelErr_Click);
-            // 
-            // timer2
-            // 
-            this.timer2.Interval = 1000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // timer3
-            // 
-            this.timer3.Interval = 300000;
-            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
-            // 
-            // timerNTP
-            // 
-            this.timerNTP.Interval = 500;
-            this.timerNTP.Tick += new System.EventHandler(this.timerNTP_Tick);
-            // 
-            // timerDoppler
-            // 
-            this.timerDoppler.Tick += new System.EventHandler(this.timerDoppler_Tick);
-            // 
-            // toolStripMenuItem6
-            // 
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(463, 6);
-            // 
-            // tRXCommandsToolStripMenuItem
-            // 
-            this.tRXCommandsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.antenaTunnerToolStripMenuItem,
-            this.offTRXToolStripMenuItem});
-            this.tRXCommandsToolStripMenuItem.Name = "tRXCommandsToolStripMenuItem";
-            this.tRXCommandsToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
-            this.tRXCommandsToolStripMenuItem.Text = "Yaesu TRXs Commands";
-            // 
-            // antenaTunnerToolStripMenuItem
-            // 
-            this.antenaTunnerToolStripMenuItem.Name = "antenaTunnerToolStripMenuItem";
-            this.antenaTunnerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.antenaTunnerToolStripMenuItem.Text = "Antena Tuner";
-            this.antenaTunnerToolStripMenuItem.Click += new System.EventHandler(this.antenaTunerToolStripMenuItem_Click);
-            // 
-            // offTRXToolStripMenuItem
-            // 
-            this.offTRXToolStripMenuItem.Name = "offTRXToolStripMenuItem";
-            this.offTRXToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.offTRXToolStripMenuItem.Text = "Off TRX";
-            this.offTRXToolStripMenuItem.Click += new System.EventHandler(this.offTRXToolStripMenuItem_Click);
             // 
             // s11
             // 
@@ -1001,6 +632,644 @@
             this.sDot.TabStop = false;
             this.sDot.Value = null;
             // 
+            // buttonMenu
+            // 
+            this.buttonMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonMenu.Location = new System.Drawing.Point(748, 114);
+            this.buttonMenu.Name = "buttonMenu";
+            this.buttonMenu.Size = new System.Drawing.Size(72, 31);
+            this.buttonMenu.TabIndex = 49;
+            this.buttonMenu.Text = "Menu";
+            this.buttonMenu.UseVisualStyleBackColor = true;
+            this.buttonMenu.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // buttonTX
+            // 
+            this.buttonTX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonTX.BackColor = System.Drawing.Color.Green;
+            this.buttonTX.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonTX.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonTX.Location = new System.Drawing.Point(767, 38);
+            this.buttonTX.Name = "buttonTX";
+            this.buttonTX.Size = new System.Drawing.Size(51, 64);
+            this.buttonTX.TabIndex = 48;
+            this.buttonTX.Text = "TX";
+            this.buttonTX.UseVisualStyleBackColor = false;
+            this.buttonTX.Click += new System.EventHandler(this.buttonTX_Click);
+            this.buttonTX.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
+            this.buttonTX.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button1_MouseUp);
+            // 
+            // labelRig
+            // 
+            this.labelRig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.labelRig.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelRig.ContextMenuStrip = this.contextMenuStrip1;
+            this.labelRig.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelRig.ForeColor = System.Drawing.Color.Silver;
+            this.labelRig.Location = new System.Drawing.Point(11, 3);
+            this.labelRig.Name = "labelRig";
+            this.labelRig.Size = new System.Drawing.Size(312, 20);
+            this.labelRig.TabIndex = 47;
+            this.labelRig.Text = "***";
+            this.labelRig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelRig.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.labelRig.MouseLeave += new System.EventHandler(this.Form1_MouseLeave);
+            this.labelRig.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
+            this.labelRig.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.selectRig1ToolStripMenuItem,
+            this.selectRig2ToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.displayToolStripMenuItem,
+            this.transponderModeToolStripMenuItem,
+            this.showDoplerEffectModuleToolStripMenuItem,
+            this.toolStripMenuItem5,
+            this.tRXCommandsToolStripMenuItem,
+            this.toolStripMenuItem6,
+            this.alwaysOnTopToolStripMenuItem,
+            this.hideInTaskBarToolStripMenuItem,
+            this.hideWindowHeaderToolStripMenuItem,
+            this.cameraModuleToolStripMenuItem,
+            this.runNTPTimeSyncOnStartToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.tXOnlyWhenPressedToolStripMenuItem,
+            this.tXOnCharToolStripMenuItem,
+            this.toolStripMenuItem3,
+            this.onBandChangedSlelectDefaultSSBModeToolStripMenuItem,
+            this.toolStripMenuItem4,
+            this.exitToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(467, 428);
+            // 
+            // selectRig1ToolStripMenuItem
+            // 
+            this.selectRig1ToolStripMenuItem.CheckOnClick = true;
+            this.selectRig1ToolStripMenuItem.Name = "selectRig1ToolStripMenuItem";
+            this.selectRig1ToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
+            this.selectRig1ToolStripMenuItem.Text = "Select Rig 1";
+            this.selectRig1ToolStripMenuItem.Click += new System.EventHandler(this.selectRig1ToolStripMenuItem_Click);
+            // 
+            // selectRig2ToolStripMenuItem
+            // 
+            this.selectRig2ToolStripMenuItem.CheckOnClick = true;
+            this.selectRig2ToolStripMenuItem.Name = "selectRig2ToolStripMenuItem";
+            this.selectRig2ToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
+            this.selectRig2ToolStripMenuItem.Text = "Select Rig 2";
+            this.selectRig2ToolStripMenuItem.Click += new System.EventHandler(this.selectRig2ToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(463, 6);
+            // 
+            // displayToolStripMenuItem
+            // 
+            this.displayToolStripMenuItem.CheckOnClick = true;
+            this.displayToolStripMenuItem.Name = "displayToolStripMenuItem";
+            this.displayToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
+            this.displayToolStripMenuItem.Text = "Display with GHz";
+            this.displayToolStripMenuItem.Click += new System.EventHandler(this.displayToolStripMenuItem_Click);
+            // 
+            // transponderModeToolStripMenuItem
+            // 
+            this.transponderModeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.workWithTransponderToolStripMenuItem,
+            this.transponderOfffsetToolStripMenuItem});
+            this.transponderModeToolStripMenuItem.Name = "transponderModeToolStripMenuItem";
+            this.transponderModeToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
+            this.transponderModeToolStripMenuItem.Text = "Transponder Mode";
+            // 
+            // workWithTransponderToolStripMenuItem
+            // 
+            this.workWithTransponderToolStripMenuItem.CheckOnClick = true;
+            this.workWithTransponderToolStripMenuItem.Name = "workWithTransponderToolStripMenuItem";
+            this.workWithTransponderToolStripMenuItem.Size = new System.Drawing.Size(253, 26);
+            this.workWithTransponderToolStripMenuItem.Text = "Work With Transponder";
+            // 
+            // transponderOfffsetToolStripMenuItem
+            // 
+            this.transponderOfffsetToolStripMenuItem.Name = "transponderOfffsetToolStripMenuItem";
+            this.transponderOfffsetToolStripMenuItem.Size = new System.Drawing.Size(253, 26);
+            this.transponderOfffsetToolStripMenuItem.Text = "Transponder offset: 0 Hz";
+            this.transponderOfffsetToolStripMenuItem.Click += new System.EventHandler(this.transponderOfffsetToolStripMenuItem_Click);
+            // 
+            // showDoplerEffectModuleToolStripMenuItem
+            // 
+            this.showDoplerEffectModuleToolStripMenuItem.CheckOnClick = true;
+            this.showDoplerEffectModuleToolStripMenuItem.Name = "showDoplerEffectModuleToolStripMenuItem";
+            this.showDoplerEffectModuleToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
+            this.showDoplerEffectModuleToolStripMenuItem.Text = "Show Doppler Effect Module";
+            this.showDoplerEffectModuleToolStripMenuItem.Click += new System.EventHandler(this.showDoplerEffectModuleToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(463, 6);
+            // 
+            // tRXCommandsToolStripMenuItem
+            // 
+            this.tRXCommandsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.antenaTunnerToolStripMenuItem,
+            this.antenaNumberToolStripMenuItem,
+            this.preAmpToolStripMenuItem,
+            this.RFAttenuatorToolStripMenuItem,
+            this.aGCToolStripMenuItem,
+            this.roofingFilterToolStripMenuItem,
+            this.toolStripMenuItem7,
+            this.offTRXToolStripMenuItem});
+            this.tRXCommandsToolStripMenuItem.Name = "tRXCommandsToolStripMenuItem";
+            this.tRXCommandsToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
+            this.tRXCommandsToolStripMenuItem.Text = "Yaesu TRXs Commands (based on FTdx 101D)";
+            // 
+            // antenaTunnerToolStripMenuItem
+            // 
+            this.antenaTunnerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.offAntenaTunerToolStripMenuItem,
+            this.OnAntenaTunerToolStripMenuItem,
+            this.toolStripMenuItem8,
+            this.tuningNownotWorkedToolStripMenuItem});
+            this.antenaTunnerToolStripMenuItem.Name = "antenaTunnerToolStripMenuItem";
+            this.antenaTunnerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.antenaTunnerToolStripMenuItem.Text = "Antenna Tuner";
+            this.antenaTunnerToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.antenaTunnerToolStripMenuItem.Click += new System.EventHandler(this.antenaTunerToolStripMenuItem_Click);
+            // 
+            // OnAntenaTunerToolStripMenuItem
+            // 
+            this.OnAntenaTunerToolStripMenuItem.Name = "OnAntenaTunerToolStripMenuItem";
+            this.OnAntenaTunerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.OnAntenaTunerToolStripMenuItem.Text = "On Antena Tuner";
+            this.OnAntenaTunerToolStripMenuItem.Click += new System.EventHandler(this.OnAntenaTunerToolStripMenuItem_Click);
+            // 
+            // offAntenaTunerToolStripMenuItem
+            // 
+            this.offAntenaTunerToolStripMenuItem.Name = "offAntenaTunerToolStripMenuItem";
+            this.offAntenaTunerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.offAntenaTunerToolStripMenuItem.Text = "Off Antena Tuner";
+            this.offAntenaTunerToolStripMenuItem.Click += new System.EventHandler(this.offAntenaTunerToolStripMenuItem_Click);
+            // 
+            // tuningNownotWorkedToolStripMenuItem
+            // 
+            this.tuningNownotWorkedToolStripMenuItem.Name = "tuningNownotWorkedToolStripMenuItem";
+            this.tuningNownotWorkedToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tuningNownotWorkedToolStripMenuItem.Text = "Tuning now";
+            this.tuningNownotWorkedToolStripMenuItem.Click += new System.EventHandler(this.tuningNownotWorkedToolStripMenuItem_Click);
+            // 
+            // antenaNumberToolStripMenuItem
+            // 
+            this.antenaNumberToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.antena1ToolStripMenuItem,
+            this.antena2ToolStripMenuItem,
+            this.antena3ToolStripMenuItem});
+            this.antenaNumberToolStripMenuItem.Name = "antenaNumberToolStripMenuItem";
+            this.antenaNumberToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.antenaNumberToolStripMenuItem.Text = "Antena Number";
+            // 
+            // antena1ToolStripMenuItem
+            // 
+            this.antena1ToolStripMenuItem.Name = "antena1ToolStripMenuItem";
+            this.antena1ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.antena1ToolStripMenuItem.Text = "Antena 1";
+            this.antena1ToolStripMenuItem.Click += new System.EventHandler(this.antena1ToolStripMenuItem_Click);
+            // 
+            // antena2ToolStripMenuItem
+            // 
+            this.antena2ToolStripMenuItem.Name = "antena2ToolStripMenuItem";
+            this.antena2ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.antena2ToolStripMenuItem.Text = "Antena 2";
+            this.antena2ToolStripMenuItem.Click += new System.EventHandler(this.antena2ToolStripMenuItem_Click);
+            // 
+            // antena3ToolStripMenuItem
+            // 
+            this.antena3ToolStripMenuItem.Name = "antena3ToolStripMenuItem";
+            this.antena3ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.antena3ToolStripMenuItem.Text = "Antena 3";
+            this.antena3ToolStripMenuItem.Click += new System.EventHandler(this.antena3ToolStripMenuItem_Click);
+            // 
+            // preAmpToolStripMenuItem
+            // 
+            this.preAmpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ipoToolStripMenuItem,
+            this.aMP1ToolStripMenuItem,
+            this.aMP2ToolStripMenuItem});
+            this.preAmpToolStripMenuItem.Name = "preAmpToolStripMenuItem";
+            this.preAmpToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.preAmpToolStripMenuItem.Text = "Pre Amp";
+            // 
+            // ipoToolStripMenuItem
+            // 
+            this.ipoToolStripMenuItem.Name = "ipoToolStripMenuItem";
+            this.ipoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ipoToolStripMenuItem.Text = "IPO";
+            this.ipoToolStripMenuItem.Click += new System.EventHandler(this.ipoToolStripMenuItem_Click);
+            // 
+            // aMP1ToolStripMenuItem
+            // 
+            this.aMP1ToolStripMenuItem.Name = "aMP1ToolStripMenuItem";
+            this.aMP1ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aMP1ToolStripMenuItem.Text = "AMP 1";
+            this.aMP1ToolStripMenuItem.Click += new System.EventHandler(this.aMP1ToolStripMenuItem_Click);
+            // 
+            // aMP2ToolStripMenuItem
+            // 
+            this.aMP2ToolStripMenuItem.Name = "aMP2ToolStripMenuItem";
+            this.aMP2ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aMP2ToolStripMenuItem.Text = "AMP 2";
+            this.aMP2ToolStripMenuItem.Click += new System.EventHandler(this.aMP2ToolStripMenuItem_Click);
+            // 
+            // RFAttenuatorToolStripMenuItem
+            // 
+            this.RFAttenuatorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.oFFToolStripMenuItem,
+            this.dBToolStripMenuItem,
+            this.dBToolStripMenuItem1,
+            this.dBToolStripMenuItem2});
+            this.RFAttenuatorToolStripMenuItem.Name = "RFAttenuatorToolStripMenuItem";
+            this.RFAttenuatorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.RFAttenuatorToolStripMenuItem.Text = "RF Attenuator";
+            // 
+            // oFFToolStripMenuItem
+            // 
+            this.oFFToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.oFFToolStripMenuItem.Name = "oFFToolStripMenuItem";
+            this.oFFToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.oFFToolStripMenuItem.Text = "OFF";
+            this.oFFToolStripMenuItem.Click += new System.EventHandler(this.oFFToolStripMenuItem_Click);
+            // 
+            // dBToolStripMenuItem
+            // 
+            this.dBToolStripMenuItem.Name = "dBToolStripMenuItem";
+            this.dBToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dBToolStripMenuItem.Text = "6dB";
+            this.dBToolStripMenuItem.Click += new System.EventHandler(this.dBToolStripMenuItem_Click);
+            // 
+            // dBToolStripMenuItem1
+            // 
+            this.dBToolStripMenuItem1.Name = "dBToolStripMenuItem1";
+            this.dBToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.dBToolStripMenuItem1.Text = "12dB";
+            this.dBToolStripMenuItem1.Click += new System.EventHandler(this.dBToolStripMenuItem1_Click);
+            // 
+            // dBToolStripMenuItem2
+            // 
+            this.dBToolStripMenuItem2.Name = "dBToolStripMenuItem2";
+            this.dBToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.dBToolStripMenuItem2.Text = "18dB";
+            this.dBToolStripMenuItem2.Click += new System.EventHandler(this.dBToolStripMenuItem2_Click);
+            // 
+            // aGCToolStripMenuItem
+            // 
+            this.aGCToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agcOFFToolStripMenuItem,
+            this.aGCFASTToolStripMenuItem,
+            this.aGCMIDToolStripMenuItem,
+            this.aGCSLOWToolStripMenuItem,
+            this.aGCAUTOToolStripMenuItem});
+            this.aGCToolStripMenuItem.Name = "aGCToolStripMenuItem";
+            this.aGCToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aGCToolStripMenuItem.Text = "AGC";
+            // 
+            // agcOFFToolStripMenuItem
+            // 
+            this.agcOFFToolStripMenuItem.Name = "agcOFFToolStripMenuItem";
+            this.agcOFFToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.agcOFFToolStripMenuItem.Text = "OFF";
+            this.agcOFFToolStripMenuItem.Click += new System.EventHandler(this.agcOFFToolStripMenuItem_Click);
+            // 
+            // aGCFASTToolStripMenuItem
+            // 
+            this.aGCFASTToolStripMenuItem.Name = "aGCFASTToolStripMenuItem";
+            this.aGCFASTToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aGCFASTToolStripMenuItem.Text = "FAST";
+            this.aGCFASTToolStripMenuItem.Click += new System.EventHandler(this.aGCFASTToolStripMenuItem_Click);
+            // 
+            // aGCMIDToolStripMenuItem
+            // 
+            this.aGCMIDToolStripMenuItem.Name = "aGCMIDToolStripMenuItem";
+            this.aGCMIDToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aGCMIDToolStripMenuItem.Text = "MID";
+            this.aGCMIDToolStripMenuItem.Click += new System.EventHandler(this.aGCMIDToolStripMenuItem_Click);
+            // 
+            // aGCSLOWToolStripMenuItem
+            // 
+            this.aGCSLOWToolStripMenuItem.Name = "aGCSLOWToolStripMenuItem";
+            this.aGCSLOWToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aGCSLOWToolStripMenuItem.Text = "SLOW";
+            this.aGCSLOWToolStripMenuItem.Click += new System.EventHandler(this.aGCSLOWToolStripMenuItem_Click);
+            // 
+            // aGCAUTOToolStripMenuItem
+            // 
+            this.aGCAUTOToolStripMenuItem.Name = "aGCAUTOToolStripMenuItem";
+            this.aGCAUTOToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aGCAUTOToolStripMenuItem.Text = "AUTO";
+            this.aGCAUTOToolStripMenuItem.Click += new System.EventHandler(this.aGCAUTOToolStripMenuItem_Click);
+            // 
+            // roofingFilterToolStripMenuItem
+            // 
+            this.roofingFilterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem12kHz,
+            this.ToolStripMenuItem3kHz,
+            this.ToolStripMenuItem1_2kHz,
+            this.ToolStripMenuItem600Hz,
+            this.ToolStripMenuItem300Hz});
+            this.roofingFilterToolStripMenuItem.Name = "roofingFilterToolStripMenuItem";
+            this.roofingFilterToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.roofingFilterToolStripMenuItem.Text = "Roofing Filter";
+            // 
+            // toolStripMenuItem12kHz
+            // 
+            this.toolStripMenuItem12kHz.Name = "toolStripMenuItem12kHz";
+            this.toolStripMenuItem12kHz.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem12kHz.Text = "12 kHz";
+            this.toolStripMenuItem12kHz.Click += new System.EventHandler(this.toolStripMenuItem12kHz_Click);
+            // 
+            // ToolStripMenuItem3kHz
+            // 
+            this.ToolStripMenuItem3kHz.Name = "ToolStripMenuItem3kHz";
+            this.ToolStripMenuItem3kHz.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItem3kHz.Text = "3 kHz";
+            this.ToolStripMenuItem3kHz.Click += new System.EventHandler(this.ToolStripMenuItem3kHz_Click);
+            // 
+            // ToolStripMenuItem1_2kHz
+            // 
+            this.ToolStripMenuItem1_2kHz.Name = "ToolStripMenuItem1_2kHz";
+            this.ToolStripMenuItem1_2kHz.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItem1_2kHz.Text = "1.2 kHz (option)";
+            this.ToolStripMenuItem1_2kHz.Click += new System.EventHandler(this.ToolStripMenuItem1_2kHz_Click);
+            // 
+            // ToolStripMenuItem600Hz
+            // 
+            this.ToolStripMenuItem600Hz.Name = "ToolStripMenuItem600Hz";
+            this.ToolStripMenuItem600Hz.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItem600Hz.Text = "600 Hz";
+            this.ToolStripMenuItem600Hz.Click += new System.EventHandler(this.ToolStripMenuItem600Hz_Click);
+            // 
+            // ToolStripMenuItem300Hz
+            // 
+            this.ToolStripMenuItem300Hz.Name = "ToolStripMenuItem300Hz";
+            this.ToolStripMenuItem300Hz.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItem300Hz.Text = "300 Hz (option)";
+            this.ToolStripMenuItem300Hz.Click += new System.EventHandler(this.ToolStripMenuItem300Hz_Click);
+            // 
+            // toolStripMenuItem7
+            // 
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(221, 6);
+            // 
+            // offTRXToolStripMenuItem
+            // 
+            this.offTRXToolStripMenuItem.Name = "offTRXToolStripMenuItem";
+            this.offTRXToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.offTRXToolStripMenuItem.Text = "Off TRX";
+            this.offTRXToolStripMenuItem.Click += new System.EventHandler(this.offTRXToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(463, 6);
+            // 
+            // alwaysOnTopToolStripMenuItem
+            // 
+            this.alwaysOnTopToolStripMenuItem.CheckOnClick = true;
+            this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
+            this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
+            this.alwaysOnTopToolStripMenuItem.Text = "Always On Top";
+            this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopToolStripMenuItem_Click);
+            // 
+            // hideInTaskBarToolStripMenuItem
+            // 
+            this.hideInTaskBarToolStripMenuItem.CheckOnClick = true;
+            this.hideInTaskBarToolStripMenuItem.Name = "hideInTaskBarToolStripMenuItem";
+            this.hideInTaskBarToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
+            this.hideInTaskBarToolStripMenuItem.Text = "Hide in Task Bar";
+            this.hideInTaskBarToolStripMenuItem.Click += new System.EventHandler(this.hideInTaskBarToolStripMenuItem_Click);
+            // 
+            // hideWindowHeaderToolStripMenuItem
+            // 
+            this.hideWindowHeaderToolStripMenuItem.CheckOnClick = true;
+            this.hideWindowHeaderToolStripMenuItem.Name = "hideWindowHeaderToolStripMenuItem";
+            this.hideWindowHeaderToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
+            this.hideWindowHeaderToolStripMenuItem.Text = "Hide Window Header";
+            this.hideWindowHeaderToolStripMenuItem.Click += new System.EventHandler(this.hideWindowHeaderToolStripMenuItem_Click);
+            // 
+            // cameraModuleToolStripMenuItem
+            // 
+            this.cameraModuleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.runCameraModuleToolStripMenuItem,
+            this.configureControlUDPPortToolStripMenuItem});
+            this.cameraModuleToolStripMenuItem.Name = "cameraModuleToolStripMenuItem";
+            this.cameraModuleToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
+            this.cameraModuleToolStripMenuItem.Text = "Camera module";
+            // 
+            // runCameraModuleToolStripMenuItem
+            // 
+            this.runCameraModuleToolStripMenuItem.CheckOnClick = true;
+            this.runCameraModuleToolStripMenuItem.Name = "runCameraModuleToolStripMenuItem";
+            this.runCameraModuleToolStripMenuItem.Size = new System.Drawing.Size(386, 26);
+            this.runCameraModuleToolStripMenuItem.Text = "On start and exit run/close Camera module";
+            // 
+            // configureControlUDPPortToolStripMenuItem
+            // 
+            this.configureControlUDPPortToolStripMenuItem.Name = "configureControlUDPPortToolStripMenuItem";
+            this.configureControlUDPPortToolStripMenuItem.Size = new System.Drawing.Size(386, 26);
+            this.configureControlUDPPortToolStripMenuItem.Text = "Configure control UDP port (restart needed):";
+            this.configureControlUDPPortToolStripMenuItem.Click += new System.EventHandler(this.configureControlUDPPortToolStripMenuItem_Click);
+            // 
+            // runNTPTimeSyncOnStartToolStripMenuItem
+            // 
+            this.runNTPTimeSyncOnStartToolStripMenuItem.CheckOnClick = true;
+            this.runNTPTimeSyncOnStartToolStripMenuItem.Name = "runNTPTimeSyncOnStartToolStripMenuItem";
+            this.runNTPTimeSyncOnStartToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
+            this.runNTPTimeSyncOnStartToolStripMenuItem.Text = "Run NTP Time sync on start (if was not sync in last 10hours)";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(463, 6);
+            // 
+            // tXOnlyWhenPressedToolStripMenuItem
+            // 
+            this.tXOnlyWhenPressedToolStripMenuItem.CheckOnClick = true;
+            this.tXOnlyWhenPressedToolStripMenuItem.Name = "tXOnlyWhenPressedToolStripMenuItem";
+            this.tXOnlyWhenPressedToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
+            this.tXOnlyWhenPressedToolStripMenuItem.Text = "TX only when pressed";
+            // 
+            // tXOnCharToolStripMenuItem
+            // 
+            this.tXOnCharToolStripMenuItem.CheckOnClick = true;
+            this.tXOnCharToolStripMenuItem.Name = "tXOnCharToolStripMenuItem";
+            this.tXOnCharToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
+            this.tXOnCharToolStripMenuItem.Text = "TX on \"\\\" keyboard pressed";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(463, 6);
+            // 
+            // onBandChangedSlelectDefaultSSBModeToolStripMenuItem
+            // 
+            this.onBandChangedSlelectDefaultSSBModeToolStripMenuItem.CheckOnClick = true;
+            this.onBandChangedSlelectDefaultSSBModeToolStripMenuItem.Name = "onBandChangedSlelectDefaultSSBModeToolStripMenuItem";
+            this.onBandChangedSlelectDefaultSSBModeToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
+            this.onBandChangedSlelectDefaultSSBModeToolStripMenuItem.Text = "On User Band changed select default SSB Mode";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(463, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(466, 24);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // comboBoxMode
+            // 
+            this.comboBoxMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMode.FormattingEnabled = true;
+            this.comboBoxMode.Items.AddRange(new object[] {
+            "",
+            "CW LSB",
+            "CW USB",
+            "SSB LSB",
+            "SSB USB",
+            "DIGI LSB",
+            "DIGI USB",
+            "AM",
+            "FM"});
+            this.comboBoxMode.Location = new System.Drawing.Point(562, 118);
+            this.comboBoxMode.Name = "comboBoxMode";
+            this.comboBoxMode.Size = new System.Drawing.Size(118, 28);
+            this.comboBoxMode.TabIndex = 44;
+            this.comboBoxMode.DropDown += new System.EventHandler(this.comboBoxMode_DropDown);
+            this.comboBoxMode.SelectedIndexChanged += new System.EventHandler(this.comboBoxMode_SelectedIndexChanged);
+            this.comboBoxMode.DropDownClosed += new System.EventHandler(this.comboBoxMode_DropDownClosed);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.ForeColor = System.Drawing.Color.Silver;
+            this.label3.Location = new System.Drawing.Point(496, 130);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 16);
+            this.label3.TabIndex = 43;
+            this.label3.Text = "MODE:";
+            // 
+            // comboBoxBand
+            // 
+            this.comboBoxBand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBand.FormattingEnabled = true;
+            this.comboBoxBand.Items.AddRange(new object[] {
+            "",
+            "160m",
+            "80m",
+            "60m",
+            "40m",
+            "30m",
+            "20m",
+            "17m",
+            "15m",
+            "12m",
+            "10m",
+            "6m",
+            "4m",
+            "2m",
+            "70cm",
+            ""});
+            this.comboBoxBand.Location = new System.Drawing.Point(70, 118);
+            this.comboBoxBand.Name = "comboBoxBand";
+            this.comboBoxBand.Size = new System.Drawing.Size(118, 28);
+            this.comboBoxBand.TabIndex = 42;
+            this.comboBoxBand.DropDown += new System.EventHandler(this.comboBoxBand_DropDown);
+            this.comboBoxBand.SelectedIndexChanged += new System.EventHandler(this.comboBoxBand_SelectedIndexChanged);
+            this.comboBoxBand.DropDownClosed += new System.EventHandler(this.comboBoxBand_DropDownClosed);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.Color.Silver;
+            this.label2.Location = new System.Drawing.Point(11, 130);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 16);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "BAND:";
+            // 
+            // button500
+            // 
+            this.button500.Location = new System.Drawing.Point(686, 74);
+            this.button500.Name = "button500";
+            this.button500.Size = new System.Drawing.Size(53, 28);
+            this.button500.TabIndex = 40;
+            this.button500.Text = "500";
+            this.button500.UseVisualStyleBackColor = true;
+            this.button500.Click += new System.EventHandler(this.button500_Click);
+            // 
+            // button000
+            // 
+            this.button000.Location = new System.Drawing.Point(686, 38);
+            this.button000.Name = "button000";
+            this.button000.Size = new System.Drawing.Size(53, 28);
+            this.button000.TabIndex = 39;
+            this.button000.Text = "000";
+            this.button000.UseVisualStyleBackColor = true;
+            this.button000.Click += new System.EventHandler(this.button000_Click);
+            // 
+            // labelMode
+            // 
+            this.labelMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelMode.ForeColor = System.Drawing.Color.Silver;
+            this.labelMode.Location = new System.Drawing.Point(523, 4);
+            this.labelMode.Name = "labelMode";
+            this.labelMode.Size = new System.Drawing.Size(159, 20);
+            this.labelMode.TabIndex = 11;
+            this.labelMode.Text = "***";
+            this.labelMode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelErr
+            // 
+            this.labelErr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelErr.AutoSize = true;
+            this.labelErr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.labelErr.Location = new System.Drawing.Point(728, 2);
+            this.labelErr.Name = "labelErr";
+            this.labelErr.Size = new System.Drawing.Size(92, 20);
+            this.labelErr.TabIndex = 51;
+            this.labelErr.Text = "Some ERR";
+            this.labelErr.Visible = false;
+            this.labelErr.Click += new System.EventHandler(this.labelErr_Click);
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // timer3
+            // 
+            this.timer3.Interval = 300000;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // timerNTP
+            // 
+            this.timerNTP.Interval = 500;
+            this.timerNTP.Tick += new System.EventHandler(this.timerNTP_Tick);
+            // 
+            // timerDoppler
+            // 
+            this.timerDoppler.Tick += new System.EventHandler(this.timerDoppler_Tick);
+            // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(221, 6);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1102,6 +1371,36 @@
         private System.Windows.Forms.ToolStripMenuItem tRXCommandsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem antenaTunnerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem offTRXToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem antenaNumberToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem antena1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem antena2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem antena3ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem preAmpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ipoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aMP1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aMP2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem RFAttenuatorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem oFFToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dBToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dBToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem dBToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem aGCToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agcOFFToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aGCFASTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aGCMIDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aGCSLOWToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aGCAUTOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem roofingFilterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem12kHz;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem3kHz;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem1_2kHz;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem600Hz;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem300Hz;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
+        private System.Windows.Forms.ToolStripMenuItem OnAntenaTunerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem offAntenaTunerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tuningNownotWorkedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
     }
 }
 

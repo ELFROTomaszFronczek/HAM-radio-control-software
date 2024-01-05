@@ -1056,20 +1056,138 @@ namespace Omnirig_CAT
         {
 
 
-            currentRig.SendCustomCommand("AC001;", 0, "");
+            
 
 
         }
 
+
+
         private void offTRXToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (FastQuestion.ShowQuestion("Are You sure to switch off TRX ", "Attention !!!") == FastQuestionResult.button1)
+            if (FastQuestion.ShowQuestion("Are You sure to switch off TRX\r\nTurning On back isn't possible in program.\r\nYou must do it manually on TRX ", "Attention !!!", ImageType.Warning, IloscPrzyciskow.trzy,"YES","NO","Cancel") == FastQuestionResult.button1)
                 currentRig.SendCustomCommand("PS0;", 0, "");
         }
 
         private void oNTToolStripMenuItem_Click(object sender, EventArgs e)
         {
             currentRig.SendCustomCommand("PS1;", 0, "");
+        }
+
+        private void antena1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("AN01;", 0, "");
+        }
+
+        private void antena2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("AN02;", 0, "");
+        }
+
+        private void antena3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("AN03;", 0, "");
+        }
+
+        private void ipoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("PA00;", 0, "");
+        }
+
+        private void aMP1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("PA01;", 0, "");
+        }
+
+        private void aMP2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("PA02;", 0, "");
+        }
+
+
+        private void oFFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("RA00;", 0, "");
+        }
+
+        private void dBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("RA01;", 0, "");
+        }
+
+        private void dBToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("RA02;", 0, "");
+        }
+
+        private void dBToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("RA03;", 0, "");
+        }
+
+        private void agcOFFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("GT00;", 0, "");
+        }
+
+        private void aGCFASTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("GT01;", 0, "");
+        }
+
+        private void aGCMIDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("GT02;", 0, "");
+        }
+
+        private void aGCSLOWToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("GT03;", 0, "");
+        }
+
+        private void aGCAUTOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("GT04;", 0, "");
+        }
+
+        private void toolStripMenuItem12kHz_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("RF01;", 0, "");
+        }
+
+        private void ToolStripMenuItem3kHz_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("RF02;", 0, "");
+        }
+
+        private void ToolStripMenuItem1_2kHz_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("RF03;", 0, "");
+        }
+
+        private void ToolStripMenuItem600Hz_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("RF04;", 0, "");
+        }
+
+        private void ToolStripMenuItem300Hz_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("RF05;", 0, "");
+        }
+
+        private void OnAntenaTunerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("AC001;", 0, "");
+        }
+
+        private void offAntenaTunerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("AC000;", 0, "");
+        }
+
+        private void tuningNownotWorkedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("AC002;", 0, "AC002;");
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
