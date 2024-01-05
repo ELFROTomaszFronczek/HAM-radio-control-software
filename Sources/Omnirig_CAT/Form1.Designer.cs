@@ -72,8 +72,9 @@
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
             this.tRXCommandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.antenaTunnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.OnAntenaTunerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.offAntenaTunerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OnAntenaTunerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
             this.tuningNownotWorkedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.antenaNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.antena1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -129,7 +130,13 @@
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timerNTP = new System.Windows.Forms.Timer(this.components);
             this.timerDoppler = new System.Windows.Forms.Timer(this.components);
-            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
+            this.powerControllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.fixedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.wToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.wToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panelDoppler.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarDopplerTime)).BeginInit();
@@ -779,6 +786,7 @@
             this.RFAttenuatorToolStripMenuItem,
             this.aGCToolStripMenuItem,
             this.roofingFilterToolStripMenuItem,
+            this.powerControllToolStripMenuItem,
             this.toolStripMenuItem7,
             this.offTRXToolStripMenuItem});
             this.tRXCommandsToolStripMenuItem.Name = "tRXCommandsToolStripMenuItem";
@@ -798,24 +806,29 @@
             this.antenaTunnerToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.antenaTunnerToolStripMenuItem.Click += new System.EventHandler(this.antenaTunerToolStripMenuItem_Click);
             // 
-            // OnAntenaTunerToolStripMenuItem
-            // 
-            this.OnAntenaTunerToolStripMenuItem.Name = "OnAntenaTunerToolStripMenuItem";
-            this.OnAntenaTunerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.OnAntenaTunerToolStripMenuItem.Text = "On Antena Tuner";
-            this.OnAntenaTunerToolStripMenuItem.Click += new System.EventHandler(this.OnAntenaTunerToolStripMenuItem_Click);
-            // 
             // offAntenaTunerToolStripMenuItem
             // 
             this.offAntenaTunerToolStripMenuItem.Name = "offAntenaTunerToolStripMenuItem";
-            this.offAntenaTunerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.offAntenaTunerToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.offAntenaTunerToolStripMenuItem.Text = "Off Antena Tuner";
             this.offAntenaTunerToolStripMenuItem.Click += new System.EventHandler(this.offAntenaTunerToolStripMenuItem_Click);
+            // 
+            // OnAntenaTunerToolStripMenuItem
+            // 
+            this.OnAntenaTunerToolStripMenuItem.Name = "OnAntenaTunerToolStripMenuItem";
+            this.OnAntenaTunerToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.OnAntenaTunerToolStripMenuItem.Text = "On Antena Tuner";
+            this.OnAntenaTunerToolStripMenuItem.Click += new System.EventHandler(this.OnAntenaTunerToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(202, 6);
             // 
             // tuningNownotWorkedToolStripMenuItem
             // 
             this.tuningNownotWorkedToolStripMenuItem.Name = "tuningNownotWorkedToolStripMenuItem";
-            this.tuningNownotWorkedToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tuningNownotWorkedToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.tuningNownotWorkedToolStripMenuItem.Text = "Tuning now";
             this.tuningNownotWorkedToolStripMenuItem.Click += new System.EventHandler(this.tuningNownotWorkedToolStripMenuItem_Click);
             // 
@@ -832,21 +845,21 @@
             // antena1ToolStripMenuItem
             // 
             this.antena1ToolStripMenuItem.Name = "antena1ToolStripMenuItem";
-            this.antena1ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.antena1ToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.antena1ToolStripMenuItem.Text = "Antena 1";
             this.antena1ToolStripMenuItem.Click += new System.EventHandler(this.antena1ToolStripMenuItem_Click);
             // 
             // antena2ToolStripMenuItem
             // 
             this.antena2ToolStripMenuItem.Name = "antena2ToolStripMenuItem";
-            this.antena2ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.antena2ToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.antena2ToolStripMenuItem.Text = "Antena 2";
             this.antena2ToolStripMenuItem.Click += new System.EventHandler(this.antena2ToolStripMenuItem_Click);
             // 
             // antena3ToolStripMenuItem
             // 
             this.antena3ToolStripMenuItem.Name = "antena3ToolStripMenuItem";
-            this.antena3ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.antena3ToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.antena3ToolStripMenuItem.Text = "Antena 3";
             this.antena3ToolStripMenuItem.Click += new System.EventHandler(this.antena3ToolStripMenuItem_Click);
             // 
@@ -863,21 +876,21 @@
             // ipoToolStripMenuItem
             // 
             this.ipoToolStripMenuItem.Name = "ipoToolStripMenuItem";
-            this.ipoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ipoToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.ipoToolStripMenuItem.Text = "IPO";
             this.ipoToolStripMenuItem.Click += new System.EventHandler(this.ipoToolStripMenuItem_Click);
             // 
             // aMP1ToolStripMenuItem
             // 
             this.aMP1ToolStripMenuItem.Name = "aMP1ToolStripMenuItem";
-            this.aMP1ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aMP1ToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.aMP1ToolStripMenuItem.Text = "AMP 1";
             this.aMP1ToolStripMenuItem.Click += new System.EventHandler(this.aMP1ToolStripMenuItem_Click);
             // 
             // aMP2ToolStripMenuItem
             // 
             this.aMP2ToolStripMenuItem.Name = "aMP2ToolStripMenuItem";
-            this.aMP2ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aMP2ToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.aMP2ToolStripMenuItem.Text = "AMP 2";
             this.aMP2ToolStripMenuItem.Click += new System.EventHandler(this.aMP2ToolStripMenuItem_Click);
             // 
@@ -896,28 +909,28 @@
             // 
             this.oFFToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.oFFToolStripMenuItem.Name = "oFFToolStripMenuItem";
-            this.oFFToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.oFFToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
             this.oFFToolStripMenuItem.Text = "OFF";
             this.oFFToolStripMenuItem.Click += new System.EventHandler(this.oFFToolStripMenuItem_Click);
             // 
             // dBToolStripMenuItem
             // 
             this.dBToolStripMenuItem.Name = "dBToolStripMenuItem";
-            this.dBToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dBToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
             this.dBToolStripMenuItem.Text = "6dB";
             this.dBToolStripMenuItem.Click += new System.EventHandler(this.dBToolStripMenuItem_Click);
             // 
             // dBToolStripMenuItem1
             // 
             this.dBToolStripMenuItem1.Name = "dBToolStripMenuItem1";
-            this.dBToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.dBToolStripMenuItem1.Size = new System.Drawing.Size(126, 26);
             this.dBToolStripMenuItem1.Text = "12dB";
             this.dBToolStripMenuItem1.Click += new System.EventHandler(this.dBToolStripMenuItem1_Click);
             // 
             // dBToolStripMenuItem2
             // 
             this.dBToolStripMenuItem2.Name = "dBToolStripMenuItem2";
-            this.dBToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.dBToolStripMenuItem2.Size = new System.Drawing.Size(126, 26);
             this.dBToolStripMenuItem2.Text = "18dB";
             this.dBToolStripMenuItem2.Click += new System.EventHandler(this.dBToolStripMenuItem2_Click);
             // 
@@ -936,35 +949,35 @@
             // agcOFFToolStripMenuItem
             // 
             this.agcOFFToolStripMenuItem.Name = "agcOFFToolStripMenuItem";
-            this.agcOFFToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.agcOFFToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
             this.agcOFFToolStripMenuItem.Text = "OFF";
             this.agcOFFToolStripMenuItem.Click += new System.EventHandler(this.agcOFFToolStripMenuItem_Click);
             // 
             // aGCFASTToolStripMenuItem
             // 
             this.aGCFASTToolStripMenuItem.Name = "aGCFASTToolStripMenuItem";
-            this.aGCFASTToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aGCFASTToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
             this.aGCFASTToolStripMenuItem.Text = "FAST";
             this.aGCFASTToolStripMenuItem.Click += new System.EventHandler(this.aGCFASTToolStripMenuItem_Click);
             // 
             // aGCMIDToolStripMenuItem
             // 
             this.aGCMIDToolStripMenuItem.Name = "aGCMIDToolStripMenuItem";
-            this.aGCMIDToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aGCMIDToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
             this.aGCMIDToolStripMenuItem.Text = "MID";
             this.aGCMIDToolStripMenuItem.Click += new System.EventHandler(this.aGCMIDToolStripMenuItem_Click);
             // 
             // aGCSLOWToolStripMenuItem
             // 
             this.aGCSLOWToolStripMenuItem.Name = "aGCSLOWToolStripMenuItem";
-            this.aGCSLOWToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aGCSLOWToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
             this.aGCSLOWToolStripMenuItem.Text = "SLOW";
             this.aGCSLOWToolStripMenuItem.Click += new System.EventHandler(this.aGCSLOWToolStripMenuItem_Click);
             // 
             // aGCAUTOToolStripMenuItem
             // 
             this.aGCAUTOToolStripMenuItem.Name = "aGCAUTOToolStripMenuItem";
-            this.aGCAUTOToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aGCAUTOToolStripMenuItem.Size = new System.Drawing.Size(131, 26);
             this.aGCAUTOToolStripMenuItem.Text = "AUTO";
             this.aGCAUTOToolStripMenuItem.Click += new System.EventHandler(this.aGCAUTOToolStripMenuItem_Click);
             // 
@@ -983,35 +996,35 @@
             // toolStripMenuItem12kHz
             // 
             this.toolStripMenuItem12kHz.Name = "toolStripMenuItem12kHz";
-            this.toolStripMenuItem12kHz.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem12kHz.Size = new System.Drawing.Size(198, 26);
             this.toolStripMenuItem12kHz.Text = "12 kHz";
             this.toolStripMenuItem12kHz.Click += new System.EventHandler(this.toolStripMenuItem12kHz_Click);
             // 
             // ToolStripMenuItem3kHz
             // 
             this.ToolStripMenuItem3kHz.Name = "ToolStripMenuItem3kHz";
-            this.ToolStripMenuItem3kHz.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItem3kHz.Size = new System.Drawing.Size(198, 26);
             this.ToolStripMenuItem3kHz.Text = "3 kHz";
             this.ToolStripMenuItem3kHz.Click += new System.EventHandler(this.ToolStripMenuItem3kHz_Click);
             // 
             // ToolStripMenuItem1_2kHz
             // 
             this.ToolStripMenuItem1_2kHz.Name = "ToolStripMenuItem1_2kHz";
-            this.ToolStripMenuItem1_2kHz.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItem1_2kHz.Size = new System.Drawing.Size(198, 26);
             this.ToolStripMenuItem1_2kHz.Text = "1.2 kHz (option)";
             this.ToolStripMenuItem1_2kHz.Click += new System.EventHandler(this.ToolStripMenuItem1_2kHz_Click);
             // 
             // ToolStripMenuItem600Hz
             // 
             this.ToolStripMenuItem600Hz.Name = "ToolStripMenuItem600Hz";
-            this.ToolStripMenuItem600Hz.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItem600Hz.Size = new System.Drawing.Size(198, 26);
             this.ToolStripMenuItem600Hz.Text = "600 Hz";
             this.ToolStripMenuItem600Hz.Click += new System.EventHandler(this.ToolStripMenuItem600Hz_Click);
             // 
             // ToolStripMenuItem300Hz
             // 
             this.ToolStripMenuItem300Hz.Name = "ToolStripMenuItem300Hz";
-            this.ToolStripMenuItem300Hz.Size = new System.Drawing.Size(224, 26);
+            this.ToolStripMenuItem300Hz.Size = new System.Drawing.Size(198, 26);
             this.ToolStripMenuItem300Hz.Text = "300 Hz (option)";
             this.ToolStripMenuItem300Hz.Click += new System.EventHandler(this.ToolStripMenuItem300Hz_Click);
             // 
@@ -1265,10 +1278,60 @@
             // 
             this.timerDoppler.Tick += new System.EventHandler(this.timerDoppler_Tick);
             // 
-            // toolStripMenuItem8
+            // powerControllToolStripMenuItem
             // 
-            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(221, 6);
+            this.powerControllToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.wToolStripMenuItem,
+            this.wToolStripMenuItem3,
+            this.wToolStripMenuItem2,
+            this.wToolStripMenuItem4,
+            this.wToolStripMenuItem1,
+            this.fixedToolStripMenuItem});
+            this.powerControllToolStripMenuItem.Name = "powerControllToolStripMenuItem";
+            this.powerControllToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.powerControllToolStripMenuItem.Text = "Power Controll";
+            // 
+            // wToolStripMenuItem
+            // 
+            this.wToolStripMenuItem.Name = "wToolStripMenuItem";
+            this.wToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.wToolStripMenuItem.Text = "5W";
+            this.wToolStripMenuItem.Click += new System.EventHandler(this.wToolStripMenuItem_Click);
+            // 
+            // wToolStripMenuItem1
+            // 
+            this.wToolStripMenuItem1.Name = "wToolStripMenuItem1";
+            this.wToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.wToolStripMenuItem1.Text = "100W";
+            this.wToolStripMenuItem1.Click += new System.EventHandler(this.wToolStripMenuItem1_Click);
+            // 
+            // fixedToolStripMenuItem
+            // 
+            this.fixedToolStripMenuItem.Name = "fixedToolStripMenuItem";
+            this.fixedToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fixedToolStripMenuItem.Text = "Fixed";
+            this.fixedToolStripMenuItem.Click += new System.EventHandler(this.fixedToolStripMenuItem_Click);
+            // 
+            // wToolStripMenuItem2
+            // 
+            this.wToolStripMenuItem2.Name = "wToolStripMenuItem2";
+            this.wToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.wToolStripMenuItem2.Text = "50W";
+            this.wToolStripMenuItem2.Click += new System.EventHandler(this.wToolStripMenuItem2_Click);
+            // 
+            // wToolStripMenuItem3
+            // 
+            this.wToolStripMenuItem3.Name = "wToolStripMenuItem3";
+            this.wToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.wToolStripMenuItem3.Text = "25W";
+            this.wToolStripMenuItem3.Click += new System.EventHandler(this.wToolStripMenuItem3_Click);
+            // 
+            // wToolStripMenuItem4
+            // 
+            this.wToolStripMenuItem4.Name = "wToolStripMenuItem4";
+            this.wToolStripMenuItem4.Size = new System.Drawing.Size(224, 26);
+            this.wToolStripMenuItem4.Text = "75W";
+            this.wToolStripMenuItem4.Click += new System.EventHandler(this.wToolStripMenuItem4_Click);
             // 
             // Form1
             // 
@@ -1401,6 +1464,13 @@
         private System.Windows.Forms.ToolStripMenuItem offAntenaTunerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tuningNownotWorkedToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
+        private System.Windows.Forms.ToolStripMenuItem powerControllToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem fixedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem wToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem wToolStripMenuItem4;
     }
 }
 

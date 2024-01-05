@@ -1190,6 +1190,52 @@ namespace Omnirig_CAT
             currentRig.SendCustomCommand("AC002;", 0, "AC002;");
         }
 
+        private void wToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            setPower(5);
+        }
+
+        private void wToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            setPower(25);
+        }
+
+        private void wToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            setPower(50);
+        }
+
+        private void wToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            setPower(75);
+        }
+
+        private void wToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            setPower(100);
+        }
+
+        int lv = 100;
+        private void fixedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int i = -1;
+            if (InputBox.ShowDialog("Enter power value (5-100)", "Enter Power Value", lv.ToString(), 5, 100, out i) == DialogResult.OK)
+            {
+                setPower(i);
+            }
+
+            
+        }
+
+        private void setPower(int i)
+        {
+           lv = i;
+            string s = i.ToString();
+            while (s.Length < 3) s = "0" + s;
+            currentRig.SendCustomCommand("PC" + s + ";", 0, "");
+            
+        }
+
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
             if (dwn)
