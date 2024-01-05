@@ -17,3 +17,5 @@ An example of a simple radio control program. Requires omnirig to be installed. 
 <hr/>
 
 I provide both modules with C# source codes.
+
+Tomasz Fronczek SP4THK
