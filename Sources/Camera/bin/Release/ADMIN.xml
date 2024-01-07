@@ -1,0 +1,3166 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ADMIN</name>
+    </assembly>
+    <members>
+        <member name="F:ADMIN.AboutBox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.AboutBox.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.AboutBox.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ADMIN.COMPONENTS.LED.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.COMPONENTS.LED.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.COMPONENTS.LED.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ADMIN.D_BASE.DB_Search">
+            <summary>
+            Testuje połączenia z bazą danych podpowiada co zrobić
+            Autor Tomasz Fronczek
+            </summary>
+        </member>
+        <member name="F:ADMIN.D_BASE.DB_Search.searchServers">
+            <summary>
+            Inicjalizacja
+            </summary>
+            
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Search.#ctor(System.String,System.Boolean,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Inicjalizacja
+            </summary>
+            <param name="serv">nazwa serwera</param>
+            <param name="winauth">typ autoryzacji - true autoryzacja Windows</param>
+            <param name="dataB">nazwa bazy danych </param>
+            <param name="user">Użytkownik</param>
+            <param name="psw">Hasło</param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Search.DB_InstallScript_Load(System.Object,System.EventArgs)">
+            <summary>
+            Załadowano formularz
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Search.addLog(System.String)">
+            <summary>
+            dodaj do okna Logu
+            </summary>
+            <param name="text">tekst do dopisania do logu</param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Search.IsValid">
+            <summary>
+            czy wpisane dane są ok
+            </summary>
+            <returns>true jak wszystko ok</returns>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Search.TestStep1">
+            <summary>
+            Test 1 - test połączenia z serwerem
+            </summary>
+            <returns>true - połączono z serwerem</returns>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Search.timerTest_Tick(System.Object,System.EventArgs)">
+            <summary>
+            Uruchom test
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Search.myButtonOK_Click(System.Object,System.EventArgs)">
+            <summary>
+            Kliknięto w OK
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:ADMIN.D_BASE.DB_Search.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Search.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Search.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ADMIN.D_BASE.DB_SQLScript.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_SQLScript.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_SQLScript.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ADMIN.D_BASE.DB_Detach.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Detach.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Detach.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ADMIN.D_BASE.DB_Attach.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Attach.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Attach.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ADMIN.D_BASE.DB_Cfg_conn_Str">
+            <summary>
+            Konfiguruj parametry połączenia z bazą danych
+            </summary>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg_conn_Str.#ctor">
+            <summary>
+             Inicjalizacja
+            </summary>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg_conn_Str.SAVE">
+            <summary>
+            Zapisz parametry połączenia z bazą
+            </summary>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg_conn_Str.fillItems">
+            <summary>
+            Wypełnij obiekty danymi
+            </summary>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg_conn_Str.TextBoxesEnable">
+            <summary>
+            Uaktywnij pola textbox
+            </summary>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg_conn_Str.IsValid">
+            <summary>
+            czy wprowadzono poprawne dane
+            </summary>
+            <returns>true - wszystko w porządku</returns>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg_conn_Str.DB_Cfg_conn_Str_Load(System.Object,System.EventArgs)">
+            <summary>
+            Załadowano okno
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg_conn_Str.radioButtonWindowsAuthentication_Click(System.Object,System.EventArgs)">
+            <summary>
+            kliknięto w radiobutton windows /serwer authentication
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg_conn_Str.myButtonTest_Click(System.Object,System.EventArgs)">
+            <summary>
+            Testuj
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg_conn_Str.myButtonCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Anuluj
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg_conn_Str.myButtonZatwierdz_Click(System.Object,System.EventArgs)">
+            <summary>
+            Zatwierdź
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:ADMIN.D_BASE.DB_Cfg_conn_Str.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg_conn_Str.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg_conn_Str.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ADMIN.D_BASE.DB_Cfg">
+            <summary>
+            Menu konfiguracji bazy danych
+            Autor Tomasz Fronczek
+            </summary>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg.#ctor">
+            <summary>
+            Inicjalizacja
+            </summary>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg.myButtonSetDefConnString_Click(System.Object,System.EventArgs)">
+            <summary>
+            Ustaw domyślne parametry połączenia z bazą
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg.myButtonInstalServer_Click(System.Object,System.EventArgs)">
+            <summary>
+            Zainstaluj serwer bazy danych
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg.myButtonZatwierdz_Click(System.Object,System.EventArgs)">
+            <summary>
+            Zatwierdź i zamknij
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg.myButtonEditSQLConn_Click(System.Object,System.EventArgs)">
+            <summary>
+            Edycja połączenia z bazą danych
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg.myButtonCreateDB_Click(System.Object,System.EventArgs)">
+            <summary>
+            Utwórz bazę danych na serwerze
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg.myButtonTest_Click(System.Object,System.EventArgs)">
+            <summary>
+            Włącz test
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:ADMIN.D_BASE.DB_Cfg.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Cfg.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ADMIN.D_BASE.DB_Test">
+            <summary>
+            Testuje połączenia z bazą danych podpowiada co zrobić
+            Autor Tomasz Fronczek
+            </summary>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Test.#ctor">
+            <summary>
+            Inicjalizacja
+            </summary>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Test.#ctor(System.String,System.Boolean,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Inicjalizacja
+            </summary>
+            <param name="serv">nazwa serwera</param>
+            <param name="winauth">typ autoryzacji - true autoryzacja Windows</param>
+            <param name="dataB">nazwa bazy danych </param>
+            <param name="user">Użytkownik</param>
+            <param name="psw">Hasło</param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Test.DB_InstallScript_Load(System.Object,System.EventArgs)">
+            <summary>
+            Załadowano formularz
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Test.addLog(System.String)">
+            <summary>
+            dodaj do okna Logu
+            </summary>
+            <param name="text">tekst do dopisania do logu</param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Test.IsValid">
+            <summary>
+            czy wpisane dane są ok
+            </summary>
+            <returns>true jak wszystko ok</returns>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Test.TestStep1">
+            <summary>
+            Test 1 - test połączenia z serwerem
+            </summary>
+            <returns>true - połączono z serwerem</returns>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Test.TestStep2">
+            <summary>
+            test 2 - sprawdzanie obecności bazy danych na serwerze
+            </summary>
+            <returns>true - jest baza danych</returns>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Test.timerTest_Tick(System.Object,System.EventArgs)">
+            <summary>
+            Uruchom test
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Test.myButtonOK_Click(System.Object,System.EventArgs)">
+            <summary>
+            Kliknięto w OK
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:ADMIN.D_BASE.DB_Test.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Test.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_Test.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ADMIN.D_BASE.DB_InstallScript">
+            <summary>
+            Instaluje bazę danych
+            Autor Tomasz Fronczek
+            </summary>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_InstallScript.#ctor">
+            <summary>
+            Inicjalizacja
+            </summary>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_InstallScript.DB_InstallScript_Load(System.Object,System.EventArgs)">
+            <summary>
+            Załadowano formę
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_InstallScript.myButtonStart_Click(System.Object,System.EventArgs)">
+            <summary>
+            Rozpocznij instalcję
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_InstallScript.addLog(System.String)">
+            <summary>
+            Dodaj do logu
+            </summary>
+            <param name="text">tekst do dopisania do logu</param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_InstallScript.timerGoScript_Tick(System.Object,System.EventArgs)">
+            <summary>
+            Uruchom skrypt
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_InstallScript.TableCreator(System.String,System.String)">
+            <summary>
+            Utwórz tabele
+            </summary>
+            <returns>true - gdy ok</returns>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_InstallScript.myButtonOK_Click(System.Object,System.EventArgs)">
+            <summary>
+            Zakończ
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:ADMIN.D_BASE.DB_InstallScript.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_InstallScript.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.D_BASE.DB_InstallScript.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ADMIN.FlashWindow.FLASHWINFO.cbSize">
+            <summary>
+            The size of the structure in bytes.
+            </summary>
+        </member>
+        <member name="F:ADMIN.FlashWindow.FLASHWINFO.hwnd">
+            <summary>
+            A Handle to the Window to be Flashed. The window can be either opened or minimized.
+            </summary>
+        </member>
+        <member name="F:ADMIN.FlashWindow.FLASHWINFO.dwFlags">
+            <summary>
+            The Flash Status.
+            </summary>
+        </member>
+        <member name="F:ADMIN.FlashWindow.FLASHWINFO.uCount">
+            <summary>
+            The number of times to Flash the window.
+            </summary>
+        </member>
+        <member name="F:ADMIN.FlashWindow.FLASHWINFO.dwTimeout">
+            <summary>
+            The rate at which the Window is to be flashed, in milliseconds. If Zero, the function uses the default cursor blink rate.
+            </summary>
+        </member>
+        <member name="F:ADMIN.FlashWindow.FLASHW_STOP">
+            <summary>
+            Stop flashing. The system restores the window to its original stae.
+            </summary>
+        </member>
+        <member name="F:ADMIN.FlashWindow.FLASHW_CAPTION">
+            <summary>
+            Flash the window caption.
+            </summary>
+        </member>
+        <member name="F:ADMIN.FlashWindow.FLASHW_TRAY">
+            <summary>
+            Flash the taskbar button.
+            </summary>
+        </member>
+        <member name="F:ADMIN.FlashWindow.FLASHW_ALL">
+            <summary>
+            Flash both the window caption and taskbar button.
+            This is equivalent to setting the FLASHW_CAPTION | FLASHW_TRAY flags.
+            </summary>
+        </member>
+        <member name="F:ADMIN.FlashWindow.FLASHW_TIMER">
+            <summary>
+            Flash continuously, until the FLASHW_STOP flag is set.
+            </summary>
+        </member>
+        <member name="F:ADMIN.FlashWindow.FLASHW_TIMERNOFG">
+            <summary>
+            Flash continuously until the window comes to the foreground.
+            </summary>
+        </member>
+        <member name="M:ADMIN.FlashWindow.Flash(System.Windows.Forms.Form)">
+            <summary>
+            Flash the spacified Window (Form) until it recieves focus.
+            </summary>
+            <param name="form">The Form (Window) to Flash.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.FlashWindow.Flash(System.Windows.Forms.Form,System.UInt32)">
+            <summary>
+            Flash the specified Window (form) for the specified number of times
+            </summary>
+            <param name="form">The Form (Window) to Flash.</param>
+            <param name="count">The number of times to Flash.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.FlashWindow.Start(System.Windows.Forms.Form)">
+            <summary>
+            Start Flashing the specified Window (form)
+            </summary>
+            <param name="form">The Form (Window) to Flash.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.FlashWindow.Stop(System.Windows.Forms.Form)">
+            <summary>
+            Stop Flashing the specified Window (form)
+            </summary>
+            <param name="form"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ADMIN.FlashWindow.Win2000OrLater">
+            <summary>
+            A boolean value indicating whether the application is running on Windows 2000 or later.
+            </summary>
+        </member>
+        <member name="F:ADMIN.SERIAL_PORT.SerialPortConfig.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.SERIAL_PORT.SerialPortConfig.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.SERIAL_PORT.SerialPortConfig.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ADMIN.SERIAL_PORT.SerialPortCFG">
+            <summary>
+            KONFIGURUJE PORTY SZEREGOWE
+            </summary>
+        </member>
+        <member name="F:ADMIN.SERIAL_PORT.SerialPortCFG.Port">
+            <summary>
+            Port COM
+            </summary>
+        </member>
+        <member name="F:ADMIN.SERIAL_PORT.SerialPortCFG.baud">
+            <summary>
+            Prędkość w b/s
+            </summary>
+        </member>
+        <member name="F:ADMIN.SERIAL_PORT.SerialPortCFG.parity">
+            <summary>
+            Parzystość
+            </summary>
+        </member>
+        <member name="F:ADMIN.SERIAL_PORT.SerialPortCFG.dataBits">
+            <summary>
+            Bity danych
+            </summary>
+        </member>
+        <member name="F:ADMIN.SERIAL_PORT.SerialPortCFG.stopBits">
+            <summary>
+            Bity stopu
+            </summary>
+        </member>
+        <member name="F:ADMIN.SERIAL_PORT.SerialPortCFG.Terminal_koniecLinii">
+            <summary>
+            CO ma być dodane do końca linii ?
+            </summary>
+        </member>
+        <member name="F:ADMIN.SERIAL_PORT.SerialPortCFG.CR">
+            <summary>
+            Znak CR \r - powrót karetki
+            </summary>
+        </member>
+        <member name="M:ADMIN.SERIAL_PORT.SerialPortCFG.SetDefault">
+            <summary>
+            Ustawia domyślne parametry
+            </summary>
+        </member>
+        <member name="M:ADMIN.SERIAL_PORT.SerialPortCFG.SetValues(System.String,System.Int32,System.IO.Ports.Parity,System.Int32,System.IO.Ports.StopBits)">
+            <summary>
+            Ustawia parametry z nowymi danymi
+            </summary>
+            <param name="_Port"></param>
+            <param name="_baud"></param>
+            <param name="_parity"></param>
+            <param name="_dataBits"></param>
+            <param name="_stopBits"></param>
+        </member>
+        <member name="M:ADMIN.SERIAL_PORT.SerialPortCFG.WriteCFG(System.String)">
+            <summary>
+            Sekcja zapisu w pliku INI
+            </summary>
+            <summary>
+            
+            </summary>
+            <param name="newSection">Nazwa sekcji np SERIALPORT1, SERIALPORT2 itd</param>
+        </member>
+        <member name="M:ADMIN.SERIAL_PORT.SerialPortCFG.WriteCFG">
+            <summary>
+            Zapisz dane do konfiguracji
+            </summary>
+        </member>
+        <member name="M:ADMIN.SERIAL_PORT.SerialPortCFG.ReadCFG">
+            <summary>
+            Odczytaj dane z konfiguracji
+            </summary>
+        </member>
+        <member name="M:ADMIN.SERIAL_PORT.SerialPortCFG.InitCom(System.IO.Ports.SerialPort,System.String,System.Int32,System.IO.Ports.Parity,System.Int32,System.IO.Ports.StopBits)">
+            <summary>
+            Ustaw port COM i wybrane parametry (nie zapisuje ich do konfigu ale już będą obowiązywac - anulowanie przez readCFG
+            </summary>
+            <param name="comm"></param>
+            <param name="_Port"></param>
+            <param name="_baud"></param>
+            <param name="_parity"></param>
+            <param name="_dataBits"></param>
+            <param name="_stopBits"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.SERIAL_PORT.SerialPortCFG.CloseCom(System.IO.Ports.SerialPort)">
+            <summary>
+            Zamknij bezpiecznie otwarty port
+            </summary>
+            <param name="comm"></param>
+            <returns></returns>
+        </member>
+        <member name="F:ADMIN.SERIAL_PORT.SerialPortCFG.LastError">
+            <summary>
+            Ostatni błąd jaki wystapił
+            </summary>
+        </member>
+        <member name="M:ADMIN.SERIAL_PORT.SerialPortCFG.InitCom(System.IO.Ports.SerialPort,System.Boolean)">
+            <summary>
+            Zainicjuj port com bieżacymi zmiennymi
+            </summary>
+            <param name="comm"></param>
+            <param name="withOpen">inicjalizacja otworzy tez port - domyślne true</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.SERIAL_PORT.SerialPortCFG.WriteCommLines(System.IO.Ports.SerialPort,System.String)">
+            <summary>
+            Zapisuje do COMa linię z odpowiednim zakończeniem linii wg zmiennej Terminal_koniecLinii
+            </summary>
+            <param name="comm">Port COM</param>
+            <param name="text">tekst do wysłania</param>
+            <returns></returns>
+        </member>
+        <member name="T:ADMIN.ToTray">
+            <summary>
+            Wrzuca formę do trayA
+            </summary>
+        </member>
+        <member name="M:ADMIN.ToTray.#ctor(System.Object,System.Drawing.Icon,System.Windows.Forms.ContextMenuStrip,System.Boolean,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            Inicalizacja
+            </summary>
+            <param name="_myForm">forma do zrzutu do traya</param>
+            <param name="_ico">ikona - jak null daje swoją</param>
+            <param name="_menu">menu - dodaje na koniec menu końcówkę Pokaż Zamknijprogram
+            lub jak null tworzy swoje menu pokaż zamknij</param>
+            <param name="toTopOnDblClick">pokaż po podwójnym kliku</param>
+            <param name="hideMe">uruchom program w trayu</param>
+            <param name="hideIfMinimized">jak forma minimalizowana - minimalizuj do traya - jeśli program uruchamia isę do traya to zawsze będzie jak true</param>
+        </member>
+        <member name="M:ADMIN.ToTray.Dispose">
+            <summary>
+            Destruktor
+            </summary>
+        </member>
+        <member name="M:ADMIN.ToTray.Dispose(System.Boolean)">
+            <summary>
+            Destruktor
+            </summary>
+        </member>
+        <member name="T:ADMIN.PRINT.printer">
+            <summary>
+            DRUKUJE GridView na drukarkę
+            </summary>
+        </member>
+        <member name="F:ADMIN.PRINT.PRINTER_CONFIG.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.PRINT.PRINTER_CONFIG.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.PRINT.PRINTER_CONFIG.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ADMIN.ConnectionString">
+            <summary>
+            Klasa z obsługą parametrów połączenia z bazą danych
+            Autor Tomasz Fronczek
+            </summary>
+        </member>
+        <member name="F:ADMIN.ConnectionString.defaultDBName">
+            <summary>
+            Nazwa bazy danych
+            </summary>
+        </member>
+        <member name="F:ADMIN.ConnectionString.Section">
+            <summary>
+            Sekcja konfiguracji w pliku INI
+            </summary>
+        </member>
+        <member name="F:ADMIN.ConnectionString.DefaultConnString">
+            <summary>
+            Parametry połączenia z bazą danych
+            </summary>
+        </member>
+        <member name="M:ADMIN.ConnectionString.ConnString">
+            <summary>
+            Bieżący connection string
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.ConnectionString.ReloadConnString">
+            <summary>
+            Załaduj ponownie connection string
+            </summary>
+        </member>
+        <member name="M:ADMIN.ConnectionString.READ_CONNECTIONS_STRINGS">
+            <summary>
+            Odczytaj połączenie z bazą danych
+            </summary>
+        </member>
+        <member name="M:ADMIN.ConnectionString.GetConnectionStringElements(System.String@,System.Boolean@,System.String@,System.String@,System.String@,System.String@,System.String@)">
+            <param name="server">Zwraca SQL Serwer </param>
+            <param name="winAuth">Zwraca Windows Authentication ?</param>
+            <param name="database">Zwraca Nazwę bazy danych </param>
+            <param name="user">Zwraca Nazwę użytkownika</param>
+            <param name="pass">Zwraca Hasło</param>
+            <param name="WinAuthAddString">Dodatkowe dane do połaczenia Windows auth</param>
+            <param name="SQLAuthAddString">Dodatkowe dane do połaczenia SQL auth</param>
+        </member>
+        <member name="M:ADMIN.ConnectionString.GetConnString">
+            <returns>ConnectionString</returns>
+        </member>
+        <member name="M:ADMIN.ConnectionString.SetConnString(System.String,System.Boolean,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Ustaw connection string do bazy danych
+            </summary>
+            <param name="Section"> Sekcja</param>
+            <param name="server">Nazwa serwera</param>
+            <param name="winAuth">Windows authent</param>
+            <param name="db">Nazwa bazy danych</param>
+            <param name="user">Nazwa użytkownika</param>
+            <param name="pass">Hasło</param>
+        </member>
+        <member name="M:ADMIN.ConnectionString.GenerateConnString(System.String,System.Boolean,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            generuje connection string z podanych elementów - nic nie zapisuje w konfigu
+            </summary>
+            <param name="server">nazwa serwera np localhost\sqlexpress</param>
+            <param name="winAuth">czy ma być używane WindowsAuthentication(true) czy SQLServerAuthentication(false)</param>
+            <param name="db">Nazwa bazy danych np Membership</param>
+            <param name="user">Nazwa użytkownika </param>
+            <param name="pass">Hasło</param>
+            <returns>zwraca connection string </returns>
+            
+        </member>
+        <member name="T:ADMIN.DB_PROCKI">
+            <summary>
+            Klasa z  procedurami obsługi Baz danych
+            Autor Tomasz Fronczek
+            </summary>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.#ctor(System.String)">
+            <summary>
+            Inicjalizacja 
+            </summary>
+            <param name="query">zapytanie do bazy danych</param>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.#ctor(System.String,System.String)">
+            <summary>
+            Inicjalizacja
+            </summary>
+            <param name="query">zapytanie do bazy danych</param>
+            <param name="connectionString">parametry połączenia z bazą</param>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.#ctor(System.String,System.Data.CommandType)">
+            <summary>
+            Inicjalizacja
+            </summary>
+            <param name="query">zapytanie do bazy danych</param>
+            <param name="ct">rodzaj komendy np StoredProcedure</param>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.#ctor(System.String,System.String,System.Data.CommandType)">
+            <summary>
+            Inicjalizacja
+            </summary>
+            <param name="query">zapytanie do bazy danych</param>
+            <param name="connectionString">parametry połączenia z bazą</param>
+            <param name="ct">rodzaj komendy np StoredProcedure</param>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.Finalize">
+            <summary>
+            Destruktor
+            </summary>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.Dispose">
+            <summary>
+            Destruktor
+            </summary>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.Dispose(System.Boolean)">
+            <summary>
+            Destruktor
+            </summary>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.DB_Dataset">
+            <summary>
+            Zwraca Dataset zapytania
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.DB_Add_Param(System.String,System.Guid)">
+            <summary>
+            Dodaj parametr do zapytania
+            </summary>
+            <param name="name">nazwa bez @</param>
+            <param name="value">wartość</param>
+            <returns>true - jak ok</returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.DB_Add_OUT_Param(System.String,System.Data.SqlDbType)">
+            <summary>
+            Dodaj parametr który będzie zwracany do bazy danych
+            </summary>
+            <param name="name">nazwa bez @</param>
+            <param name="type">typ parametru</param>
+            <returns>true jak ok</returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.DB_Add_Param(System.String,System.Int32)">
+            <summary>
+            Dodaj parametr do zapytania
+            </summary>
+            <param name="name">nazwa bez @</param>
+            <param name="value">wartość</param>
+            <returns>true - jak ok</returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.DB_Add_Param(System.String,System.Double)">
+            <summary>
+            Dodaj parametr do zapytania
+            </summary>
+            <param name="name">nazwa bez @</param>
+            <param name="value">wartość</param>
+            <returns>true - jak ok</returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.DB_Add_Param(System.String,System.Decimal)">
+            <summary>
+            Dodaj parametr do zapytania
+            </summary>
+            <param name="name">nazwa bez @</param>
+            <param name="value">wartość</param>
+            <returns>true - jak ok</returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.DB_Add_Param(System.String,System.Int64)">
+            <summary>
+            Dodaj parametr do zapytania
+            </summary>
+            <param name="name">nazwa bez @</param>
+            <param name="value">wartość</param>
+            <returns>true - jak ok</returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.isNull(System.Object)">
+            <summary>
+            Zwraca true gdy obiekt jest null lub dbnull
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.DB_Add_Param(System.String,System.Object)">
+            <summary>
+            /// wrzuca dowolny cały !!! obiekt jako string do bazy danych  - nie to samo co ToString()
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.DB_Add_Param(System.String,System.Object,System.Type)">
+            <summary>
+            /// wrzuca dowolny cały !!! obiekt jako string do bazy danych  - nie to samo co ToString()
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.DB_Add_Param(System.String,System.Object,System.String)">
+            <summary>
+            Dodaje parametr do bazy danych
+            </summary>
+            <param name="name">nzawa parametru bez @</param>
+            <param name="value">wartość - dowolny obiekt</param>
+            <param name="val">string opisujący typ parametru np "int" "string" itp</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.DB_Add_Param(System.String,System.String)">
+            <summary>
+            Dodaj parametr do zapytania
+            </summary>
+            <param name="name">nazwa bez @</param>
+            <param name="value">wartość</param>
+            <returns>true - jak ok</returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.DB_Add_Param(System.String,System.Boolean)">
+            <summary>
+            Dodaj parametr do zapytania
+            </summary>
+            <param name="name">nazwa bez @</param>
+            <param name="value">wartość</param>
+            <returns>true - jak ok</returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.DB_Add_Param(System.String,System.DateTime)">
+            <summary>
+            Dodaj parametr do zapytania
+            </summary>
+            <param name="name">nazwa bez @</param>
+            <param name="value">wartość</param>
+            <returns>true - jak ok</returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.AddParamASInt(System.String,System.Object)">
+            <summary>
+            Dodaj parametr do zapytania jako integer
+            </summary>
+            <param name="name">nazwa bez @</param>
+            <param name="value">wartość</param>
+            <returns>true - jak ok</returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.DB_Add_Img_Param(System.String,System.Byte[])">
+            <summary>
+            Dodaj obraz jako parametr
+            </summary>
+            <param name="name">nazwa parametru bez @</param>
+            <param name="value">tablica byte[] zawierająca obrazek</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.DB_READ">
+            <summary>
+            otwórz SQLDatareader reprezentowany przez myReader i sprawdź czy się powiodło i czy myReader ma zawartośc
+            </summary>
+            <returns>true jak myReader istnieje i zawiera zawartość</returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.DB_Read">
+            <summary>
+            otwórz SQLDatareader reprezentowany przez myReader
+            </summary>
+            <returns> true jak ok</returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.DB_ExecuteNonQuery">
+            <summary>
+            Wywołaj zapytnanie które nie jest selectem i zwraca ilość wierszy związanych z zapytaniem
+            </summary>
+            <returns>ilość wierszy związanych z zapytaniem</returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.DB_ExecuteScalar">
+            <summary>
+            Wykonuje zapytanie które zwraca jedną wartość np SELECT Getdate()
+            </summary>
+            <returns>zwrócony obiekt</returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.DB_Close">
+            <summary>
+            Zamknij połączenie z bazą danych
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.DB_Free">
+            <summary>
+            Zwolnij zajmowaną pamięć
+            </summary>
+            <returns>true jak wszystko ok</returns>
+        </member>
+        <member name="M:ADMIN.DB_PROCKI.LogFails(System.Exception)">
+            <summary>
+            Zapisz do logu jak błąd
+            </summary>
+            <param name="ex"></param>
+        </member>
+        <member name="T:ADMIN.FillItems">
+            <summary>
+            Wypełnia Comboboxa danymi z bazy
+            </summary>
+        </member>
+        <member name="M:ADMIN.FillItems.FillCombo(System.Windows.Forms.ComboBox,System.String,System.String,System.String,System.String)">
+            <summary>
+            Wypełnia Comboboxa danymi z bazy
+            </summary>
+            <param name="cbox">combobox do wypełnienia </param>
+            <param name="connectionString">parametry połączenia z bazą</param>
+            <param name="SelectQuery">Zapytanie do bazy</param>
+            <param name="text">kolumna odpowiedzialna za tekst wyświetlany na liście</param>
+            <param name="value">kolumna odpowiedzialna za wartości wybrane w combo</param>
+        </member>
+        <member name="M:ADMIN.FillItems.FillCombo(System.Windows.Forms.ComboBox,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Wypełnia Comboboxa danymi z bazy
+            </summary>
+            <param name="cbox">combobox do wypełnienia</param>
+            <param name="connectionString">parametry połączenia z bazą</param>
+            <param name="table">tabela</param>
+            <param name="value">kolumna odpowiedzialna za wartości wybrane w combo</param>
+            <param name="text">kolumna odpowiedzialna za tekst wyświetlany na liście (sortowanie po tekscie)</param>
+            <param name="desc">true- sortowanie malejąco    false-rosnąco </param>
+        </member>
+        <member name="M:ADMIN.FillItems.FillCombo(System.Windows.Forms.ComboBox,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Wypełnia Comboboxa danymi z bazy
+            </summary>
+            <param name="cbox">combobox do wypełnienia</param>
+            <param name="connectionString">parametry połączenia z bazą</param>
+            <param name="table">tabela</param>
+            <param name="value">kolumna odpowiedzialna za wartości wybrane w combo</param>
+            <param name="text">kolumna odpowiedzialna za tekst wyświetlany na liście (sortowanie po tekscie)</param>
+            <param name="where">parametry zapytania np ID>120 </param>
+            <param name="desc">true- sortowanie malejąco    false-rosnąco </param>
+        </member>
+        <member name="T:ADMIN.DeleteItems">
+            <summary>
+            Szybkie usunięcie z bazy danych
+            </summary>
+        </member>
+        <member name="M:ADMIN.DeleteItems.DeletePermamentByID(System.String,System.String,System.String,System.String)">
+            <summary>
+            Trwale usuń z bazy danych 
+            </summary>
+            <param name="connectionString">parametry połączenia z bazą</param>
+            <param name="table">tabela</param>
+            <param name="columnNameID">kolumna ID</param>
+            <param name="IDvalue">wartość kolumny</param>
+        </member>
+        <member name="M:ADMIN.DeleteItems.Mark(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Ustaw wartość wiersza jako usuniętą np ustawia pole isDeleted na true
+            </summary>
+            <param name="connectionString">parametry połączenia z bazą</param>
+            <param name="table"> tabela</param>
+            <param name="columnNameID">nazwa kolumny ID</param>
+            <param name="IDvalue">wartość kolumny ID</param>
+            <param name="columnToMark"> kolumna do zaznaczenia </param>
+            <param name="columnValue"> wartość zaznaczana</param>
+        </member>
+        <member name="T:ADMIN.SetValues">
+            <summary>
+            Ustawia wartość zmiennym które mogą być null
+            </summary>
+        </member>
+        <member name="M:ADMIN.SetValues.SetIntValue(System.Object,System.Nullable{System.Int32}@)">
+            <summary>
+            Ustawia wartość dla zmiennej która może być null
+            </summary>
+            <param name="value">obiekt żródłowy</param>
+            <param name="returnValue">obiekt docelowy do którego próbujemy zapisać wartość z obkektu żródłowego</param>
+        </member>
+        <member name="M:ADMIN.SetValues.SetDateValue(System.Object,System.Nullable{System.DateTime}@)">
+            <summary>
+            Ustawia wartość dla zmiennej która może być null
+            </summary>
+            <param name="value">obiekt żródłowy</param>
+            <param name="returnValue">obiekt docelowy do którego próbujemy zapisać wartość z obkektu żródłowego</param>
+        </member>
+        <member name="M:ADMIN.SetValues.SetBoolValue(System.Object,System.Nullable{System.Boolean}@)">
+            <summary>
+            Ustawia wartość dla zmiennej która może być null
+            </summary>
+            <param name="value">obiekt żródłowy</param>
+            <param name="returnValue">obiekt docelowy do którego próbujemy zapisać wartość z obkektu żródłowego</param>
+        </member>
+        <member name="M:ADMIN.SetValues.SetLongValue(System.Object,System.Nullable{System.Int64}@)">
+            <summary>
+            Ustawia wartość dla zmiennej która może być null
+            </summary>
+            <param name="value">obiekt żródłowy</param>
+            <param name="returnValue">obiekt docelowy do którego próbujemy zapisać wartość z obkektu żródłowego</param>
+        </member>
+        <member name="M:ADMIN.SetValues.SetDoubleValue(System.Object,System.Nullable{System.Double}@)">
+            <summary>
+            Ustawia wartość dla zmiennej która może być null
+            </summary>
+            <param name="value">obiekt żródłowy</param>
+            <param name="returnValue">obiekt docelowy do którego próbujemy zapisać wartość z obkektu żródłowego</param>
+        </member>
+        <member name="T:ADMIN.INIT">
+            <summary>
+            Klasa inicjująca program 
+            Autor Tomasz Fronczek
+            </summary>
+        </member>
+        <member name="F:ADMIN.INIT.ClearOldLogs">
+            Używaj systemu logowania
+        </member>
+        <member name="F:ADMIN.INIT.RunWithWindows">
+            Używaj pliku konfiguracyjnego
+        </member>
+        <member name="F:ADMIN.INIT.RunMinimizedToTray">
+            Uruchamiaj program z windowsem
+        </member>
+        <member name="F:ADMIN.INIT.MinimizeToTray">
+            Uruchamiaj program w postaci zminimalizowanej
+        </member>
+        <member name="F:ADMIN.INIT.WaitAfterRun">
+            Minimalizuj do traya
+        </member>
+        <member name="F:ADMIN.INIT.AllowConfigNotEncrypted">
+            Czy plik konfiguracynjy ma byc zakodowany ?
+        </member>
+        <member name="F:ADMIN.INIT.CatchCriticalException">
+            Zezwalaj na niezakodowany plik konfiguracyjny mimo że powinien byc zakodowany - gdy zostanie zapisany będzie zakodowany
+        </member>
+        <member name="F:ADMIN.INIT.autoClose">
+            W przypadku błędów krytycznych wyświetl własne okno z błędem zamiast standartowego
+        </member>
+        <member name="F:ADMIN.INIT.autoCloseTime">
+            Zamykaj automatycznie okna 
+        </member>
+        <member name="F:ADMIN.INIT.customMessageBoxes">
+            >Czas automatycznego zamknięcia okna w sekundach
+        </member>
+        <member name="F:ADMIN.INIT.messageBoxesToLog">
+            True - własny styl message boxów false -Systemowe
+        </member>
+        <member name="F:ADMIN.INIT.UseDB">
+            Zapisuj okienka dialogowe do logu
+        </member>
+        <member name="F:ADMIN.INIT.splashHeader">
+            Nazwa domyślnej bazy danych
+        </member>
+        <member name="F:ADMIN.INIT.exePath">
+            <summary>
+            wpisz katalog aplikacji
+            </summary>
+        </member>
+        <member name="F:ADMIN.INIT.exePathB">
+            folder do pliku exe
+        </member>
+        <member name="F:ADMIN.INIT.exeName">
+            folder do pliku exe z \ na końcu
+        </member>
+        <member name="F:ADMIN.INIT.ProgramName">
+            nazwa pliku z exe
+        </member>
+        <member name="F:ADMIN.INIT._ProgramFolder">
+            nazwa plku bez exe
+        </member>
+        <member name="M:ADMIN.INIT.CheckDBConnection">
+            <summary>
+            Sprawdź połączenie z bazą danych
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.INIT.Exit(System.Boolean)">
+            <summary>
+            Wyjdź z programu
+            </summary>
+            <param name="saveCfg"></param>
+        </member>
+        <member name="M:ADMIN.INIT.INITIALIZE">
+            <summary>
+            Zainicjiuj parametry programu
+            </summary>
+        </member>
+        <member name="M:ADMIN.INIT.ConfigureMessageBoxes(System.Boolean,System.Boolean)">
+            <summary>
+            Konfiguruj własny styl Message Box
+            </summary>
+            <param name="customBoxesEnable">Ustaw MessageBoxy wg własnego stylu</param>
+            <param name="addMessagesToLog">dodaj wiadomości do logów</param>
+        </member>
+        <member name="M:ADMIN.INIT.UNLOAD">
+            <summary>
+            Zakończ program
+            </summary>
+        </member>
+        <member name="M:ADMIN.INIT.Application_ThreadException(System.Object,System.Threading.ThreadExceptionEventArgs)">
+            <summary>
+            Procedura własnej obsługi błędów
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADMIN.INI_FILES.#ctor(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            INICJALIZACJA INI
+            </summary>
+            <param name="filename">nazwa pliku INI</param>
+            <param name="_IsEncrypted">true= kodowany </param>
+            <param name="_AllowToNotEncrypted">true= zezwól na załadowanie niezakodowanego (zapis go zakoduje)</param>
+        </member>
+        <member name="F:ADMIN.INI_FILES.FileName">
+            <summary>
+            Nazwa pliku INI
+            </summary>
+        </member>
+        <member name="P:ADMIN.INI_FILES.opened">
+            <summary>
+            INI ZAŁADOWANY !!!
+            </summary>
+        </member>
+        <member name="F:ADMIN.INI_FILES.file">
+            <summary>
+            PLIK INI 
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ADMIN.INI_FILES.DecryptData(System.String,System.String)" -->
+        <member name="F:ADMIN.INI_FILES.IsEncrypted">
+            <summary>
+            CZY ZAKODOWANY ?
+            </summary>
+        </member>
+        <member name="F:ADMIN.INI_FILES.AllowToNotEncrypted">
+            <summary>
+            ZEZWALA NA NIEZAKODOWANY ?
+            </summary>
+        </member>
+        <member name="M:ADMIN.INI_FILES.ReadIni(System.String)">
+            <summary>
+            Otwiera plik INI
+            </summary>
+            <param name="filename">Nazwa pliku INI</param>
+            <returns>true - otwarto ini
+            false - nie otwarto lub błąd</returns>
+        </member>
+        <member name="M:ADMIN.INI_FILES.WriteIni(System.String)">
+            <summary>
+            Zapisuje  Ini
+            </summary>
+            <param name="filename">nazwa pliku </param>
+            <returns>true - zapisano
+            false - nie zapisano lub błąd</returns>
+        </member>
+        <member name="M:ADMIN.INI_FILES.WriteValue(System.String,System.String,System.Object)">
+            <summary>
+            Zapisuje wartość klucza do pliku ini jak nie ma to dodaje nową a jak jest to ją zastępuje
+            </summary>
+            <param name="Section">Nazwa Sekcji - jak nie ma tworzy nową</param>
+            <param name="Key">Klucz</param>
+            <param name="val">Wartość</param>
+        </member>
+        <member name="M:ADMIN.INI_FILES.RemoveValue(System.String,System.String)">
+            <summary>
+            Usuwa wartość
+            </summary>
+            <param name="Section">Sekcja</param>
+            <param name="Key">klucz</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.INI_FILES.ReadValue(System.String,System.String)">
+            <summary>
+            Odczytuje wartość z pliku ini
+            </summary>
+            <param name="Section">Sekcja </param>
+            <param name="Key">Klucz</param>
+            <returns>Wartość</returns>
+        </member>
+        <member name="M:ADMIN.INI_FILES.CloneSection(System.String,System.String)">
+            <summary>
+            Klonuje sekcję wraz z wartościami do nowej o ile juz jej nie ma.
+            </summary>
+            <param name="oldSection"></param>
+            <param name="newSection"></param>
+        </member>
+        <member name="T:ADMIN.Config">
+            <summary>
+            Zarządza konfiguracją programu z  pliku CONFIG.INI
+            </summary>
+        </member>
+        <member name="F:ADMIN.Config.ini">
+            <summary>
+            plik ini
+            </summary>
+        </member>
+        <member name="F:ADMIN.Config.UseConfig">
+            <summary>
+            Czy używać konfigu z pliku INI ?
+            </summary>
+        </member>
+        <member name="F:ADMIN.Config.FileName">
+            <summary>
+            Nazwa pliku ini
+            </summary>
+        </member>
+        <member name="F:ADMIN.Config.IsEncrypted">
+            <summary>
+            czy kodować plik ini
+            </summary>
+        </member>
+        <member name="F:ADMIN.Config.AllowToNotEncrypted">
+            <summary>
+            Zezwól na odczyt niezakodowanego ini gdy ini ma być plikiem kodowanym
+            </summary>
+        </member>
+        <member name="M:ADMIN.Config.Load_config(System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Inicjalizuje i ładuje plik ini
+            </summary>
+            <param name="force_reload">Przeładuj ini nawet jak było już odczytane</param>
+            <param name="_IsEncrypted">true- plik ini ma być kodowany</param>
+            <param name="_AllowToNotEncrypted">true- zezwól na odczyt niezakodowanego ini gdy plik ini ma być kodowany</param>
+        </member>
+        <member name="M:ADMIN.Config.WriteConfig">
+            <summary>
+            Zapisuje konfigurację
+            </summary>
+        </member>
+        <member name="F:ADMIN.Config.LastSection">
+            <summary>
+            Ostatnio używana sekcja
+            </summary>
+        </member>
+        <member name="M:ADMIN.Config.ReadBoolValue(System.String,System.String,System.Boolean)">
+            <summary>
+            Odczytuje wartość z ini i zwaraca wartość bool 
+            </summary>
+            <param name="Section">Sekcja</param>
+            <param name="Key">Klucz</param>
+            <param name="valueIfNull">zwróć to jeśli null</param>
+            <returns>Wartosć</returns>
+        </member>
+        <member name="M:ADMIN.Config.ReadIntValue(System.String,System.String,System.Int32)">
+            <summary>
+            Odczytuje wartość z ini i zwaraca wartość int 
+            </summary>
+            <param name="Section">Sekcja</param>
+            <param name="Key">Klucz</param>
+            <param name="valueIfNull">zwróć to jeśli null</param>
+            <returns>Wartosć</returns>
+        </member>
+        <member name="M:ADMIN.Config.ReadDoubleValue(System.String,System.String,System.Double)">
+            <summary>
+            Odczytuje wartość z ini i zwaraca wartość int 
+            </summary>
+            <param name="Section">Sekcja</param>
+            <param name="Key">Klucz</param>
+            <param name="valueIfNull">zwróć to jeśli null</param>
+            <returns>Wartosć</returns>
+        </member>
+        <member name="M:ADMIN.Config.ReadValue(System.String,System.String)">
+            <summary>
+            Odczytuje wartość z ini
+            </summary>
+            <param name="Section">Sekcja</param>
+            <param name="Key">Klucz</param>
+            <returns>Wartość</returns>
+        </member>
+        <member name="M:ADMIN.Config.ReadValue(System.String,System.String,System.String)">
+            <summary>
+            Odczytaj wartość do string
+            </summary>
+            <param name="Section"></param>
+            <param name="Key"></param>
+            <param name="valueIfNull"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.Config.ReadMultiLineValue(System.String,System.String,System.String)">
+            <summary>
+            Odczytaj tekst wielolinijkowy
+            </summary>
+            <param name="Section"></param>
+            <param name="Key"></param>
+            <param name="valueIfNull"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.Config.ReadMultiLineValue(System.String,System.String)">
+            <summary>
+            Odczytaj tekst wielolinijkowy
+            </summary>
+            <param name="Section"></param>
+            <param name="Key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.Config.ReadValue(System.String)">
+            <summary>
+            Odczytuje kolejną wartość z ini - zaleca się aby najpierw odczytać wartość z ReadValue(string Section,string Key)
+            </summary>
+            <param name="Key">Klucz</param>
+            <returns>Wartość</returns>
+        </member>
+        <member name="M:ADMIN.Config.ReadEncryptedValue(System.String,System.String,System.String)">
+            <summary>
+            Odczytuje zakodowaną wartość z pliku
+            </summary>
+            <param name="Section">Sekcja</param>
+            <param name="Key">Klucz</param>
+            <returns>Wartość klucza</returns>
+        </member>
+        <member name="M:ADMIN.Config.ReadEncryptedValue(System.String)">
+            <summary>
+            Odczytuje zakodowaną wartość z pliku
+            </summary>
+            <param name="Key">Klucz</param>
+            <returns>Wartość klucza</returns>
+        </member>
+        <member name="M:ADMIN.Config.WriteEncryptedValue(System.String,System.String,System.Object)">
+            <summary>
+            Zapisuje zakodowaną wartość do pliku
+            </summary>
+            <param name="Section">Sekcja</param>
+            <param name="Key">Klucz</param>
+            <param name="Value">Wartość</param>
+        </member>
+        <member name="M:ADMIN.Config.WriteEncryptedValue(System.String,System.Object)">
+            <summary>
+            Zapisuje zakodowaną wartość do pliku
+            </summary>
+            <param name="Key">Klucz</param>
+            <param name="Value">Wartość</param>
+        </member>
+        <member name="M:ADMIN.Config.RemoveValue(System.String,System.String)">
+            <summary>
+            Usuwa wartość
+            </summary>
+            <param name="Section"></param>
+            <param name="Key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.Config.WriteValue(System.String,System.String,System.Object)">
+            <summary>
+            Zapisuje wartość do ini
+            </summary>
+            <param name="Section">Sekcja</param>
+            <param name="Key">Klucz</param>
+            <param name="Value">Wartość</param>
+        </member>
+        <member name="M:ADMIN.Config.WriteValue(System.String,System.Object)">
+            <summary>
+            Zapisuje kolejną wartość do ini - zaleca się aby najpierw zapisać wartość poprzez WriteValue(string Section, string Key, object val)
+            </summary>
+            <param name="Key">Klucz</param>
+            <param name="Value">Wartość</param>
+        </member>
+        <member name="M:ADMIN.Config.WriteMultiLineValue(System.String,System.String,System.String)">
+            <summary>
+            Zapisuje wielolinijkowy teksr
+            </summary>
+            <param name="Section"></param>
+            <param name="Key"></param>
+            <param name="Value"></param>
+        </member>
+        <member name="M:ADMIN.Config.CloneSectionToMachineName(System.String)">
+            <summary>
+            Klonuje sekcję wraz z wartościami do sekcji z nazwą komputera na poczatku o ile juz takiej sekcji nie ma
+            </summary>
+            <param name="oldSection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.Config.CloneSectionToMachineNameFromOtherMachineOrSection(System.String)">
+             <summary>
+            Klonuje sekcję wraz z wartościami do sekcji z nazwą komputera na poczatku o ile juz takiej sekcji nie ma
+            Jeżeli nie ma sekcji źródłowej spróbuje poszukać sekcji o podobnej nazwie
+             </summary>
+             <param name="oldSection"></param>
+             <returns></returns>
+        </member>
+        <member name="M:ADMIN.Config.AddMachineToSection(System.String)">
+            <summary>
+            Dodaj nazwę komputera do sekcji jesli INIT.useMultiUserConfig=true;
+            </summary>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ADMIN.PROCKI">
+            <summary>
+            Klasa z przydatnymi procedurami
+            Autor Tomasz Fronczek
+            </summary>
+        </member>
+        <member name="M:ADMIN.PROCKI.twoDigit(System.Int32)">
+            <summary>
+            Zamień liczbę na stringa zawsze dwucyfrowego
+            </summary>
+            <param name="x"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.Exit(System.Boolean)">
+            <summary>
+            Wyjdź z programu
+            </summary>
+            <param name="saveCfg"></param>
+        </member>
+        <member name="M:ADMIN.PROCKI.XDigit(System.Int32,System.Int32)">
+            <summary>
+            Zamień liczbę na stringa o odpowiedniej długości
+            </summary>
+            <param name="x">liczba do zamiany</param>
+            <param name="length">długość jaka ma być zwrócona</param>
+            <returns>tekst </returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.CenterMe(System.Windows.Forms.Control)">
+             <summary>
+            Wycentrowuje Kontrolkę w Parent 
+             </summary>
+             <param name="c">obiekt do wycentrowania</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.CenterMe(System.Windows.Forms.Control,System.Int32,System.Int32)">
+            <summary>
+            Wycentrowuje Kontrolkę w Parent z ofsetem
+            </summary>
+            <param name="c">obiekt do wycentrowania</param>
+            <param name="xOfs">ofset x</param>
+            <param name="yOfs">ofset y</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.CenterMeOnScreen(System.Windows.Forms.Form)">
+            <summary>
+            Wycentruj formę na ekranie
+            </summary>
+            <param name="f">forma</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.CenterMeOnScreen(System.Windows.Forms.Form,System.Int32,System.Int32)">
+            <summary>
+            wycentruj formę na ekranie z ofsetem
+            </summary>
+            <param name="f">forma</param>
+            <param name="xOfs">ofset x</param>
+            <param name="yOfs">ofset y</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.textIsEmpty(System.Windows.Forms.TextBox)">
+            <summary>
+            zwraca true gdy tekxBox jest pusty
+            </summary>
+            <param name="t">obiekt TextBox</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.textIsEmptyOrWhite(System.Windows.Forms.TextBox)">
+            <summary>
+            zwraca true gdy tekxBox jest pusty lub ma same spacje (white characters)
+            </summary>
+            <param name="t">obiekt TextBox</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.textIsEmptyOrWhite(System.String)">
+            <summary>
+            zwraca true gdy tekxBox jest pusty lub ma same spacje (white characters)
+            </summary>
+            <param name="t">tekst</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.isTextValid(System.Windows.Forms.TextBox,System.Windows.Forms.ErrorProvider,System.String)">
+            <summary>
+            sprawdź czy textbox ma wprowadzoy tekst a jeśli nie ustaw error w errorProvider
+            </summary>
+            <param name="t">textbox do sprawdzenia</param>
+            <param name="e">errorProvider do którego będzie wprowadzony ew. błąd</param>
+            <param name="errMess">tekst błęu</param>
+            <returns>true - gdy tekst jest w textBox</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.ShutDown">
+            <summary>
+            Zamyka system
+            </summary>
+        </member>
+        <member name="M:ADMIN.PROCKI.isDBNull(System.Object)">
+            <summary>
+            Czy jest to dbnull?
+            </summary>
+            <param name="o">obiekt do sprawdzenia</param>
+            <returns>true- gdy dbnull false gdy nie</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.CopyDataGridToClipboard(System.Windows.Forms.DataGridView)">
+            <summary>
+            Kopiuje DataGrid do schowka.
+            </summary>
+            <param name="dataGridView1"></param>
+        </member>
+        <member name="M:ADMIN.PROCKI.IsNotNull(System.Object)">
+            <summary>
+            Czy wartość nie jest Null
+            </summary>
+            <param name="value"></param>
+            <returns>true- nie jest null      false- jest null</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.IsNull(System.Object)">
+            <summary>
+            Czy wartość jest Null
+            </summary>
+            <param name="value"></param>
+            <returns>false- nie jest null      true- jest null</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.StringFromNonPrintingChars(System.String)">
+            <summary>
+            zamienia string z roznymi znakami sterującymi(enter tab itp) na jednolinijowy 
+            </summary>
+            <param name="text">wieloliniowy tekst z różnymi znakami</param>
+            <returns>jednoliniowy tekst bez znaków które mogą w czymś przeszkadzać</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.StringToNonPrintingChars(System.String)">
+            <summary>
+            Zamienia jednolinijkowy string na wielolinijkowy z roznymi znakami sterującymi (enter tab itp)
+            </summary>
+            <param name="text">jednoliniowy tekst bez znaków które mogą w czymś przeszkadzać</param>
+            <returns>wieloliniowy tekst z różnymi znakami</returns>
+        </member>
+        <member name="P:ADMIN.PROCKI.DecimalSeparator">
+            <summary>
+            Zwraca znak odpowiedzalny za przecinek w liczbach zazwyczaj . lub ,
+            </summary>
+        </member>
+        <member name="M:ADMIN.PROCKI.ConvDecimalSepToDot(System.String)">
+            <summary>
+            Zamienia "przecinek" w liczbach na kropkę
+            </summary>
+            <param name="value">tekst-liczba</param>
+            <returns>tekst-liczba z . po przecinku</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.ConvDotToDecimalSep(System.String)">
+            <summary>
+            Zamienia kropkę . na przecinek w liczbach
+            </summary>
+            <param name="value">tekst-liczba z . po przecinku</param>
+            <returns>tekst-liczba z przecinkiem</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.DetectIP">
+            <summary>
+            Pobiera adres ip komputera (pierwsza karta sieciowa)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.setString(System.String,System.String@,System.Boolean)">
+            <summary>
+            zamień string na  string
+            </summary>
+            <param name="val">wartość</param>
+            <param name="cb">ref zmienna do której wstawiamy wartość</param>
+            <param name="noSetIfnull">nie wstawiaj gdy wartość==null</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.setBool(System.String,System.Boolean@,System.Boolean)">
+            <summary>
+            zamień string na  bool
+            </summary>
+            <param name="val">wartość</param>
+            <param name="cb">ref zmienna do której wstawiamy wartość</param>
+            <param name="noSetIfnull">nie wstawiaj gdy wartość==null</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.setDateTime(System.String,System.DateTime@,System.Boolean)">
+            <summary>
+            zamień string na DateTime
+            </summary>
+            <param name="val">wartość</param>
+            <param name="cb">ref zmienna do której wstawiamy wartość</param>
+            <param name="noSetIfnull">nie wstawiaj gdy wartość==null</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.setDateTime(System.String,System.DateTime@)">
+            <summary>
+            zamień string na  datetime
+            </summary>
+            <param name="val">wartość</param>
+            <param name="cb">ref zmienna do której wstawiamy wartość</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.setBool(System.String,System.Boolean@)">
+            <summary>
+            zamień string na bool
+            </summary>
+            <param name="val">wartość</param>
+            <param name="cb">ref zmienna do której wstawiamy wartość</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.stringToBool(System.String)">
+            <summary>
+            zamienia tekst na bool 
+            </summary>
+            <param name="val">tekst - sprawdzany tylko pierwszy znak dopuszczalne wartosci value[0] T/F t/f 1/0 - jak błąd zwraca false </param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.setInt(System.String,System.Int32@,System.Boolean)">
+            <summary>
+            zamień string na  Int
+            </summary>
+            <param name="val">wartość</param>
+            <param name="cb">ref zmienna do której wstawiamy wartość</param>
+            <param name="noSetIfnull">nie wstawiaj gdy wartość==null</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.setInt(System.String,System.Int32@)">
+            <summary>
+            zamień string na int 
+            </summary>
+            <param name="val">wartość</param>
+            <param name="cb">ref zmienna do której wstawiamy wartość</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.setDouble(System.String,System.Double@,System.Boolean)">
+            <summary>
+            zamień string na double jezeli nie pasuje przecinek to go dostosuj
+            </summary>
+            <param name="val">wartość</param>
+            <param name="cb">ref zmienna do której wstawiamy wartość</param>
+            <param name="noSetIfnull">nie wstawiaj gdy wartość==null</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.setToDouble(System.String)">
+            <summary>
+            zamień tekst na double jezeli nie pasuje przecinek to go dostosuj
+            </summary>
+            <param name="val">wartość</param>
+            <returns>liczba zamieniana lub -1</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.setDouble(System.String,System.Double@)">
+            <summary>
+            zamień tekst na double jezeli nie pasuje przecinek to go dostosuj
+            </summary>
+            <param name="val">wartość</param>
+            <param name="cb">liczba zamieniana lub -1</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.cutAfterSpace(System.String)">
+            <summary>
+            Ucina tekst po spacji
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.setCombo(System.String,System.Windows.Forms.ComboBox@)">
+            <summary>
+            Ustaw index w ComboBoxie
+            </summary>
+            <param name="val">liczba w postaci tekstowej która będzie indeksem</param>
+            <param name="cb">ComboBox do ustawienia</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.setCombo(System.Int32,System.Windows.Forms.ComboBox@)">
+            <summary>
+            Ustaw index w ComboBoxie
+            </summary>
+            <param name="val">liczba  która będzie indeksem</param>
+            <param name="cb">ComboBox do ustawienia</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.setComboByText(System.String,System.Windows.Forms.ComboBox@,System.Boolean)">
+            <summary>
+            Ustaw index w ComboBoxie wyszukując tekst
+            </summary>
+            <param name="val">Tekst który będzie szukany</param>
+            <param name="cb">ComboBox w którym szukamy</param>
+            <param name="ignoreCase">zignoruj wielkość liter</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.ImageTo32Bit(System.Drawing.Image,System.Drawing.Imaging.PixelFormat,System.Boolean)">
+            <summary>
+            Zamienia Image na image 32Bit
+            </summary>
+            <param name="img"></param>
+            <param name="pf">Pixel firmat optional</param>
+            <param name="force">true zawsze false tylko gdy orginał 8bit indexed</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.ImageFromFile(System.String)">
+            <summary>
+            Zraca image z pliku naprawia błąd blokowania pliku dla obiektu image lub null gdy błąd
+            Poprawia takze gdy obraz jest obrócony ale tylko w znaczniku a nie rzeczywiscie
+            </summary>
+            <param name="fileName">nazwa pliku </param>
+            <returns></returns>
+        </member>
+        <member name="P:ADMIN.PROCKI.myPath">
+            <summary>
+            Katalog aplikacji bez \ na końcu
+            </summary>
+        </member>
+        <member name="P:ADMIN.PROCKI.exePath">
+            <summary>
+             Katalog pliku EXE(programu) bez \ na końcu
+            </summary>
+        </member>
+        <member name="P:ADMIN.PROCKI.exePathB">
+            <summary>
+            Katalog pliku EXE(programu) z \ na końcu
+            </summary>
+        </member>
+        <member name="P:ADMIN.PROCKI.tempPath">
+            <summary>
+            Katalog TEMP bez \ na końcu
+            </summary>
+        </member>
+        <member name="P:ADMIN.PROCKI.tempPathB">
+            <summary>
+            Katalog temp z \ na końcu
+            </summary>
+        </member>
+        <member name="P:ADMIN.PROCKI.myPathB">
+            <summary>
+            Katalog aplikacji z \ na końcu
+            </summary>
+        </member>
+        <member name="M:ADMIN.PROCKI.ObjectToXML(System.Type,System.Object)">
+            <summary>
+            Zamień obiekt na XML - serializacja
+            </summary>
+            <param name="type">Typ obiektu</param>
+            <param name="obby">obiekt</param>
+            <returns>tekst XML </returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.XmlToObject(System.Type,System.String)">
+            <summary>
+             Zamień XML na obiekt - deserializacja
+            </summary>
+            <param name="type">typeof(mojTYP)</param>
+            <param name="xml"> XML obiektu</param>
+            <returns>obiekt</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.stringToBytes(System.String)">
+            <summary>
+            Zamień tekst na tablicę bajtów 
+            </summary>
+            <param name="str">tekst</param>
+            <returns>byte[]</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.stringToBytesWithCR(System.String)">
+            <summary>
+            Zamień tekst na tablicę bajtów i dodaje znak końca wiersza
+            </summary>
+            <param name="str">tekst</param>
+            <returns>byte[]</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.bytesToString(System.Byte[])">
+            <summary>
+            Zamienia tablicę bajtów na tekst
+            </summary>
+            <param name="arr">byte[]</param>
+            <returns>tekst</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.bytesToHexString(System.Byte[])">
+            <summary>
+            Zamień ciąg bajtów na tekst w postaci heksadecymalnej
+            </summary>
+            <param name="arr">byte[]</param>
+            <returns>tekst</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.UTF_TO_UCS2(System.String)">
+            ================> Used to encoding GSM message as UCS2
+        </member>
+        <member name="M:ADMIN.PROCKI.UCS2_TO_UTF(System.String)">
+            ================> Used to decoding GSM UCS2 message  
+        </member>
+        <member name="M:ADMIN.PROCKI.HexStringToBytes(System.String)">
+            <summary>
+            Zamień tekst(string) z liczbami heksadecymalnymi na tablicę bajtów
+            </summary>
+            <param name="hexa">tekst do zamiany</param>
+            <returns>byte[]</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.StringToHexString(System.String)">
+            <summary>
+            zamień zwykły tekst na tablicę bajtów a tę z kolei zamien na ciąg szesnastkowy
+            </summary>
+            <param name="what">tekst</param>
+            <returns>HEX Text</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.HexStringToString(System.String)">
+            <summary>
+            Zamień tekst(string) zawierający informację w postaci szesnastkowej na tekst
+            </summary>
+            <param name="what">HEX Text</param>
+            <returns>Text</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.encode(System.String)">
+            <summary>
+            Koduje tekst
+            </summary>
+            <param name="what">tekst do zakodowania</param>
+            <returns>zakodowany tekst</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.decode(System.String)">
+            <summary>
+            Dekoduje tekst
+            </summary>
+            <param name="what">zakodowany tekst</param>
+            <returns>zdekodowany tekst</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.EncryptData(System.String,System.String)">
+            <summary>
+            Używa AES Do zakodowania danych w postraci Base64
+            </summary>
+            <param name="data">Tekst do zakodowania.</param>
+            <param name="password">Hasło.</param>
+            <returns>Wynko kodowania w Base64 string.</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.DecryptData(System.String,System.String)">
+            <summary>
+            Używa AES do zdekodowania tekstu
+            </summary>
+            <param name="data">zakodowane dane w postaci Base64 string</param>
+            <param name="password">Hasło</param>
+            <returns>zdekodowany tekst</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.EncryptData(System.Byte[],System.String,System.Security.Cryptography.PaddingMode)">
+            <summary>
+            Używa AES Do zakodowania danych 
+            </summary>
+            <param name="data">dane </param>
+            <param name="password">hasło</param>
+            <param name="paddingMode"></param>
+            <returns>zakodowane dane</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.DecryptData(System.Byte[],System.String,System.Security.Cryptography.PaddingMode)">
+            <summary>
+            Używa AES do zdekodowania danych
+            </summary>
+            <param name="data">zakodowane dane</param>
+            <param name="password">hasło</param>
+            <param name="paddingMode"></param>
+            <returns>zdekodowane dane</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.toHex(System.Int32,System.Int32)">
+            <summary>
+            liczba na HEX małe abcdef
+            </summary>
+            <param name="value">liczba</param>
+            <param name="length">długość zwracanej liczby w znakach</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.toHEX(System.Int32,System.Int32)">
+            <summary>
+            liczba na HEX duże ABCDEF
+            </summary>
+            <param name="value">liczba</param>
+            <param name="length">długość zwracanej liczby w znakach</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.MD5Encryption(System.String)">
+            <summary>
+            tworzy sume kontrolna MD5 
+            </summary>
+            <param name="ToEncrypt"></param>
+            <returns> tablica z liczbami</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.MD5String_Encryption(System.String)">
+            <summary>
+            tworzy sume kontrolna MD5 
+            </summary>
+            <param name="ToEncrypt"></param>
+            <returns>string-MD5</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.FoldersSeparator">
+            <summary>
+            Zwraca znak separujący katalogi w ścieżce zazwyczaj backslash \
+            </summary>
+            <returns>Zwraca znak separujący katalogi w ścieżce zazwyczaj backslash \</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.addSlash(System.String)">
+            <summary>
+            Dodaje / na końcu jak nie ma / lub \
+            </summary>
+            <param name="what">tekst do dodania /</param>
+            <returns>tekst z / na końcu</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.addBackSlash(System.String)">
+            <summary>
+            Dodaje \ na końcu jak nie ma / lub \
+            </summary>
+            <param name="what">tekst do dodania \</param>
+            <returns>tekst z \ na końcu</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.addFolderSeparator(System.String)">
+            <summary>
+            Dodaje separator na koncu ścieżki np c:\APP_Path\
+            </summary>
+            <param name="what"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.removeLastFolderSeparator(System.String)">
+            <summary>
+            Usuwa separator z końca ściezki jeśli występuje np c:\App\ zamieni na c:\App
+            </summary>
+            <param name="what"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.changeSlashesToBackSlashes(System.String,System.Boolean)">
+            <summary>
+            Zamienia slashe na backslashe
+            </summary>
+            <param name="what">tekst do zamiany</param>
+            <param name="slashToBackSlash">true-slash na backslash     false-backslash na slash</param>
+            <returns>zmieniony tekst</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.removeAllSlashes(System.String)">
+            <summary>
+            Usuwa wszystkie slashe
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.removeAllBackSlashes(System.String)">
+            <summary>
+            Usuwa wszystkie backslashe
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.removeAllSpaces(System.String)">
+            <summary>
+            Usuwa wszystkie spacje
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.removeBadChars(System.String)">
+            <summary>
+            usuwa wszystkie znaki poza cyframi małymi i dużymi literami i spacją
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.removeEndChar(System.String,System.Char)">
+            <summary>
+            Usuwa z końca stringu znak dpoóki jest to znak ostantni np usuwa '\' z 'C:\ala\\\\' wynik = C:\ala
+            </summary>
+            <param name="s"></param>
+            <param name="endChar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.removeBeginChar(System.String,System.Char)">
+            <summary>
+            Usuwa wybrany znak z początku np usuwamy '/' z '////folder' wynik 'folder' 
+            </summary>
+            <param name="s"></param>
+            <param name="endChar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.removeEndSpaces(System.String)">
+            <summary>
+            usuwa spacje na końcu tekstu
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.removeEndSlashes(System.String)">
+            <summary>
+            Usuwa z końca tekstu wszystkie '/'
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.removeEndBackslashes(System.String)">
+             <summary>
+            Usuwa z końca tekstu wszystkie '\'
+             </summary>
+             <param name="s"></param>
+             <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.removeEndBackslashesAndSlashes(System.String)">
+            <summary>
+            Usuwa z końca tekstu wszystkie '/' i '\' 
+            </summary>
+            <param name="s">tekst</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.GetCurrentDateTime">
+            <summary>
+            Zwraca datę w formacie  rrrr/mm/dd hh:mm:ss
+            </summary>
+            <returns>Zwraca datę w formacie  rrrr/mm/dd hh:mm:ss (string)</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.DateToStr(System.DateTime,System.Boolean,System.String)">
+            <summary>
+            Zamienia datę na string  
+            </summary>
+            <param name="date">Data</param>
+            <param name="dmy">true-dzień/miesiąc/rok   false-rok/miesiąc/dzień</param>
+            <param name="separator">co ma oddzielać dzień  miesiąc rok np "/"</param>
+            <returns>Zwraca datę (string)</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.TimeToStr(System.DateTime,System.String)">
+            <summary>
+            Zwraca Czas
+            </summary>
+            <param name="date">Data i czas</param>
+            <param name="separator">co ma oddzielać godziny minuty i sekundy np ":"</param>
+            <returns>Zwraca czas (string)</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.DateTimeToStr(System.DateTime,System.Boolean,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Zwraca Datę i czas w wybranym formacie
+            </summary>
+            <param name="date">Data i Czas</param>
+            <param name="dmy">true-dzień/miesiąc/rok   false-rok/miesiąc/dzień</param>
+            <param name="dateseparator">Separator wartości daty np "/"</param>
+            <param name="timeseparator">Separator wartości czasu np ":"</param>
+            <param name="space">odstęp między datą a czasem np " "</param>
+            <param name="no_return_zero_time">true-zwróci samą datę jak czas jest 00:00:00    false- zwraca datę i czas nawet jak czas jest zerem</param>
+            <returns>Zwraca datę i czas w formiacie string</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.DateTimeToStr(System.DateTime,System.Boolean,System.String,System.String,System.String)">
+            <summary>
+            Zwraca Datę i Czas jako string
+            </summary>
+            <param name="date">Data i Czas</param>
+            <param name="dmy">true-dzień/miesiąc/rok   false-rok/miesiąc/dzień</param>
+            <param name="dateseparator">Separator wartości daty np "/"</param>
+            <param name="timeseparator">Separator wartości czasu np ":"</param>
+            <param name="space">odstęp między datą a czasem np " "</param>
+            <returns>Zwraca datę i czas w formiacie string</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.TimeDateToStr(System.DateTime,System.Boolean,System.String,System.String,System.String)">
+            <summary>
+            Zwraca Czas i Datę jako string
+            </summary>
+            <param name="date">Data i Czas</param>
+            <param name="dmy">true-dzień/miesiąc/rok   false-rok/miesiąc/dzień</param>
+            <param name="dateseparator">Separator wartości daty np "/"</param>
+            <param name="timeseparator">Separator wartości czasu np ":"</param>
+            <param name="space">odstęp między datą a czasem np " "</param>
+            <returns>Zwraca czas i datę w formiacie string</returns>>
+        </member>
+        <member name="M:ADMIN.PROCKI.FromArrayToImage(System.Byte[])">
+            <summary>
+            Zamień Array na Image - np pobieramy array z bazy danych
+            </summary>
+            <param name="arrC">tablica bajtów</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.ResizeImageWithScale(System.Drawing.Image,System.Int32,System.Int32,ADMIN.PROCKI.ImageResizer,ADMIN.PROCKI.ImageRenderQuailty)">
+            <summary>
+            Zmienia obrazek zachowując skalę
+            </summary>
+            <param name="img">Image</param>
+            <param name="x">szerokość</param>
+            <param name="y">wysokość</param>
+            <param name="forceY">
+               Dopasuj wszystkie zdjęcia do wysokości ( zdjęcia obrócone do pionu będą węższe) forceY = FIT_TO_WIDTH;
+               Dopasuj wszystkie zdjęcia do szerokości (zdjęcia obrócone będą wyższe)          forceY = FIT_TO_HEIGHT;
+               Autodetekcja obróconych zdjęć (rozmiar będzie uwzględniał orginalne proporcje)  forceY = FIT_ROTATED;
+            </param>
+            <param name="irq">opcjonalnie Jakość renderingu - domyślnie wysoka </param>
+            <returns >Bitmapa ze zmienionym rozmiarem </returns> 
+        </member>
+        <member name="M:ADMIN.PROCKI.ResizeImage(System.Drawing.Image,System.Int32,System.Int32,System.Boolean,System.Drawing.Color,System.Int32,System.Int32,ADMIN.PROCKI.ImageRenderQuailty)">
+            <summary>
+            Zmień rozmiar obrazka jak będa inne proporcje rozmiarow obrazka i x,y pojawią się  pasy w kolorze background
+            </summary>
+            <param name="img">obraz</param>
+            <param name="x">nowy X</param>
+            <param name="y">nowy Y</param>
+            <param name="center">wycentruj nowy obrazek</param>
+            <param name="backgoundColor">Kolor tła</param>
+            <param name="newImgWidth">opcjonalnie - można zrobić obraz nieco większy i np zrobą sie ramki dookoła</param>
+            <param name="newImgHeight">opcjonalnie - można zrobić obraz nieco większy i np zrobą sie ramki dookoła</param>
+             /// <param name="irq">opcjonalnie Jakość renderingu - domyślnie wysoka </param>
+            <returns>Bitmapa ze zmienionym rozmiarem</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.ResizeImageNoScale(System.Drawing.Image,System.Int32,System.Int32,ADMIN.PROCKI.ImageRenderQuailty)">
+            <summary>
+            Zmień rozmiar obrazka jak będa inne proporcje obraz będzie rozciągnięty
+            </summary>
+            <param name="img">obraz</param>
+            <param name="x">nowy X</param>
+            <param name="y">nowy Y</param>
+             /// <param name="irq">opcjonalnie Jakość renderingu - domyślnie wysoka </param>
+            <returns>Bitmapa ze zmienionym rozmiarem</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.FromImageToPNGArray(System.Drawing.Image)">
+            <summary>
+            Zamienia Image na tablicę bajtów - format PNG
+            </summary>
+            <param name="img">image</param>
+            <returns>byte[]</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.FromImageToJPEGArray(System.Drawing.Image,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Z image na array - format JPEG
+            </summary>
+            <param name="img"></param>
+            <param name="x">szerokość</param>
+            <param name="y">wysokość</param>
+            <param name="quality">jakość</param>
+            <returns>Array</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.SetDesktopWallpaper(System.String,ADMIN.PROCKI.WalpaperStyle,System.Boolean)">
+            <summary>
+            Ustawia Tapetę pulpitu
+            </summary>
+            <param name="fileName">plik z bitmapą</param>
+            <param name="style">typ wyświetlania</param>
+            <param name="FitToScreen">rozciągnij na ekranie</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.SetWindowTop(System.Windows.Forms.Form)">
+            <summary>
+            UStaw formę na wierzchu
+            </summary>
+            <param name="f"></param>
+        </member>
+        <member name="M:ADMIN.PROCKI.isTodayDate(System.DateTime)">
+            <summary>
+            Zwraca true jak podana data to dziś
+            </summary>
+            <param name="data">data do sprawdzenie</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.isTheSameDays(System.DateTime,System.DateTime)">
+            <summary>
+            Zwraca true jak podana data jest równa z datą do sprawdzenia - czas jest ignorowany
+            </summary>
+            <param name="data">data</param>
+            <param name="data">wzorzec daty z którym będzie porównywana data</param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.bitSet(System.Int32@,System.Byte)">
+            <summary>
+            Ustawia bit w liczbie
+            </summary>
+            <param name="value">liczba</param>
+            <param name="bitNumber">który bit do ustawienia</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.bitSet(System.Byte@,System.Byte)">
+            <summary>
+            Ustawia bit w liczbie
+            </summary>
+            <param name="value">liczba</param>
+            <param name="bitNumber">który bit do ustawienia</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.bitClear(System.Int32@,System.Byte)">
+            <summary>
+            Zeruje bit w liczbie
+            </summary>
+            <param name="value">liczba</param>
+            <param name="bitNumber">który bit do wyzerowania</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.bitClear(System.Byte@,System.Byte)">
+            <summary>
+            Zeruje bit w liczbie
+            </summary>
+            <param name="value">liczba</param>
+            <param name="bitNumber">który bit do wyzerowania</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.bitRead(System.Int32,System.Byte)">
+            <summary>
+            Odczytuje wartość bitu - zwraca true false
+            </summary>
+            <param name="value">liczba</param>
+            <param name="bitNumber">który bit </param>
+            <returns>0 lub 1</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.isBitSet(System.Int32,System.Byte)">
+            <summary>
+            Odczytuje wartość bitu  - zwraca true false
+            </summary>
+            <param name="value">liczba</param>
+            <param name="bitNumber">który bit </param>
+            /// <returns>false lub true</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.getBitsToArray(System.Boolean[]@,System.Byte)">
+            <summary>
+            Pobiera bity i ustawia do tablicy bool[8]
+            </summary>
+            <param name="x"></param>
+            <param name="bits"></param>
+        </member>
+        <member name="M:ADMIN.PROCKI.bitWrite(System.Int32@,System.Byte,System.Boolean)">
+            <summary>
+            zapisuje wybrany bit
+            </summary>
+            <param name="value">liczba</param>
+            <param name="bitNumber">który bit </param>
+            <param name="bit">wartosć bitu 0/1 false/true</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.bitWrite(System.Byte@,System.Byte,System.Boolean)">
+            <summary>
+            zapisuje wybrany bit
+            </summary>
+            <param name="value">liczba</param>
+            <param name="bitNumber">który bit </param>
+            <param name="bit">wartosć bitu 0/1 false/true</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.bitWrite(System.Int32@,System.Byte,System.Int32)">
+            <summary>
+            zapisuje wybrany bit
+            </summary>
+            <param name="value">liczba</param>
+            <param name="bitNumber">który bit </param>
+            <param name="bit">wartosć bitu 0/1 false/true</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.bitWrite(System.Byte@,System.Byte,System.Int32)">
+            <summary>
+            zapisuje wybrany bit
+            </summary>
+            <param name="value">liczba</param>
+            <param name="bitNumber">który bit </param>
+            <param name="bit">wartosć bitu 0/1 false/true</param>
+        </member>
+        <member name="M:ADMIN.PROCKI.byteFromBits(System.Byte,System.Byte,System.Byte,System.Byte,System.Byte,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            utwórz bajt z bitów - w wersji 0/1
+            </summary>
+            <param name="b0"></param>
+            <param name="b1"></param>
+            <param name="b2"></param>
+            <param name="b3"></param>
+            <param name="b4"></param>
+            <param name="b5"></param>
+            <param name="b6"></param>
+            <param name="b7"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.byteFromBits(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            utwórz bajt z bitów - tu w wersji boolean
+            </summary>
+            <param name="b0"></param>
+            <param name="b1"></param>
+            <param name="b2"></param>
+            <param name="b3"></param>
+            <param name="b4"></param>
+            <param name="b5"></param>
+            <param name="b6"></param>
+            <param name="b7"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.byteFromBits(System.Boolean[])">
+            <summary>
+            utwórz bajt z bitów
+            </summary>
+            <param name="bits"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.byteFromBits(System.Byte[])">
+            <summary>
+            utwórz bajt z bitów
+            </summary>
+            <param name="bits"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.getLowNibble(System.Byte)">
+            <summary>
+            Pobierz dolne 4 bity z bajtu
+            </summary>
+            <param name="b">bajt</param>
+            <returns>4 dolne bity</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.getHighNibble(System.Byte)">
+            <summary>
+            pobierz 4 górne bity z bajtu 
+            </summary>
+            <param name="b">bajt</param>
+            <returns>4 górne bity przesunięte o 4 w dół</returns>
+        </member>
+        <member name="M:ADMIN.PROCKI.splitNibbles(System.Byte,System.Byte)">
+            <summary>
+            połącz dwa Nibble
+            </summary>
+            <param name="HI">górna połówka tylko 4 najmniej znaczące bity - będa przesuwane</param>
+            <param name="LO">dolna połówka</param>
+            <returns></returns>
+        </member>
+        <member name="F:ADMIN.ProgramConfig.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.ProgramConfig.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.ProgramConfig.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:ADMIN.FTP.Finalize">
+            <summary>
+            Destruktor
+            </summary>
+        </member>
+        <member name="M:ADMIN.FTP.Dispose">
+            <summary>
+            Destruktor
+            </summary>
+        </member>
+        <member name="M:ADMIN.FTP.Dispose(System.Boolean)">
+            <summary>
+            Destruktor
+            </summary>
+        </member>
+        <member name="F:ADMIN.FTP_config.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.FTP_config.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.FTP_config.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ADMIN.FTP_Test.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.FTP_Test.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.FTP_Test.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ADMIN.SMTP_config.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.SMTP_config.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.SMTP_config.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ADMIN.Properties.Resources">
+            <summary>
+              Klasa zasobu wymagająca zdefiniowania typu do wyszukiwania zlokalizowanych ciągów itd.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.ResourceManager">
+            <summary>
+            Zwraca buforowane wystąpienie ResourceManager używane przez tę klasę.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Culture">
+            <summary>
+              Przesłania właściwość CurrentUICulture bieżącego wątku dla wszystkich
+              przypadków przeszukiwania zasobów za pomocą tej klasy zasobów wymagającej zdefiniowania typu.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources._200_by_elfro">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.B_LED_not_avail">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.B_LED_OFF">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.B_LED_ON">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.G_LED_OFF">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.G_LED_ON">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.GRAY_LED_OFF">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.GRAY_LED_ON">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.ICO">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Icon podobny do zasobu (Ikona).
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.ie_tlo_gr">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.logo">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.R_LED_OFF">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.R_LED_ON">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Small_Symbol_Delete">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Small_Symbol_Exclamation">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Small_Symbol_Refresh">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Small_Symbol_Stop">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.splash">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Symbol_Delete">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Symbol_Error">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Symbol_Exclamation">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Symbol_Help">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Symbol_Information">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Symbol_Restricted">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Symbol_Stop">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Very_Small_Symbol_Check">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Very_Small_symbol_Database">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Very_Small_Symbol_Delete">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Very_Small_Symbol_Exclamati">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Very_small_Symbol_Informati">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Very_Small_Symbol_Refresh">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Very_Small_Symbol_Stop">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Y_LED_OFF">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ADMIN.Properties.Resources.Y_LED_ON">
+            <summary>
+              Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="T:ADMIN.Splash">
+            <summary>
+            Pokazuje ekran startowy programu
+            Autor Tomasz Fronczek
+            </summary>
+        </member>
+        <member name="F:ADMIN.Splash.fastRun">
+            <summary>
+            Zainicjiuj parametry programu
+            </summary>
+        </member>
+        <member name="M:ADMIN.Splash.RememberMeCFG">
+            <summary>
+            Inicjalizacja
+            </summary>
+            
+        </member>
+        <member name="M:ADMIN.Splash.#ctor(System.Boolean)">
+            <summary>
+            Pokaż splash screen
+            </summary>
+            <param name="only_SPLASH">true -sam splash false logowanie inicjalizacjia itp itd</param>
+        </member>
+        <member name="M:ADMIN.Splash.#ctor(System.Int32)">
+            <summary>
+            Uruchom samo logowanie
+            </summary>
+            <param name="currentStep"></param>
+        </member>
+        <member name="M:ADMIN.Splash.SetStep(System.Int32,System.String)">
+            <summary>
+            Ustaw etap uruchamianego programu
+            </summary>
+            <param name="current">który krok</param>
+            <param name="text">opis</param>
+        </member>
+        <member name="M:ADMIN.Splash.fastInit">
+            <summary>
+            Szybka inicjalizacja bez splash screena - nie obsługuje logowania 
+            </summary>
+        </member>
+        <member name="M:ADMIN.Splash.timerInit_Tick(System.Object,System.EventArgs)">
+            <summary>
+            Uruchamiaj posczególne etapy startu programu
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ADMIN.Splash.timerOpacity_Tick(System.Object,System.EventArgs)">
+            <summary>
+            Zmienia  przeźroczystość formy
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:ADMIN.Splash.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.Splash.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.Splash.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ADMIN.USERS.Change_pass.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.USERS.Change_pass.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.USERS.Change_pass.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ADMIN.USERS.Edit_userByUser.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.USERS.Edit_userByUser.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.USERS.Edit_userByUser.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ADMIN.USERS.Edit_userByAdmin.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.USERS.Edit_userByAdmin.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.USERS.Edit_userByAdmin.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ADMIN.USERS.New_user.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.USERS.New_user.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.USERS.New_user.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ADMIN.USERS.users_list.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ADMIN.USERS.users_list.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ADMIN.USERS.users_list.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ADMIN.uprawnienia">
+            <summary>
+            upraniwenia
+            </summary>
+        </member>
+        <member name="T:ADMIN.GroupController">
+            <summary>
+            Zarządza gupami dostępu 
+            Określamy poziom dostępu 0 ADMIN im większa liczba tym niższy poziom dostępu obecie 4. Poziom dostępu 666 - brak dostęu 
+            </summary>
+        </member>
+        <member name="M:ADMIN.GroupController.getUserGroupName(System.Int32)">
+            <summary>
+            Zwraca Nazwę grupy po poziomie dostępu
+            </summary>
+            <param name="AccessLevel">Poziom dostępu</param>
+            <returns>Nazwa grupy</returns>
+        </member>
+        <member name="M:ADMIN.GroupController.getCurrentUserGroupName">
+            <summary>
+            Zwraca nazwę grupy bieżącego usera
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADMIN.GroupController.getUserAccesLevelByName(System.String)">
+            <summary>
+            Zwraca Poziom dostępu
+            </summary>
+            <param name="userName">Nazwa użytkownika</param>
+            <returns>Zwraca Poziom dostępu</returns>
+        </member>
+        <member name="M:ADMIN.GroupController.IsInRole(System.String,System.Int32)">
+            <summary>
+            Czy użytkownik jest w roli
+            </summary>
+            <param name="RoleName">Nazwa roli </param>
+            <param name="userAccesLevel">poziom dostępu</param>
+            <returns>OK</returns>
+        </member>
+        <member name="M:ADMIN.UserController.Create_USERS_Table">
+            <summary>
+            Tworzy tabelę użytkowników w bazie
+            </summary>
+            <returns>OK</returns>
+        </member>
+        <member name="M:ADMIN.UserController.AddAdminToEmptyTable">
+            <summary>
+            Dodaje admina do bazy admin/admin
+            </summary>
+            <returns>OK</returns>
+        </member>
+        <member name="M:ADMIN.UserController.AddNewUser(System.String,System.String,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Dodaje użytkownika 
+            </summary>
+            <param name="uName">Nazwa użytkownika - imię i nazwisko</param>
+            <param name="uLogin">Login</param>
+            <param name="uPass">Hasło - czystym tekstem</param>
+            <param name="uAccessLevel">Rola</param>
+            <param name="uEmail">Email</param>
+            <param name="uInfo">Uwagi</param>
+            <returns>OK</returns>
+        </member>
+        <member name="M:ADMIN.UserController.UpdateUser(System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String,System.Boolean)">
+            <summary>
+            Zmienia dane użytkownika
+            </summary>
+            <param name="ID">Id użytkownika</param>
+            <param name="uName">Nazwa wyśwletlana np imie i nazwisko</param>
+            <param name="uLogin">login</param>
+            <param name="uPassENC">hasło w postaci zakodowanej</param>
+            <param name="uEmail">email</param>
+            <param name="isDeleted">true-usunięty false aktywny</param>
+            <param name="uAccessLevel">rola użytkownika </param>
+            <param name="uInfo">Uwagi</param>
+            <returns>OK</returns>
+        </member>
+        <member name="M:ADMIN.UserController.DELETE_User(System.Int32,System.Boolean)">
+            <summary>
+            Kasuje odkasowuje użytkownika
+            </summary>
+            <param name="ID">Id Użytkownika</param>
+            <param name="isDeleted">true- skasować false - odkasować</param>
+            <returns>OK</returns>
+        </member>
+        <member name="M:ADMIN.UserController.SaveCurrentUser">
+            <summary>
+            Zapisz dane bieżącego użytkownika
+            </summary>
+            <returns>OK</returns>
+        </member>
+        <member name="M:ADMIN.UserController.Login(System.String,System.String)">
+            <summary>
+            Sprawdza czy użytkownik może się zalogować
+            </summary>
+            <param name="Login">Login</param>
+            <param name="Password">Hasło - zwykły tekst</param>
+            <returns>OK</returns>
+        </member>
+        <member name="M:ADMIN.UserController.LoginENC(System.String,System.String)">
+            <summary>
+            Sprawdza czy użytkownik może się zalogować
+            </summary>
+            <param name="Login">Login</param>
+            <param name="EncryptedPassword">Hasło w postaci zakodowanej</param>
+            <returns>OK</returns>
+        </member>
+        <member name="M:ADMIN.UserController.LogOut">
+            <summary>
+            Wyloguj
+            </summary>
+        </member>
+        <member name="M:ADMIN.UserController.UserExist(System.String)">
+            <summary>
+            Czy istnieje użytkownik z wybranym loginem
+            </summary>
+            <param name="login">login</param>
+            <returns>true - istnieje</returns>
+        </member>
+        <member name="M:ADMIN.UserController.changePassword(System.String,System.String,System.String,System.String)">
+            <summary>
+            Zmiana hasła bieżacego użytkownika
+            </summary>
+            <param name="uLogin">Login uzytkownika</param>
+            <param name="oldPass">stare hasło - tekstem</param>
+            <param name="newPass">nowe hasło - tekstem</param>
+            <param name="confirmPass">powtórzone nowe hasło - tekstem</param>
+            <returns>OK</returns>
+        </member>
+        <member name="F:FastQuestion.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:FastQuestion.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:FastQuestion.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:InputBox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:InputBox.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:InputBox.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:MessageBoxIcon">
+            <summary>
+            Do standardowych ikonek dodano nowe wobec czego troche to moze nie pasowac do kazdego kodu
+            zachowanie standartu konwersji na standartowe - nalezy podzielic przez 100 bez reszty
+            </summary>
+        </member>
+        <member name="T:MessageBoxDefaultButton">
+            <summary>
+            dodano nowy typ None - nalezy go uwzgl podczas konwersji
+            </summary>
+        </member>
+        <member name="T:MessageBoxButtons">
+            <summary>
+            dodano nowy typ None - nalezy go uwzgl podczas konwersji
+            </summary>
+        </member>
+        <member name="F:MyBox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MyBox.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MyBox.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Win32">
+            <summary>
+            Implementacja niektórych funkcji WIN API
+            Autor Tomasz Fronczek
+            </summary>
+        </member>
+        <member name="F:Win32.CB_GETEDITSEL">
+            { Combo Box messages }
+        </member>
+        <member name="M:Win32.FindWindow(System.String,System.String)">
+            <summary>
+            Znajdź okno
+            </summary>
+            <param name="lpClassName"></param>
+            <param name="lpWindowName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Win32.SendMessage(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Wyślij komunikat API metoda SEND
+            </summary>
+            <param name="hWnd">Uchwyt okna</param>
+            <param name="Msg">Komunikat</param>
+            <param name="wParam">Parametr wParam</param>
+            <param name="lParam">Parametr lParam</param>
+            <returns></returns>
+        </member>
+        <member name="M:Win32.PostMessage(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Wyślij komunikat API metoda Post
+            </summary>
+            <param name="hWnd">Uchwyt okna</param>
+            <param name="Msg">Komunikat</param>
+            <param name="wParam">Parametr wParam</param>
+            <param name="lParam">Parametr lParam</param>
+            <returns></returns>
+        </member>
+        <member name="M:Win32.SetActiveWindow(System.IntPtr)">
+            <summary>
+            Ustaw aktywne okno
+            </summary>
+            <param name="hWnd">Uchwyt okna</param>
+            <returns></returns>
+        </member>
+        <member name="M:Win32.SetForegroundWindow(System.IntPtr)">
+            <summary>
+            Ustaw okno jako pierwsze
+            </summary>
+            <param name="hWnd">Uchwyt okna</param>
+            <returns></returns>
+        </member>
+        <member name="M:Win32.keybd_event(System.Byte,System.Byte,System.UInt32,System.IntPtr)">
+            <summary>
+            Wymusza naciśnięcie klawisza
+            </summary>
+            <param name="bVk"></param>
+            <param name="bScan"></param>
+            <param name="dwFlags"></param>
+            <param name="dwExtraInfo"></param>
+        </member>
+        <member name="M:Win32.mouse_event(System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.Int32)">
+            <summary>
+            Wymusza kliknięcie,przesuwanie itp myszką
+            </summary>
+            <param name="dwFlags"></param>
+            <param name="dx"></param>
+            <param name="dy"></param>
+            <param name="dwData"></param>
+            <param name="dwExtraInfo"></param>
+        </member>
+        <member name="M:Win32.IsWindowVisible(System.Int32)">
+            <summary>
+            Czy okno jest widoczne
+            </summary>
+            <param name="hWnd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Win32.ShellExecute(System.Int32,System.String,System.String,System.String,System.String,System.Int64)">
+            <summary>
+            Uruchom program
+            </summary>
+            <param name="hWnd"></param>
+            <param name="lpOperation"></param>
+            <param name="lpFile"></param>
+            <param name="lpParameters"></param>
+            <param name="lpDirectory"></param>
+            <param name="nShowCmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Win32.Beep(System.UInt32,System.UInt32)">
+            <summary>
+            Generuj dźwięk
+            </summary>
+            <param name="frequency"></param>
+            <param name="duration"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Win32.GetSystemMetrics(System.Int32)">
+            <summary>
+            Pobierz dane regionalne
+            </summary>
+            <param name="which"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Win32.FindWindowExA(System.Int64,System.Int64,System.String,System.String)">
+            <summary>
+            Znajdź okno
+            </summary>
+            <param name="hWnd1"></param>
+            <param name="hWnd2"></param>
+            <param name="lpsz1"></param>
+            <param name="lpsz2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Win32.ShowWindow(System.Int64,System.Int64)">
+            <summary>
+            Pokaż okno
+            </summary>
+            <param name="hwnd"></param>
+            <param name="nCmdShow"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Win32.GetDesktopWindow">
+            <summary>
+            Pobierz desktop
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Win32.SetWinTop(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            SETS Window To TOP MOST ABSOLUTELY 
+            </summary>
+            <param name="hwnd"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="w"></param>
+            <param name="h"></param>
+        </member>
+        <member name="F:REGISTER.licenseChecker.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:REGISTER.licenseChecker.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:REGISTER.licenseChecker.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>
