@@ -13,6 +13,11 @@ The right mouse button opens the menu.
 <h2> Omnirig CAT </h2>
 
 An example of a simple radio control program. Requires omnirig to be installed. It allows you to change the frequency, mode, and the ability to transmit.
+link to dxAtlas omnirig: https://www.dxatlas.com/omnirig/
+
+- Added TRX custom commands controll based on Yaesu manuals.
+- Added POTA program window. You can use frequencies directly from POTA spots and activations.
+
 
 <hr/>
 
