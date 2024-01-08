@@ -44,19 +44,6 @@
             this.trackBarDopplerFrequency = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.s11 = new Omnirig_CAT.SevenSegment();
-            this.s10 = new Omnirig_CAT.SevenSegment();
-            this.s9 = new Omnirig_CAT.SevenSegment();
-            this.s8 = new Omnirig_CAT.SevenSegment();
-            this.s7 = new Omnirig_CAT.SevenSegment();
-            this.s6 = new Omnirig_CAT.SevenSegment();
-            this.s5 = new Omnirig_CAT.SevenSegment();
-            this.s4 = new Omnirig_CAT.SevenSegment();
-            this.s3 = new Omnirig_CAT.SevenSegment();
-            this.s2 = new Omnirig_CAT.SevenSegment();
-            this.s1 = new Omnirig_CAT.SevenSegment();
-            this.s0 = new Omnirig_CAT.SevenSegment();
-            this.sDot = new Omnirig_CAT.SevenSegment();
             this.buttonMenu = new System.Windows.Forms.Button();
             this.buttonTX = new System.Windows.Forms.Button();
             this.labelRig = new System.Windows.Forms.Label();
@@ -141,6 +128,19 @@
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timerNTP = new System.Windows.Forms.Timer(this.components);
             this.timerDoppler = new System.Windows.Forms.Timer(this.components);
+            this.s11 = new Omnirig_CAT.SevenSegment();
+            this.s10 = new Omnirig_CAT.SevenSegment();
+            this.s9 = new Omnirig_CAT.SevenSegment();
+            this.s8 = new Omnirig_CAT.SevenSegment();
+            this.s7 = new Omnirig_CAT.SevenSegment();
+            this.s6 = new Omnirig_CAT.SevenSegment();
+            this.s5 = new Omnirig_CAT.SevenSegment();
+            this.s4 = new Omnirig_CAT.SevenSegment();
+            this.s3 = new Omnirig_CAT.SevenSegment();
+            this.s2 = new Omnirig_CAT.SevenSegment();
+            this.s1 = new Omnirig_CAT.SevenSegment();
+            this.s0 = new Omnirig_CAT.SevenSegment();
+            this.sDot = new Omnirig_CAT.SevenSegment();
             this.panel1.SuspendLayout();
             this.panelDoppler.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarDopplerTime)).BeginInit();
@@ -345,303 +345,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(669, 86);
             this.panel2.TabIndex = 50;
-            // 
-            // s11
-            // 
-            this.s11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.s11.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.s11.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.s11.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.s11.CustomPattern = 0;
-            this.s11.DecimalOn = false;
-            this.s11.DecimalShow = false;
-            this.s11.DoubleDot = false;
-            this.s11.ElementWidth = 10;
-            this.s11.ItalicFactor = 0F;
-            this.s11.Location = new System.Drawing.Point(7, 9);
-            this.s11.Name = "s11";
-            this.s11.Padding = new System.Windows.Forms.Padding(4);
-            this.s11.Size = new System.Drawing.Size(44, 64);
-            this.s11.TabIndex = 11;
-            this.s11.TabStop = false;
-            this.s11.Tag = "100000000000";
-            this.s11.Value = null;
-            this.s11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
-            this.s11.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
-            // 
-            // s10
-            // 
-            this.s10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.s10.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.s10.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.s10.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.s10.CustomPattern = 0;
-            this.s10.DecimalOn = false;
-            this.s10.DecimalShow = false;
-            this.s10.DoubleDot = false;
-            this.s10.ElementWidth = 10;
-            this.s10.ItalicFactor = 0F;
-            this.s10.Location = new System.Drawing.Point(57, 9);
-            this.s10.Name = "s10";
-            this.s10.Padding = new System.Windows.Forms.Padding(4);
-            this.s10.Size = new System.Drawing.Size(44, 64);
-            this.s10.TabIndex = 12;
-            this.s10.TabStop = false;
-            this.s10.Tag = "10000000000";
-            this.s10.Value = null;
-            this.s10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
-            this.s10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
-            // 
-            // s9
-            // 
-            this.s9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.s9.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.s9.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.s9.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.s9.CustomPattern = 0;
-            this.s9.DecimalOn = false;
-            this.s9.DecimalShow = false;
-            this.s9.DoubleDot = false;
-            this.s9.ElementWidth = 10;
-            this.s9.ItalicFactor = 0F;
-            this.s9.Location = new System.Drawing.Point(107, 9);
-            this.s9.Name = "s9";
-            this.s9.Padding = new System.Windows.Forms.Padding(4);
-            this.s9.Size = new System.Drawing.Size(44, 64);
-            this.s9.TabIndex = 13;
-            this.s9.TabStop = false;
-            this.s9.Tag = "1000000000";
-            this.s9.Value = null;
-            this.s9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
-            this.s9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
-            // 
-            // s8
-            // 
-            this.s8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.s8.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.s8.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.s8.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.s8.CustomPattern = 0;
-            this.s8.DecimalOn = false;
-            this.s8.DecimalShow = false;
-            this.s8.DoubleDot = false;
-            this.s8.ElementWidth = 10;
-            this.s8.ItalicFactor = 0F;
-            this.s8.Location = new System.Drawing.Point(178, 9);
-            this.s8.Name = "s8";
-            this.s8.Padding = new System.Windows.Forms.Padding(4);
-            this.s8.Size = new System.Drawing.Size(44, 64);
-            this.s8.TabIndex = 1;
-            this.s8.TabStop = false;
-            this.s8.Tag = "100000000";
-            this.s8.Value = null;
-            this.s8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
-            this.s8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
-            // 
-            // s7
-            // 
-            this.s7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.s7.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.s7.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.s7.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.s7.CustomPattern = 0;
-            this.s7.DecimalOn = false;
-            this.s7.DecimalShow = false;
-            this.s7.DoubleDot = false;
-            this.s7.ElementWidth = 10;
-            this.s7.ItalicFactor = 0F;
-            this.s7.Location = new System.Drawing.Point(228, 9);
-            this.s7.Name = "s7";
-            this.s7.Padding = new System.Windows.Forms.Padding(4);
-            this.s7.Size = new System.Drawing.Size(44, 64);
-            this.s7.TabIndex = 2;
-            this.s7.TabStop = false;
-            this.s7.Tag = "10000000";
-            this.s7.Value = null;
-            this.s7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
-            this.s7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
-            // 
-            // s6
-            // 
-            this.s6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.s6.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.s6.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.s6.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.s6.CustomPattern = 0;
-            this.s6.DecimalOn = false;
-            this.s6.DecimalShow = false;
-            this.s6.DoubleDot = false;
-            this.s6.ElementWidth = 10;
-            this.s6.ItalicFactor = 0F;
-            this.s6.Location = new System.Drawing.Point(278, 9);
-            this.s6.Name = "s6";
-            this.s6.Padding = new System.Windows.Forms.Padding(4);
-            this.s6.Size = new System.Drawing.Size(44, 64);
-            this.s6.TabIndex = 3;
-            this.s6.TabStop = false;
-            this.s6.Tag = "1000000";
-            this.s6.Value = null;
-            this.s6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
-            this.s6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
-            // 
-            // s5
-            // 
-            this.s5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.s5.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.s5.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.s5.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.s5.CustomPattern = 0;
-            this.s5.DecimalOn = false;
-            this.s5.DecimalShow = false;
-            this.s5.DoubleDot = false;
-            this.s5.ElementWidth = 10;
-            this.s5.ItalicFactor = 0F;
-            this.s5.Location = new System.Drawing.Point(349, 9);
-            this.s5.Name = "s5";
-            this.s5.Padding = new System.Windows.Forms.Padding(4);
-            this.s5.Size = new System.Drawing.Size(44, 64);
-            this.s5.TabIndex = 4;
-            this.s5.TabStop = false;
-            this.s5.Tag = "100000";
-            this.s5.Value = null;
-            this.s5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
-            this.s5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
-            // 
-            // s4
-            // 
-            this.s4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.s4.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.s4.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.s4.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.s4.CustomPattern = 0;
-            this.s4.DecimalOn = false;
-            this.s4.DecimalShow = false;
-            this.s4.DoubleDot = false;
-            this.s4.ElementWidth = 10;
-            this.s4.ItalicFactor = 0F;
-            this.s4.Location = new System.Drawing.Point(399, 9);
-            this.s4.Name = "s4";
-            this.s4.Padding = new System.Windows.Forms.Padding(4);
-            this.s4.Size = new System.Drawing.Size(44, 64);
-            this.s4.TabIndex = 5;
-            this.s4.TabStop = false;
-            this.s4.Tag = "10000";
-            this.s4.Value = null;
-            this.s4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
-            this.s4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
-            // 
-            // s3
-            // 
-            this.s3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.s3.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.s3.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.s3.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.s3.CustomPattern = 0;
-            this.s3.DecimalOn = false;
-            this.s3.DecimalShow = false;
-            this.s3.DoubleDot = false;
-            this.s3.ElementWidth = 10;
-            this.s3.ItalicFactor = 0F;
-            this.s3.Location = new System.Drawing.Point(449, 9);
-            this.s3.Name = "s3";
-            this.s3.Padding = new System.Windows.Forms.Padding(4);
-            this.s3.Size = new System.Drawing.Size(44, 64);
-            this.s3.TabIndex = 6;
-            this.s3.TabStop = false;
-            this.s3.Tag = "1000";
-            this.s3.Value = null;
-            this.s3.Load += new System.EventHandler(this.s3_Load);
-            this.s3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
-            this.s3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
-            // 
-            // s2
-            // 
-            this.s2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.s2.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.s2.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.s2.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.s2.CustomPattern = 0;
-            this.s2.DecimalOn = false;
-            this.s2.DecimalShow = false;
-            this.s2.DoubleDot = false;
-            this.s2.ElementWidth = 10;
-            this.s2.ItalicFactor = 0F;
-            this.s2.Location = new System.Drawing.Point(513, 9);
-            this.s2.Name = "s2";
-            this.s2.Padding = new System.Windows.Forms.Padding(4);
-            this.s2.Size = new System.Drawing.Size(44, 64);
-            this.s2.TabIndex = 7;
-            this.s2.TabStop = false;
-            this.s2.Tag = "100";
-            this.s2.Value = null;
-            this.s2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
-            this.s2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
-            // 
-            // s1
-            // 
-            this.s1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.s1.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.s1.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.s1.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.s1.CustomPattern = 0;
-            this.s1.DecimalOn = false;
-            this.s1.DecimalShow = false;
-            this.s1.DoubleDot = false;
-            this.s1.ElementWidth = 10;
-            this.s1.ItalicFactor = 0F;
-            this.s1.Location = new System.Drawing.Point(563, 9);
-            this.s1.Name = "s1";
-            this.s1.Padding = new System.Windows.Forms.Padding(4);
-            this.s1.Size = new System.Drawing.Size(44, 64);
-            this.s1.TabIndex = 8;
-            this.s1.TabStop = false;
-            this.s1.Tag = "10";
-            this.s1.Value = null;
-            this.s1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
-            this.s1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
-            // 
-            // s0
-            // 
-            this.s0.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.s0.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.s0.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.s0.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.s0.CustomPattern = 0;
-            this.s0.DecimalOn = true;
-            this.s0.DecimalShow = false;
-            this.s0.DoubleDot = false;
-            this.s0.ElementWidth = 10;
-            this.s0.ItalicFactor = 0F;
-            this.s0.Location = new System.Drawing.Point(613, 9);
-            this.s0.Name = "s0";
-            this.s0.Padding = new System.Windows.Forms.Padding(4);
-            this.s0.Size = new System.Drawing.Size(44, 64);
-            this.s0.TabIndex = 9;
-            this.s0.TabStop = false;
-            this.s0.Tag = "1";
-            this.s0.Value = null;
-            this.s0.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
-            this.s0.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
-            // 
-            // sDot
-            // 
-            this.sDot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.sDot.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.sDot.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.sDot.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.sDot.CustomPattern = 0;
-            this.sDot.DecimalOn = true;
-            this.sDot.DecimalShow = true;
-            this.sDot.DoubleDot = false;
-            this.sDot.ElementWidth = 10;
-            this.sDot.ItalicFactor = 0F;
-            this.sDot.Location = new System.Drawing.Point(495, 9);
-            this.sDot.Name = "sDot";
-            this.sDot.Padding = new System.Windows.Forms.Padding(4);
-            this.sDot.Size = new System.Drawing.Size(44, 64);
-            this.sDot.TabIndex = 10;
-            this.sDot.TabStop = false;
-            this.sDot.Value = null;
             // 
             // buttonMenu
             // 
@@ -1187,7 +890,7 @@
             // 
             this.pOTAModuleToolStripMenuItem.Name = "pOTAModuleToolStripMenuItem";
             this.pOTAModuleToolStripMenuItem.Size = new System.Drawing.Size(394, 24);
-            this.pOTAModuleToolStripMenuItem.Text = "Show POTA module";
+            this.pOTAModuleToolStripMenuItem.Text = "Show SOTA/POTA module";
             this.pOTAModuleToolStripMenuItem.Click += new System.EventHandler(this.pOTAModuleToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
@@ -1368,6 +1071,303 @@
             // timerDoppler
             // 
             this.timerDoppler.Tick += new System.EventHandler(this.timerDoppler_Tick);
+            // 
+            // s11
+            // 
+            this.s11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.s11.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.s11.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.s11.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.s11.CustomPattern = 0;
+            this.s11.DecimalOn = false;
+            this.s11.DecimalShow = false;
+            this.s11.DoubleDot = false;
+            this.s11.ElementWidth = 10;
+            this.s11.ItalicFactor = 0F;
+            this.s11.Location = new System.Drawing.Point(7, 9);
+            this.s11.Name = "s11";
+            this.s11.Padding = new System.Windows.Forms.Padding(4);
+            this.s11.Size = new System.Drawing.Size(44, 64);
+            this.s11.TabIndex = 11;
+            this.s11.TabStop = false;
+            this.s11.Tag = "100000000000";
+            this.s11.Value = null;
+            this.s11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
+            this.s11.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
+            // 
+            // s10
+            // 
+            this.s10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.s10.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.s10.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.s10.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.s10.CustomPattern = 0;
+            this.s10.DecimalOn = false;
+            this.s10.DecimalShow = false;
+            this.s10.DoubleDot = false;
+            this.s10.ElementWidth = 10;
+            this.s10.ItalicFactor = 0F;
+            this.s10.Location = new System.Drawing.Point(57, 9);
+            this.s10.Name = "s10";
+            this.s10.Padding = new System.Windows.Forms.Padding(4);
+            this.s10.Size = new System.Drawing.Size(44, 64);
+            this.s10.TabIndex = 12;
+            this.s10.TabStop = false;
+            this.s10.Tag = "10000000000";
+            this.s10.Value = null;
+            this.s10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
+            this.s10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
+            // 
+            // s9
+            // 
+            this.s9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.s9.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.s9.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.s9.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.s9.CustomPattern = 0;
+            this.s9.DecimalOn = false;
+            this.s9.DecimalShow = false;
+            this.s9.DoubleDot = false;
+            this.s9.ElementWidth = 10;
+            this.s9.ItalicFactor = 0F;
+            this.s9.Location = new System.Drawing.Point(107, 9);
+            this.s9.Name = "s9";
+            this.s9.Padding = new System.Windows.Forms.Padding(4);
+            this.s9.Size = new System.Drawing.Size(44, 64);
+            this.s9.TabIndex = 13;
+            this.s9.TabStop = false;
+            this.s9.Tag = "1000000000";
+            this.s9.Value = null;
+            this.s9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
+            this.s9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
+            // 
+            // s8
+            // 
+            this.s8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.s8.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.s8.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.s8.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.s8.CustomPattern = 0;
+            this.s8.DecimalOn = false;
+            this.s8.DecimalShow = false;
+            this.s8.DoubleDot = false;
+            this.s8.ElementWidth = 10;
+            this.s8.ItalicFactor = 0F;
+            this.s8.Location = new System.Drawing.Point(178, 9);
+            this.s8.Name = "s8";
+            this.s8.Padding = new System.Windows.Forms.Padding(4);
+            this.s8.Size = new System.Drawing.Size(44, 64);
+            this.s8.TabIndex = 1;
+            this.s8.TabStop = false;
+            this.s8.Tag = "100000000";
+            this.s8.Value = null;
+            this.s8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
+            this.s8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
+            // 
+            // s7
+            // 
+            this.s7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.s7.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.s7.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.s7.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.s7.CustomPattern = 0;
+            this.s7.DecimalOn = false;
+            this.s7.DecimalShow = false;
+            this.s7.DoubleDot = false;
+            this.s7.ElementWidth = 10;
+            this.s7.ItalicFactor = 0F;
+            this.s7.Location = new System.Drawing.Point(228, 9);
+            this.s7.Name = "s7";
+            this.s7.Padding = new System.Windows.Forms.Padding(4);
+            this.s7.Size = new System.Drawing.Size(44, 64);
+            this.s7.TabIndex = 2;
+            this.s7.TabStop = false;
+            this.s7.Tag = "10000000";
+            this.s7.Value = null;
+            this.s7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
+            this.s7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
+            // 
+            // s6
+            // 
+            this.s6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.s6.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.s6.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.s6.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.s6.CustomPattern = 0;
+            this.s6.DecimalOn = false;
+            this.s6.DecimalShow = false;
+            this.s6.DoubleDot = false;
+            this.s6.ElementWidth = 10;
+            this.s6.ItalicFactor = 0F;
+            this.s6.Location = new System.Drawing.Point(278, 9);
+            this.s6.Name = "s6";
+            this.s6.Padding = new System.Windows.Forms.Padding(4);
+            this.s6.Size = new System.Drawing.Size(44, 64);
+            this.s6.TabIndex = 3;
+            this.s6.TabStop = false;
+            this.s6.Tag = "1000000";
+            this.s6.Value = null;
+            this.s6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
+            this.s6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
+            // 
+            // s5
+            // 
+            this.s5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.s5.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.s5.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.s5.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.s5.CustomPattern = 0;
+            this.s5.DecimalOn = false;
+            this.s5.DecimalShow = false;
+            this.s5.DoubleDot = false;
+            this.s5.ElementWidth = 10;
+            this.s5.ItalicFactor = 0F;
+            this.s5.Location = new System.Drawing.Point(349, 9);
+            this.s5.Name = "s5";
+            this.s5.Padding = new System.Windows.Forms.Padding(4);
+            this.s5.Size = new System.Drawing.Size(44, 64);
+            this.s5.TabIndex = 4;
+            this.s5.TabStop = false;
+            this.s5.Tag = "100000";
+            this.s5.Value = null;
+            this.s5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
+            this.s5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
+            // 
+            // s4
+            // 
+            this.s4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.s4.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.s4.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.s4.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.s4.CustomPattern = 0;
+            this.s4.DecimalOn = false;
+            this.s4.DecimalShow = false;
+            this.s4.DoubleDot = false;
+            this.s4.ElementWidth = 10;
+            this.s4.ItalicFactor = 0F;
+            this.s4.Location = new System.Drawing.Point(399, 9);
+            this.s4.Name = "s4";
+            this.s4.Padding = new System.Windows.Forms.Padding(4);
+            this.s4.Size = new System.Drawing.Size(44, 64);
+            this.s4.TabIndex = 5;
+            this.s4.TabStop = false;
+            this.s4.Tag = "10000";
+            this.s4.Value = null;
+            this.s4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
+            this.s4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
+            // 
+            // s3
+            // 
+            this.s3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.s3.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.s3.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.s3.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.s3.CustomPattern = 0;
+            this.s3.DecimalOn = false;
+            this.s3.DecimalShow = false;
+            this.s3.DoubleDot = false;
+            this.s3.ElementWidth = 10;
+            this.s3.ItalicFactor = 0F;
+            this.s3.Location = new System.Drawing.Point(449, 9);
+            this.s3.Name = "s3";
+            this.s3.Padding = new System.Windows.Forms.Padding(4);
+            this.s3.Size = new System.Drawing.Size(44, 64);
+            this.s3.TabIndex = 6;
+            this.s3.TabStop = false;
+            this.s3.Tag = "1000";
+            this.s3.Value = null;
+            this.s3.Load += new System.EventHandler(this.s3_Load);
+            this.s3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
+            this.s3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
+            // 
+            // s2
+            // 
+            this.s2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.s2.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.s2.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.s2.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.s2.CustomPattern = 0;
+            this.s2.DecimalOn = false;
+            this.s2.DecimalShow = false;
+            this.s2.DoubleDot = false;
+            this.s2.ElementWidth = 10;
+            this.s2.ItalicFactor = 0F;
+            this.s2.Location = new System.Drawing.Point(513, 9);
+            this.s2.Name = "s2";
+            this.s2.Padding = new System.Windows.Forms.Padding(4);
+            this.s2.Size = new System.Drawing.Size(44, 64);
+            this.s2.TabIndex = 7;
+            this.s2.TabStop = false;
+            this.s2.Tag = "100";
+            this.s2.Value = null;
+            this.s2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
+            this.s2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
+            // 
+            // s1
+            // 
+            this.s1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.s1.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.s1.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.s1.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.s1.CustomPattern = 0;
+            this.s1.DecimalOn = false;
+            this.s1.DecimalShow = false;
+            this.s1.DoubleDot = false;
+            this.s1.ElementWidth = 10;
+            this.s1.ItalicFactor = 0F;
+            this.s1.Location = new System.Drawing.Point(563, 9);
+            this.s1.Name = "s1";
+            this.s1.Padding = new System.Windows.Forms.Padding(4);
+            this.s1.Size = new System.Drawing.Size(44, 64);
+            this.s1.TabIndex = 8;
+            this.s1.TabStop = false;
+            this.s1.Tag = "10";
+            this.s1.Value = null;
+            this.s1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
+            this.s1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
+            // 
+            // s0
+            // 
+            this.s0.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.s0.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.s0.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.s0.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.s0.CustomPattern = 0;
+            this.s0.DecimalOn = true;
+            this.s0.DecimalShow = false;
+            this.s0.DoubleDot = false;
+            this.s0.ElementWidth = 10;
+            this.s0.ItalicFactor = 0F;
+            this.s0.Location = new System.Drawing.Point(613, 9);
+            this.s0.Name = "s0";
+            this.s0.Padding = new System.Windows.Forms.Padding(4);
+            this.s0.Size = new System.Drawing.Size(44, 64);
+            this.s0.TabIndex = 9;
+            this.s0.TabStop = false;
+            this.s0.Tag = "1";
+            this.s0.Value = null;
+            this.s0.MouseDown += new System.Windows.Forms.MouseEventHandler(this.s1_MouseDown);
+            this.s0.MouseUp += new System.Windows.Forms.MouseEventHandler(this.s1_MouseUp);
+            // 
+            // sDot
+            // 
+            this.sDot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sDot.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.sDot.ColorDark = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.sDot.ColorLight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.sDot.CustomPattern = 0;
+            this.sDot.DecimalOn = true;
+            this.sDot.DecimalShow = true;
+            this.sDot.DoubleDot = false;
+            this.sDot.ElementWidth = 10;
+            this.sDot.ItalicFactor = 0F;
+            this.sDot.Location = new System.Drawing.Point(495, 9);
+            this.sDot.Name = "sDot";
+            this.sDot.Padding = new System.Windows.Forms.Padding(4);
+            this.sDot.Size = new System.Drawing.Size(44, 64);
+            this.sDot.TabIndex = 10;
+            this.sDot.TabStop = false;
+            this.sDot.Value = null;
             // 
             // Form1
             // 

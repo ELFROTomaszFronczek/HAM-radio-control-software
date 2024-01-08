@@ -67,7 +67,8 @@
     <Compile Include="POTA\FormPOTA.Designer.cs">
       <DependentUpon>FormPOTA.cs</DependentUpon>
     </Compile>
-    <Compile Include="POTA\Spot.cs" />
+    <Compile Include="POTA\SOTA.cs" />
+    <Compile Include="POTA\POTA.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SevenSegment.cs">

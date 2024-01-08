@@ -29,26 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelLoading = new System.Windows.Forms.Label();
             this.labelNotLoaded = new System.Windows.Forms.Label();
             this.textBoxLog = new System.Windows.Forms.TextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButtonACTIVATIONS = new System.Windows.Forms.RadioButton();
+            this.radioButtonSPOTS = new System.Windows.Forms.RadioButton();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBoxFilter = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonRefresh = new System.Windows.Forms.Button();
-            this.buttonRefreshingMin = new System.Windows.Forms.Button();
-            this.timerStart = new System.Windows.Forms.Timer(this.components);
-            this.timerRefresh = new System.Windows.Forms.Timer(this.components);
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Reference = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.spotName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,25 +54,29 @@
             this.Spotter = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonRefresh = new System.Windows.Forms.Button();
+            this.buttonRefreshingMin = new System.Windows.Forms.Button();
+            this.timerStart = new System.Windows.Forms.Timer(this.components);
+            this.timerRefresh = new System.Windows.Forms.Timer(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.panelPOTA = new System.Windows.Forms.Panel();
+            this.radioButtonSOTA = new System.Windows.Forms.RadioButton();
+            this.radioButtonPOTA = new System.Windows.Forms.RadioButton();
+            this.panelSP = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panelPOTA.SuspendLayout();
+            this.panelSP.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panel1.Controls.Add(this.panelSP);
             this.panel1.Controls.Add(this.labelLoading);
             this.panel1.Controls.Add(this.labelNotLoaded);
             this.panel1.Controls.Add(this.textBoxLog);
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.textBoxFilter);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.buttonRefresh);
-            this.panel1.Controls.Add(this.buttonRefreshingMin);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -125,37 +124,37 @@
             this.textBoxLog.Visible = false;
             this.textBoxLog.WordWrap = false;
             // 
-            // radioButton2
+            // radioButtonACTIVATIONS
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.radioButton2.Location = new System.Drawing.Point(942, 11);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(139, 24);
-            this.radioButton2.TabIndex = 59;
-            this.radioButton2.Text = "ACTIVATIONS";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButtonACTIVATIONS.AutoSize = true;
+            this.radioButtonACTIVATIONS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.radioButtonACTIVATIONS.Location = new System.Drawing.Point(131, 5);
+            this.radioButtonACTIVATIONS.Name = "radioButtonACTIVATIONS";
+            this.radioButtonACTIVATIONS.Size = new System.Drawing.Size(139, 24);
+            this.radioButtonACTIVATIONS.TabIndex = 59;
+            this.radioButtonACTIVATIONS.Text = "ACTIVATIONS";
+            this.radioButtonACTIVATIONS.UseVisualStyleBackColor = true;
+            this.radioButtonACTIVATIONS.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // radioButton1
+            // radioButtonSPOTS
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.radioButton1.Location = new System.Drawing.Point(823, 12);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(86, 24);
-            this.radioButton1.TabIndex = 58;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "SPOTS";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButtonSPOTS.AutoSize = true;
+            this.radioButtonSPOTS.Checked = true;
+            this.radioButtonSPOTS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.radioButtonSPOTS.Location = new System.Drawing.Point(13, 5);
+            this.radioButtonSPOTS.Name = "radioButtonSPOTS";
+            this.radioButtonSPOTS.Size = new System.Drawing.Size(86, 24);
+            this.radioButtonSPOTS.TabIndex = 58;
+            this.radioButtonSPOTS.TabStop = true;
+            this.radioButtonSPOTS.Text = "SPOTS";
+            this.radioButtonSPOTS.UseVisualStyleBackColor = true;
+            this.radioButtonSPOTS.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(644, 12);
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button3.Location = new System.Drawing.Point(655, 8);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(110, 31);
             this.button3.TabIndex = 57;
@@ -166,8 +165,8 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(517, 11);
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button2.Location = new System.Drawing.Point(528, 7);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 31);
             this.button2.TabIndex = 56;
@@ -178,7 +177,7 @@
             // textBoxFilter
             // 
             this.textBoxFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxFilter.Location = new System.Drawing.Point(277, 12);
+            this.textBoxFilter.Location = new System.Drawing.Point(294, 9);
             this.textBoxFilter.Name = "textBoxFilter";
             this.textBoxFilter.Size = new System.Drawing.Size(217, 27);
             this.textBoxFilter.TabIndex = 55;
@@ -187,19 +186,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(11, 19);
+            this.label1.Location = new System.Drawing.Point(11, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 20);
+            this.label1.Size = new System.Drawing.Size(272, 20);
             this.label1.TabIndex = 54;
-            this.label1.Text = "Filter (OR function in 1,2,3,4 col.):";
+            this.label1.Text = "Filter (OR funct. in some columns):";
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -215,30 +214,30 @@
             this.Spotter,
             this.Comments,
             this.Time});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(15, 52);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowCellErrors = false;
@@ -248,46 +247,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1711, 592);
             this.dataGridView1.TabIndex = 53;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
-            // 
-            // buttonRefresh
-            // 
-            this.buttonRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonRefresh.ForeColor = System.Drawing.Color.Black;
-            this.buttonRefresh.Location = new System.Drawing.Point(1618, 12);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(106, 31);
-            this.buttonRefresh.TabIndex = 52;
-            this.buttonRefresh.Text = "Refresh now";
-            this.buttonRefresh.UseVisualStyleBackColor = true;
-            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
-            // 
-            // buttonRefreshingMin
-            // 
-            this.buttonRefreshingMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonRefreshingMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonRefreshingMin.ForeColor = System.Drawing.Color.Black;
-            this.buttonRefreshingMin.Location = new System.Drawing.Point(1343, 12);
-            this.buttonRefreshingMin.Name = "buttonRefreshingMin";
-            this.buttonRefreshingMin.Size = new System.Drawing.Size(255, 31);
-            this.buttonRefreshingMin.TabIndex = 49;
-            this.buttonRefreshingMin.Text = "Start refresh every 1 min.";
-            this.buttonRefreshingMin.UseVisualStyleBackColor = true;
-            this.buttonRefreshingMin.Click += new System.EventHandler(this.buttonRefreshingMin_Click);
-            // 
-            // timerStart
-            // 
-            this.timerStart.Tick += new System.EventHandler(this.timerStart_Tick);
-            // 
-            // timerRefresh
-            // 
-            this.timerRefresh.Interval = 60000;
-            this.timerRefresh.Tick += new System.EventHandler(this.timerRefresh_Tick);
-            // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
             // Column1
             // 
@@ -369,6 +328,101 @@
             this.Time.ReadOnly = true;
             this.Time.Width = 300;
             // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonRefresh.Location = new System.Drawing.Point(1617, 11);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(106, 31);
+            this.buttonRefresh.TabIndex = 52;
+            this.buttonRefresh.Text = "Refresh now";
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
+            // buttonRefreshingMin
+            // 
+            this.buttonRefreshingMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRefreshingMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonRefreshingMin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonRefreshingMin.Location = new System.Drawing.Point(1342, 11);
+            this.buttonRefreshingMin.Name = "buttonRefreshingMin";
+            this.buttonRefreshingMin.Size = new System.Drawing.Size(255, 31);
+            this.buttonRefreshingMin.TabIndex = 49;
+            this.buttonRefreshingMin.Text = "Start refresh every 2 min.";
+            this.buttonRefreshingMin.UseVisualStyleBackColor = true;
+            this.buttonRefreshingMin.Click += new System.EventHandler(this.buttonRefreshingMin_Click);
+            // 
+            // timerStart
+            // 
+            this.timerStart.Tick += new System.EventHandler(this.timerStart_Tick);
+            // 
+            // timerRefresh
+            // 
+            this.timerRefresh.Interval = 120000;
+            this.timerRefresh.Tick += new System.EventHandler(this.timerRefresh_Tick);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // panelPOTA
+            // 
+            this.panelPOTA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelPOTA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelPOTA.Controls.Add(this.radioButtonSPOTS);
+            this.panelPOTA.Controls.Add(this.radioButtonACTIVATIONS);
+            this.panelPOTA.Location = new System.Drawing.Point(1027, 8);
+            this.panelPOTA.Name = "panelPOTA";
+            this.panelPOTA.Size = new System.Drawing.Size(285, 34);
+            this.panelPOTA.TabIndex = 65;
+            // 
+            // radioButtonSOTA
+            // 
+            this.radioButtonSOTA.AutoSize = true;
+            this.radioButtonSOTA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.radioButtonSOTA.Location = new System.Drawing.Point(818, 14);
+            this.radioButtonSOTA.Name = "radioButtonSOTA";
+            this.radioButtonSOTA.Size = new System.Drawing.Size(75, 24);
+            this.radioButtonSOTA.TabIndex = 66;
+            this.radioButtonSOTA.Text = "SOTA";
+            this.radioButtonSOTA.UseVisualStyleBackColor = true;
+            this.radioButtonSOTA.CheckedChanged += new System.EventHandler(this.radioButtonSOTA_CheckedChanged);
+            // 
+            // radioButtonPOTA
+            // 
+            this.radioButtonPOTA.AutoSize = true;
+            this.radioButtonPOTA.Checked = true;
+            this.radioButtonPOTA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.radioButtonPOTA.Location = new System.Drawing.Point(910, 14);
+            this.radioButtonPOTA.Name = "radioButtonPOTA";
+            this.radioButtonPOTA.Size = new System.Drawing.Size(75, 24);
+            this.radioButtonPOTA.TabIndex = 67;
+            this.radioButtonPOTA.TabStop = true;
+            this.radioButtonPOTA.Text = "POTA";
+            this.radioButtonPOTA.UseVisualStyleBackColor = true;
+            this.radioButtonPOTA.CheckedChanged += new System.EventHandler(this.radioButtonSOTA_CheckedChanged);
+            // 
+            // panelSP
+            // 
+            this.panelSP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelSP.Controls.Add(this.radioButtonSOTA);
+            this.panelSP.Controls.Add(this.radioButtonPOTA);
+            this.panelSP.Controls.Add(this.buttonRefreshingMin);
+            this.panelSP.Controls.Add(this.buttonRefresh);
+            this.panelSP.Controls.Add(this.button3);
+            this.panelSP.Controls.Add(this.button2);
+            this.panelSP.Controls.Add(this.panelPOTA);
+            this.panelSP.Controls.Add(this.textBoxFilter);
+            this.panelSP.Controls.Add(this.label1);
+            this.panelSP.Location = new System.Drawing.Point(3, 1);
+            this.panelSP.Name = "panelSP";
+            this.panelSP.Size = new System.Drawing.Size(1731, 50);
+            this.panelSP.TabIndex = 68;
+            // 
             // FormPOTA
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -378,12 +432,16 @@
             this.Name = "FormPOTA";
             this.Padding = new System.Windows.Forms.Padding(2);
             this.ShowIcon = false;
-            this.Text = "POTA To CAT";
+            this.Text = "SOTA/POTA To CAT";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panelPOTA.ResumeLayout(false);
+            this.panelPOTA.PerformLayout();
+            this.panelSP.ResumeLayout(false);
+            this.panelSP.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -399,8 +457,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBoxFilter;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButtonACTIVATIONS;
+        private System.Windows.Forms.RadioButton radioButtonSPOTS;
         private System.Windows.Forms.Timer timerRefresh;
         private System.Windows.Forms.TextBox textBoxLog;
         private System.Windows.Forms.Label labelLoading;
@@ -416,6 +474,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Spotter;
         private System.Windows.Forms.DataGridViewTextBoxColumn Comments;
         private System.Windows.Forms.DataGridViewTextBoxColumn Time;
+        private System.Windows.Forms.RadioButton radioButtonPOTA;
+        private System.Windows.Forms.RadioButton radioButtonSOTA;
+        private System.Windows.Forms.Panel panelPOTA;
+        private System.Windows.Forms.Panel panelSP;
     }
 }
 

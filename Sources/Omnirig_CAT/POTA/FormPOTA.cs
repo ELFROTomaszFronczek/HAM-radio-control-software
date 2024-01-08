@@ -1,5 +1,6 @@
 ﻿using ADMIN;
 using Omnirig_CAT;
+using Omnirig_CAT.POTA;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +13,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace POTA_To_CAT
 {
@@ -24,7 +26,7 @@ namespace POTA_To_CAT
         }
 
 
-     
+
         string sect = "pota";
         bool loading = true;
 
@@ -35,17 +37,23 @@ namespace POTA_To_CAT
 
             PROCKI.loadFormSizeAndLog(this);
             PROCKI.loadGridWidths(this, dataGridView1);
-     
 
-            radioButton1.Checked = Config.ReadBoolValue(sect, "spots", true);
-            radioButton2.Checked = !radioButton1.Checked;
+
+            radioButtonSPOTS.Checked = Config.ReadBoolValue(sect, "spots", true);
+            radioButtonACTIVATIONS.Checked = !radioButtonSPOTS.Checked;
+
+            radioButtonPOTA.Checked = Config.ReadBoolValue(sect, "POTA", true);
+            radioButtonSOTA.Checked = !radioButtonPOTA.Checked;
+            radioButtonSOTA_CheckedChanged(null, null);
+
+
             bool refr = Config.ReadBoolValue(sect, "autoRefresh", false);
             if (refr) buttonRefreshingMin_Click(null, null);
 
 
-     
 
-          
+
+
 
             timerStart.Start();
 
@@ -55,17 +63,19 @@ namespace POTA_To_CAT
         {
             PROCKI.saveFormSizeAndLog(this);
             PROCKI.saveGridWidths(this, dataGridView1);
-            Config.WriteValue(sect, "spots", radioButton1.Checked);
+            Config.WriteValue(sect, "spots", radioButtonSPOTS.Checked);
             Config.WriteValue(sect, "autoRefresh", timerRefresh.Enabled);
+            Config.WriteValue(sect, "POTA", radioButtonPOTA.Checked);
+
             isClosed = true;
             timerRefresh.Enabled = false;
-    
+
             timerStart.Enabled = false;
-           
+
         }
 
 
-     
+
 
         private void timerStart_Tick(object sender, EventArgs e)
         {
@@ -98,46 +108,104 @@ namespace POTA_To_CAT
                     s = html.Replace("},", "},\r\n\r\n");
                     s = s.Replace("\",", "\",\r\n");
                     s = s.Replace(", \"", ", \r\n\"");
-
                     s = s.Trim();//.Replace(" "," ");
-                    if (radioButton1.Checked)
-                    {
-                        if (Spot.DeserializeSPOT_JSON(s))
-                        {
 
-                            foreach (Spot.spotJson sj in Spot.spotList)
+                    if (radioButtonPOTA.Checked)
+                    {
+                        //POTA
+                       
+                        if (radioButtonSPOTS.Checked)
+                        {
+                            if (SpotPOTA.DeserializeSPOT_JSON(s))
                             {
 
-                                bool add = true;
-                                if (filtered)
+                                foreach (SpotPOTA.spotJson sj in SpotPOTA.spotList)
                                 {
-                                    if (sj.activator.IndexOf(filter) < 0 && sj.reference.IndexOf(filter) < 0 && sj.name.IndexOf(filter) < 0 && sj.locationDesc.IndexOf(filter) < 0) add = false;
+
+                                    bool add = true;
+                                    if (filtered)
+                                    {
+                                        if (sj.activator.IndexOf(filter) < 0 && sj.reference.IndexOf(filter) < 0 && sj.name.IndexOf(filter) < 0 && sj.locationDesc.IndexOf(filter) < 0) add = false;
+                                    }
+
+                                    if (add) dataGridView1.Rows.Add(sj.activator, sj.reference, sj.name, sj.locationDesc, sj.frequency, sj.mode, SpotPOTA.getLocation(sj), sj.spotter, sj.comments, sj.spotTime);
                                 }
 
-                                if (add) dataGridView1.Rows.Add(sj.activator, sj.reference, sj.name, sj.locationDesc, sj.frequency, sj.mode, Spot.getLocation(sj), sj.spotter, sj.comments, sj.spotTime);
-                            }
 
+                            }
+                        }
+                        else
+                        {
+                           
+
+                            if (ActivationPOTA.DeserializeACTIVATION_JSON(s))
+                            {
+                                foreach (ActivationPOTA.activationJson sj in ActivationPOTA.activationList)
+                                {
+
+                                    bool add = true;
+                                    if (filtered)
+                                    {
+                                        if (sj.activator.IndexOf(filter) < 0 && sj.reference.IndexOf(filter) < 0 && sj.name.IndexOf(filter) < 0 && sj.locationDesc.IndexOf(filter) < 0) add = false;
+                                    }
+                                    if (add) dataGridView1.Rows.Add(sj.activator, sj.reference, sj.name, sj.locationDesc, sj.frequencies, "", "", "", sj.comments,
+                                        sj.startDate + " " + sj.startTime + " / " + sj.endDate + " " + sj.endTime);
+                                }
+                            }
 
                         }
                     }
                     else
                     {
-                        if (Activation.DeserializeACTIVATION_JSON(s))
+                      
+                        s = s.Replace(",\"", "\",\r\n");
+                        //s = s.Replace(", \"", ", \r\n\"");
+                        s = s.Trim();//.Replace(" "," ");
+
+                        if (radioButtonSPOTS.Checked)
                         {
-                            foreach (Activation.activationJson sj in Activation.activationList)
+                            if (SpotSOTA.DeserializeSPOT_JSON(s))
                             {
 
-                                bool add = true;
-                                if (filtered)
+                                foreach (SpotSOTA.spotJson sj in SpotSOTA.spotList)
                                 {
-                                    if (sj.activator.IndexOf(filter) < 0 && sj.reference.IndexOf(filter) < 0 && sj.name.IndexOf(filter) < 0 && sj.locationDesc.IndexOf(filter) < 0) add = false;
+                                    string refer = sj.associationCode + "/" + sj.summitCode;
+                                    bool add = true;
+                                    if (filtered)
+                                    {
+                                           if (sj.activatorCallsign.IndexOf(filter) < 0 && refer.IndexOf(filter) < 0 && sj.summitDetails.IndexOf(filter) < 0 && sj.callsign.IndexOf(filter) < 0) add = false;
+                                    }
+
+                                    if (add)
+
+                                        //dataGridView1.Rows.Add(sj.activator, sj.reference, sj.name, sj.locationDesc, sj.frequency, sj.mode, SpotPOTA.getLocation(sj), sj.spotter, sj.comments, sj.spotTime);
+                                        dataGridView1.Rows.Add(sj.activatorCallsign, refer, sj.summitDetails, "", sj.frequency, sj.mode, "", sj.callsign, sj.comments, sj.timeStamp);
                                 }
-                                if (add) dataGridView1.Rows.Add(sj.activator, sj.reference, sj.name, sj.locationDesc, sj.frequencies, "", "", "", sj.comments,
-                                    sj.startDate + " " + sj.startTime + " / " + sj.endDate + " " + sj.endTime);
+
+
                             }
+                        }
+                        else
+                        {
+                            if (AlertSOTA.DeserializeACTIVATION_JSON(s))
+                            {
+                                foreach (AlertSOTA.alertJson sj in AlertSOTA.alertList)
+                                {
+                                    string refer = sj.associationCode + "/" + sj.summitCode;
+                                    bool add = true;
+                                    if (filtered)
+                                    {
+                                        if (sj.activatingCallsign.IndexOf(filter) < 0 && refer.IndexOf(filter) < 0 && sj.summitDetails.IndexOf(filter) < 0 && sj.posterCallsign.IndexOf(filter) < 0 ) add = false;
+                                    }
+                                      if (add)
+                                        dataGridView1.Rows.Add(sj.activatingCallsign, refer, sj.summitDetails, "", sj.frequency, "", "", sj.posterCallsign, sj.comments, sj.timeStamp);
+                                }
+                            }
+
                         }
 
                     }
+
 
                 }
                 catch (Exception ex)
@@ -151,12 +219,12 @@ namespace POTA_To_CAT
         }
 
         bool firstNavi = true;
-       
+
 
         volatile string html;
         //volatile string text;
 
-        
+
         bool filtered = false;
         string filter = "";
 
@@ -175,7 +243,7 @@ namespace POTA_To_CAT
 
         }
 
-      
+
 
 
 
@@ -202,10 +270,14 @@ namespace POTA_To_CAT
             if (e.RowIndex >= 0)
             {
 
+                if (radioButtonPOTA.Checked)
+                {
+                    _f.updateFrequency(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
+                }
+                else
+                    _f.updateFrequency(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString()+"MHZ", dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
 
-                _f.updateFrequency(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
 
-              
             }
 
         }
@@ -215,16 +287,36 @@ namespace POTA_To_CAT
             if (!loading)
 
             {
-        
 
+                SOTAPOTAVisiblity();
                 labelLoading.Visible = true;
+                Application.DoEvents();
                 if (!backgroundWorker1.IsBusy)
                     backgroundWorker1.RunWorkerAsync();
-               
+                else
+                {
+                    System.Threading.Thread.Sleep(1000);
+                    if (!backgroundWorker1.IsBusy)
+                        backgroundWorker1.RunWorkerAsync();
+                    else
+                    {
+                        System.Threading.Thread.Sleep(1000);
+                        if (!backgroundWorker1.IsBusy)
+                            backgroundWorker1.RunWorkerAsync();
+                    }
+
+                }
+
+
             }
         }
 
-       
+        private void SOTAPOTAVisiblity(bool hide=false)
+        {
+            panelSP.Enabled = hide;
+            buttonRefresh.Visible = hide;
+            buttonRefreshingMin.Visible = hide;
+        }
 
         private void timerRefresh_Tick(object sender, EventArgs e)
         {
@@ -234,7 +326,7 @@ namespace POTA_To_CAT
 
         private void buttonRefreshingMin_Click(object sender, EventArgs e)
         {
-          
+
             timerRefresh.Enabled = !timerRefresh.Enabled;
             if (timerRefresh.Enabled)
                 buttonRefreshingMin.Text = "Stop refreshing";
@@ -245,22 +337,44 @@ namespace POTA_To_CAT
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            if (radioButton1.Checked)
+            try
             {
+                if (radioButtonPOTA.Checked)
+                {
+                    if (radioButtonSPOTS.Checked)
+                        html = ADMIN.HTTP.GET("https://api.pota.app/spot/activator");
 
-               
-                html = ADMIN.HTTP.GET("https://api.pota.app/spot/activator");
+                    else
+                        html = ADMIN.HTTP.GET("https://api.pota.app/activation");
+                }
+                else
+                {
+                    if (radioButtonSPOTS.Checked)
+                        html = ADMIN.HTTP.GET("https://api2.sota.org.uk/api/spots/200/all%7Call?client=sotawatch&user=anon");
+
+                    else
+                        html = ADMIN.HTTP.GET("https://api2.sota.org.uk/api/alerts/12?client=sotawatch&user=anon");
+
+                }
             }
-            else
-            {
-                html = ADMIN.HTTP.GET("https://api.pota.app/activation");
-            }
+            catch (Exception ex) { Log.AddException(ex); }
+
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             labelLoading.Visible = false;
+            SOTAPOTAVisiblity(true);
             fillGrid();
+        }
+
+        private void radioButtonSOTA_CheckedChanged(object sender, EventArgs e)
+        {
+            SOTAPOTAVisiblity();
+            if (radioButtonPOTA.Checked) radioButtonACTIVATIONS.Text = "ACTIVATIONS";
+            else
+                radioButtonACTIVATIONS.Text = "ALERTS";
+            radioButton1_CheckedChanged(null, null);
         }
     }
 }

@@ -1,0 +1,35 @@
+E:\_A_MOJE_PROJEKTY\Omnirig_CAT\bin\Release\Omnirig_CAT.exe.config
+E:\_A_MOJE_PROJEKTY\Omnirig_CAT\bin\Release\Omnirig_CAT.exe
+E:\_A_MOJE_PROJEKTY\Omnirig_CAT\bin\Release\Omnirig_CAT.pdb
+E:\_A_MOJE_PROJEKTY\Omnirig_CAT\bin\Release\ADMIN.dll
+E:\_A_MOJE_PROJEKTY\Omnirig_CAT\bin\Release\ADMIN.pdb
+E:\_A_MOJE_PROJEKTY\Omnirig_CAT\bin\Release\ADMIN.xml
+E:\_A_MOJE_PROJEKTY\Omnirig_CAT\obj\Release\Omnirig_CAT.csproj.AssemblyReference.cache
+E:\_A_MOJE_PROJEKTY\Omnirig_CAT\obj\Release\Interop.OmniRig.dll
+E:\_A_MOJE_PROJEKTY\Omnirig_CAT\obj\Release\Omnirig_CAT.csproj.ResolveComReference.cache
+E:\_A_MOJE_PROJEKTY\Omnirig_CAT\obj\Release\Omnirig_CAT.Form1.resources
+E:\_A_MOJE_PROJEKTY\Omnirig_CAT\obj\Release\Omnirig_CAT.Properties.Resources.resources
+E:\_A_MOJE_PROJEKTY\Omnirig_CAT\obj\Release\Omnirig_CAT.SevenSegment.resources
+E:\_A_MOJE_PROJEKTY\Omnirig_CAT\obj\Release\Omnirig_CAT.csproj.GenerateResource.cache
+E:\_A_MOJE_PROJEKTY\Omnirig_CAT\obj\Release\Omnirig_CAT.csproj.CoreCompileInputs.cache
+E:\_A_MOJE_PROJEKTY\Omnirig_CAT\obj\Release\Omnirig_CAT.csproj.CopyComplete
+E:\_A_MOJE_PROJEKTY\Omnirig_CAT\obj\Release\Omnirig_CAT.exe
+E:\_A_MOJE_PROJEKTY\Omnirig_CAT\obj\Release\Omnirig_CAT.pdb
+E:\_A_MOJE_PROJEKTY\HAM CAT Example\Omnirig_CAT\bin\Release\Omnirig_CAT.exe.config
+E:\_A_MOJE_PROJEKTY\HAM CAT Example\Omnirig_CAT\bin\Release\Omnirig_CAT.exe
+E:\_A_MOJE_PROJEKTY\HAM CAT Example\Omnirig_CAT\bin\Release\Omnirig_CAT.pdb
+E:\_A_MOJE_PROJEKTY\HAM CAT Example\Omnirig_CAT\bin\Release\ADMIN.pdb
+E:\_A_MOJE_PROJEKTY\HAM CAT Example\Omnirig_CAT\bin\Release\ADMIN.xml
+E:\_A_MOJE_PROJEKTY\HAM CAT Example\Omnirig_CAT\obj\Release\Omnirig_CAT.csproj.AssemblyReference.cache
+E:\_A_MOJE_PROJEKTY\HAM CAT Example\Omnirig_CAT\obj\Release\Interop.OmniRig.dll
+E:\_A_MOJE_PROJEKTY\HAM CAT Example\Omnirig_CAT\obj\Release\Omnirig_CAT.csproj.ResolveComReference.cache
+E:\_A_MOJE_PROJEKTY\HAM CAT Example\Omnirig_CAT\obj\Release\Omnirig_CAT.Form1.resources
+E:\_A_MOJE_PROJEKTY\HAM CAT Example\Omnirig_CAT\obj\Release\Omnirig_CAT.Properties.Resources.resources
+E:\_A_MOJE_PROJEKTY\HAM CAT Example\Omnirig_CAT\obj\Release\Omnirig_CAT.SevenSegment.resources
+E:\_A_MOJE_PROJEKTY\HAM CAT Example\Omnirig_CAT\obj\Release\Omnirig_CAT.csproj.GenerateResource.cache
+E:\_A_MOJE_PROJEKTY\HAM CAT Example\Omnirig_CAT\obj\Release\Omnirig_CAT.csproj.CoreCompileInputs.cache
+E:\_A_MOJE_PROJEKTY\HAM CAT Example\Omnirig_CAT\obj\Release\Omnirig_CAT.csproj.CopyComplete
+E:\_A_MOJE_PROJEKTY\HAM CAT Example\Omnirig_CAT\obj\Release\Omnirig_CAT.exe
+E:\_A_MOJE_PROJEKTY\HAM CAT Example\Omnirig_CAT\obj\Release\Omnirig_CAT.pdb
+E:\_A_MOJE_PROJEKTY\HAM CAT Example\Omnirig_CAT\obj\Release\Omnirig_CAT.DopplerCalculator.resources
+E:\_A_MOJE_PROJEKTY\HAM CAT Example\Omnirig_CAT\obj\Release\POTA_To_CAT.FormPOTA.resources
