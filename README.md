@@ -15,13 +15,15 @@ The right mouse button opens the menu.
 An example of a simple radio control program. Requires omnirig to be installed. It allows you to change the frequency, mode, and the ability to transmit.
 link to dxAtlas omnirig: https://www.dxatlas.com/omnirig/
 
+- Automatic NTP clock synchronize
+- Program can work with frequency offset (ex.for sattelite transmisions)
 - Added TRX custom commands controll based on Yaesu manuals.
 - Added POTA/SOTA/WWFF/DXCluster program window. You can use frequencies directly from POTA etc. spots and activations(by double click on grid row). Callsign is copied to clipboard.
-- Added "doppler module" this is an experimental module that changes frequency over time. I'm not sure if this is a sensible solution.
+- Added "doppler module" this is an experimental module that changes frequency over time (ex.for sattelite transmisions). I'm not sure if this is a sensible solution.
 
 
 <hr/>
 
-I provide all modules with C# source codes.
+I am providing these modules with source code in C# enyoy.
 
 Tomasz Fronczek SP4THK
