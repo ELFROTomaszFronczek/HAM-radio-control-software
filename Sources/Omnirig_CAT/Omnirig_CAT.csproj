@@ -61,6 +61,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="POTA\DX_Cluster.cs" />
     <Compile Include="POTA\FormPOTA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +76,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UDP.cs" />
+    <Compile Include="POTA\WWFF.cs" />
     <EmbeddedResource Include="DopplerCalculator.resx">
       <DependentUpon>DopplerCalculator.cs</DependentUpon>
     </EmbeddedResource>

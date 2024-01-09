@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using static POTA_To_CAT.SpotPOTA;
 
-namespace POTA_To_CAT
+
+namespace Omnirig_CAT.POTA
 {
     public class SpotPOTA
     {

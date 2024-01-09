@@ -639,38 +639,42 @@ namespace Omnirig_CAT
 
         private void SAVE()
         {
-            if (loading) return;
-            Config.WriteValue(sect, "hideInTaskBar", hideInTaskBarToolStripMenuItem.Checked);
-            Config.WriteValue(sect, "onTop", alwaysOnTopToolStripMenuItem.Checked);
-            Config.WriteValue(sect, "rig1", rig1);
+            try
+            {
+                if (loading) return;
+                Config.WriteValue(sect, "hideInTaskBar", hideInTaskBarToolStripMenuItem.Checked);
+                Config.WriteValue(sect, "onTop", alwaysOnTopToolStripMenuItem.Checked);
+                Config.WriteValue(sect, "rig1", rig1);
 
-            Config.WriteValue(sect, "txOnChar", tXOnCharToolStripMenuItem.Checked);
-            Config.WriteValue(sect, "txWhenPressed", tXOnlyWhenPressedToolStripMenuItem.Checked);
+                Config.WriteValue(sect, "txOnChar", tXOnCharToolStripMenuItem.Checked);
+                Config.WriteValue(sect, "txWhenPressed", tXOnlyWhenPressedToolStripMenuItem.Checked);
 
-            Config.WriteValue(sect, "chngModeOnBandChng", onBandChangedSlelectDefaultSSBModeToolStripMenuItem.Checked);
-            Config.WriteValue(sect, "hideBar", hideWindowHeaderToolStripMenuItem.Checked);
-            Config.WriteValue(sect, "runCameraModule", runCameraModuleToolStripMenuItem.Checked);
-            Config.WriteValue(sect, "UDP_PORT", UDP_PORT);
+                Config.WriteValue(sect, "chngModeOnBandChng", onBandChangedSlelectDefaultSSBModeToolStripMenuItem.Checked);
+                Config.WriteValue(sect, "hideBar", hideWindowHeaderToolStripMenuItem.Checked);
+                Config.WriteValue(sect, "runCameraModule", runCameraModuleToolStripMenuItem.Checked);
+                Config.WriteValue(sect, "UDP_PORT", UDP_PORT);
 
 
-            Config.WriteValue(sect, "runNTPModule", runNTPTimeSyncOnStartToolStripMenuItem.Checked);
-            Config.WriteValue(sect, "display12Digit", displayToolStripMenuItem.Checked);
+                Config.WriteValue(sect, "runNTPModule", runNTPTimeSyncOnStartToolStripMenuItem.Checked);
+                Config.WriteValue(sect, "display12Digit", displayToolStripMenuItem.Checked);
 
-            Config.WriteValue(sect, "workWithTransponder", workWithTransponderToolStripMenuItem.Checked);
+                Config.WriteValue(sect, "workWithTransponder", workWithTransponderToolStripMenuItem.Checked);
 
-            Config.WriteValue(sect, "transponderOffset", transponderOffset);
+                Config.WriteValue(sect, "transponderOffset", transponderOffset);
 
-            Config.WriteValue(sect, "dopplerVisible", showDoplerEffectModuleToolStripMenuItem.Checked);
+                Config.WriteValue(sect, "dopplerVisible", showDoplerEffectModuleToolStripMenuItem.Checked);
 
-            Config.WriteValue(sect, "dopplerFrequency", trackBarDopplerFrequency.Value);
-            Config.WriteValue(sect, "dopplerTime", trackBarDopplerTime.Value);
+                Config.WriteValue(sect, "dopplerFrequency", trackBarDopplerFrequency.Value);
+                Config.WriteValue(sect, "dopplerTime", trackBarDopplerTime.Value);
 
-            
 
-            Config.WriteValue(sect, "potaShow", !(pota == null | pota.isClosed));
-            
 
-            Config.WriteConfig();
+                Config.WriteValue(sect, "potaShow", !(pota == null | pota.isClosed));
+
+
+                Config.WriteConfig();
+            }
+            catch  { }
         }
 
 
@@ -1339,11 +1343,12 @@ namespace Omnirig_CAT
             
 
                 string f = "";
-                foreach (char c in freq)
+            /*    foreach (char c in freq)
                 {
                     if ((c >= '0' && c <= '9') || c == '.' || c == ',') f += c;
                     else break;
-                }
+                }*/
+            f = freq.Replace("MHZ", "").Replace("KHZ", "").Replace(")","").Replace("(","").Trim();
 
 
                 if (!string.IsNullOrEmpty(f))
@@ -1355,8 +1360,12 @@ namespace Omnirig_CAT
                     else
                     if (freq.IndexOf("MHZ") > 0) i = i * 1000000;
                     else
-                        i = i * 1000;
-                    if (i < 10000) i = i * 1000;
+                    {
+                        if (i < 1000) i = i * 1000000; else
+                        if (i < 1000000) i = i * 1000;
+                        
+                            }
+                        
 
                     long fq = (long)i;
                     int sx = comboBoxMode.SelectedIndex;
