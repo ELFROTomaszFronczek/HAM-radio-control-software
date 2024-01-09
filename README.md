@@ -16,11 +16,12 @@ An example of a simple radio control program. Requires omnirig to be installed. 
 link to dxAtlas omnirig: https://www.dxatlas.com/omnirig/
 
 - Added TRX custom commands controll based on Yaesu manuals.
-- Added POTA program window. You can use frequencies directly from POTA spots and activations.
+- Added POTA/SOTA/WWFF/DXCluster program window. You can use frequencies directly from POTA etc. spots and activations(by double click on grid row). Callsign is copied to clipboard.
+- Added "doppler module" this is an experimental module that changes frequency over time. I'm not sure if this is a sensible solution.
 
 
 <hr/>
 
-I provide both modules with C# source codes.
+I provide all modules with C# source codes.
 
 Tomasz Fronczek SP4THK
