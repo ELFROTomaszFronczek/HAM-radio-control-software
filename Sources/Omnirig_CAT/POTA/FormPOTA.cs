@@ -324,6 +324,7 @@ namespace POTA_To_CAT
         string listaDanych = "";
         private Form1 _f;
         volatile int workingIndex;
+        private bool inCell;
         private int rowIndex = -1;
         private int colIndex = -1;
 
@@ -361,35 +362,39 @@ namespace POTA_To_CAT
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.RowIndex >= 0)
-
+            Clipboard.Clear();
+            try
             {
+                if (e.RowIndex >= 0)
 
-
-                switch (comboBox1.SelectedIndex)
                 {
 
-                    //POTA
-                    case 1:
-                        _f.updateFrequency(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
-                        break;
-                    //SOTA
-                    case 2:
-                        _f.updateFrequency(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString() /*+ "MHZ"*/, dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
-                        break;
-                    //WWFF
-                    case 3:
 
-                        _f.updateFrequency(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString(), "");
-                        break;
-                    //DX CLUSTER
-                    case 4:
-                        _f.updateFrequency(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString(), "");
-                        break;
+                    switch (comboBox1.SelectedIndex)
+                    {
+
+                        //POTA
+                        case 1:
+                            _f.updateFrequency(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString(), dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
+                            break;
+                        //SOTA
+                        case 2:
+                            _f.updateFrequency(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString() /*+ "MHZ"*/, dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
+                            break;
+                        //WWFF
+                        case 3:
+
+                            _f.updateFrequency(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString(), "");
+                            break;
+                        //DX CLUSTER
+                        case 4:
+                            _f.updateFrequency(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString(), "");
+                            break;
+                    }
+
+                    Clipboard.SetText(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
                 }
-
-                Clipboard.SetText(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-            }
+            } catch { }
 
         }
 
@@ -541,22 +546,14 @@ namespace POTA_To_CAT
 
         private void dataGridView1_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {
+            inCell = true;
             rowIndex = e.RowIndex;
             colIndex = e.ColumnIndex;
         }
 
         private void copyCellcurrentValueToClipboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Clipboard.Clear();
-            try
-            {
-                if (rowIndex > -1 && colIndex > -1)
-                {
-                    string val = dataGridView1.Rows[rowIndex].Cells[colIndex].Value.ToString();
-                    Clipboard.SetText(val);
-                }
-            }
-            catch { }
+            rowCellToClibborad(colIndex);
         }
 
         private void copyRowToClipboardcsvToolStripMenuItem_Click(object sender, EventArgs e)
@@ -606,6 +603,36 @@ namespace POTA_To_CAT
             Clipboard.Clear();
             if (dataGridView1.Rows.Count > 0)
                 PROCKI.CopyDataGridToClipboard(dataGridView1);
+        }
+
+        private void copyCallSignToClipboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rowCellToClibborad(0);
+
+        }
+
+        private void rowCellToClibborad(int cellIDX)
+        {
+            Clipboard.Clear();
+            try
+            {
+                if (rowIndex >= 0 && cellIDX >= 0) 
+                    Clipboard.SetText(dataGridView1.Rows[rowIndex].Cells[cellIDX].Value.ToString());
+            }
+            catch { }
+        }
+
+        private void copyFrequencyToClipboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rowCellToClibborad(4);
+        }
+
+        private void dataGridView1_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (!inCell)
+            { rowIndex = -1; colIndex = -1; }
+            
+            inCell = false;
         }
     }
 }

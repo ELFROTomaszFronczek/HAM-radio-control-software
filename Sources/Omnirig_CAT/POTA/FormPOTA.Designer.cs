@@ -60,15 +60,18 @@
             this.Spotter = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timerStart = new System.Windows.Forms.Timer(this.components);
-            this.timerRefresh = new System.Windows.Forms.Timer(this.components);
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.timerHideHelp = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyCellcurrentValueToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyRowToClipboardcsvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyAllRowsToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyAllRowsToClipboardcsvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerStart = new System.Windows.Forms.Timer(this.components);
+            this.timerRefresh = new System.Windows.Forms.Timer(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.timerHideHelp = new System.Windows.Forms.Timer(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.copyCallSignToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyFrequencyToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panelSP.SuspendLayout();
             this.panelPOTA.SuspendLayout();
@@ -344,6 +347,7 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseUp);
+            this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
             // 
             // Column1
             // 
@@ -425,35 +429,19 @@
             this.Time.ReadOnly = true;
             this.Time.Width = 300;
             // 
-            // timerStart
-            // 
-            this.timerStart.Tick += new System.EventHandler(this.timerStart_Tick);
-            // 
-            // timerRefresh
-            // 
-            this.timerRefresh.Interval = 120000;
-            this.timerRefresh.Tick += new System.EventHandler(this.timerRefresh_Tick);
-            // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
-            // 
-            // timerHideHelp
-            // 
-            this.timerHideHelp.Interval = 5000;
-            this.timerHideHelp.Tick += new System.EventHandler(this.timerHideHelp_Tick);
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copyCallSignToClipboardToolStripMenuItem,
+            this.copyFrequencyToClipboardToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.copyCellcurrentValueToClipboardToolStripMenuItem,
             this.copyRowToClipboardcsvToolStripMenuItem,
             this.copyAllRowsToClipboardToolStripMenuItem,
             this.copyAllRowsToClipboardcsvToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(319, 128);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(319, 154);
             // 
             // copyCellcurrentValueToClipboardToolStripMenuItem
             // 
@@ -482,6 +470,44 @@
             this.copyAllRowsToClipboardcsvToolStripMenuItem.Size = new System.Drawing.Size(318, 24);
             this.copyAllRowsToClipboardcsvToolStripMenuItem.Text = "Copy all Rows to Clipboard (csv)";
             this.copyAllRowsToClipboardcsvToolStripMenuItem.Click += new System.EventHandler(this.copyAllRowsToClipboardcsvToolStripMenuItem_Click);
+            // 
+            // timerStart
+            // 
+            this.timerStart.Tick += new System.EventHandler(this.timerStart_Tick);
+            // 
+            // timerRefresh
+            // 
+            this.timerRefresh.Interval = 120000;
+            this.timerRefresh.Tick += new System.EventHandler(this.timerRefresh_Tick);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // timerHideHelp
+            // 
+            this.timerHideHelp.Interval = 5000;
+            this.timerHideHelp.Tick += new System.EventHandler(this.timerHideHelp_Tick);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(315, 6);
+            // 
+            // copyCallSignToClipboardToolStripMenuItem
+            // 
+            this.copyCallSignToClipboardToolStripMenuItem.Name = "copyCallSignToClipboardToolStripMenuItem";
+            this.copyCallSignToClipboardToolStripMenuItem.Size = new System.Drawing.Size(318, 24);
+            this.copyCallSignToClipboardToolStripMenuItem.Text = "Copy CallSign to Clipboard";
+            this.copyCallSignToClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyCallSignToClipboardToolStripMenuItem_Click);
+            // 
+            // copyFrequencyToClipboardToolStripMenuItem
+            // 
+            this.copyFrequencyToClipboardToolStripMenuItem.Name = "copyFrequencyToClipboardToolStripMenuItem";
+            this.copyFrequencyToClipboardToolStripMenuItem.Size = new System.Drawing.Size(318, 24);
+            this.copyFrequencyToClipboardToolStripMenuItem.Text = "Copy Frequency to Clipboard";
+            this.copyFrequencyToClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyFrequencyToClipboardToolStripMenuItem_Click);
             // 
             // FormPOTA
             // 
@@ -545,6 +571,9 @@
         private System.Windows.Forms.ToolStripMenuItem copyRowToClipboardcsvToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyAllRowsToClipboardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyAllRowsToClipboardcsvToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyCallSignToClipboardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem copyFrequencyToClipboardToolStripMenuItem;
     }
 }
 

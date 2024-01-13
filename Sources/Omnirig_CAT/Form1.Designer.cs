@@ -715,7 +715,7 @@
             this.toolStripMenuItem4,
             this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(395, 452);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(395, 424);
             // 
             // selectRig1ToolStripMenuItem
             // 
@@ -1187,7 +1187,7 @@
             // 
             this.pOTAModuleToolStripMenuItem.Name = "pOTAModuleToolStripMenuItem";
             this.pOTAModuleToolStripMenuItem.Size = new System.Drawing.Size(394, 24);
-            this.pOTAModuleToolStripMenuItem.Text = "Show POTA/SOTA/WWFF module";
+            this.pOTAModuleToolStripMenuItem.Text = "Show POTA/SOTA/WWFF/DX Cluster module";
             this.pOTAModuleToolStripMenuItem.Click += new System.EventHandler(this.pOTAModuleToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
