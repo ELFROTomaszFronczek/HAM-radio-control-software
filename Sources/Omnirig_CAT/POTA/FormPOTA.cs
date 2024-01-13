@@ -181,7 +181,7 @@ namespace POTA_To_CAT
                             {
                                 if (SpotSOTA.DeserializeSPOT_JSON(s))
                                 {
-                                    setColumnsNames("Callsign", "Refferer", "Summit", "", "Frequency", "Mode",  "", "Spotter", "Comments", "Date Time");
+                                    setColumnsNames("Callsign", "Refferer", "Summit", "", "Frequency", "Mode", "", "Spotter", "Comments", "Date Time");
                                     foreach (SpotSOTA.spotJson sj in SpotSOTA.spotList)
                                     {
                                         string refer = sj.associationCode + "/" + sj.summitCode;
@@ -234,7 +234,7 @@ namespace POTA_To_CAT
 
                             if (WWFF.DeserializeWWFF_html(s))
                             {
-                                setColumnsNames("Callsign", "X",  "WWFF", "Notes", "Frequency", "", "Locator", "Spotter", "Comments", "Date Time");
+                                setColumnsNames("Callsign", "X", "WWFF", "Notes", "Frequency", "", "Locator", "Spotter", "Comments", "Date Time");
                                 foreach (WWFF.spotWWFF sj in WWFF.spotList)
                                 {
                                     bool add = true;
@@ -265,7 +265,7 @@ namespace POTA_To_CAT
                                     bool add = true;
                                     if (filtered)
                                     {
-                                         if (sj.dx_call.IndexOf(filter) < 0 && sj.dx_country.IndexOf(filter) < 0 && sj.de_call.IndexOf(filter) < 0 ) add = false;
+                                        if (sj.dx_call.IndexOf(filter) < 0 && sj.dx_country.IndexOf(filter) < 0 && sj.de_call.IndexOf(filter) < 0) add = false;
                                     }
 
                                     if (add) dataGridView1.Rows.Add(sj.dx_call, "", sj.dx_country, sj.dx_longitude + "/" + sj.dx_latitude, sj.frequency, "", sj.de_longitude + "/" + sj.de_latitude, sj.de_call, sj.info, sj.time);
@@ -324,6 +324,8 @@ namespace POTA_To_CAT
         string listaDanych = "";
         private Form1 _f;
         volatile int workingIndex;
+        private int rowIndex = -1;
+        private int colIndex = -1;
 
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
@@ -360,7 +362,9 @@ namespace POTA_To_CAT
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex >= 0)
+
             {
+
 
                 switch (comboBox1.SelectedIndex)
                 {
@@ -376,11 +380,11 @@ namespace POTA_To_CAT
                     //WWFF
                     case 3:
 
-                        _f.updateFrequency(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString() , "");
+                        _f.updateFrequency(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString(), "");
                         break;
                     //DX CLUSTER
                     case 4:
-                        _f.updateFrequency(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString() , "");
+                        _f.updateFrequency(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString(), "");
                         break;
                 }
 
@@ -529,10 +533,79 @@ namespace POTA_To_CAT
             if (e.RowIndex >= 0)
             {
 
-              
+
 
                 Clipboard.SetText(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
             }
+        }
+
+        private void dataGridView1_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            rowIndex = e.RowIndex;
+            colIndex = e.ColumnIndex;
+        }
+
+        private void copyCellcurrentValueToClipboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();
+            try
+            {
+                if (rowIndex > -1 && colIndex > -1)
+                {
+                    string val = dataGridView1.Rows[rowIndex].Cells[colIndex].Value.ToString();
+                    Clipboard.SetText(val);
+                }
+            }
+            catch { }
+        }
+
+        private void copyRowToClipboardcsvToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();
+            try
+            {
+                if (rowIndex > -1 && rowIndex < dataGridView1.Rows.Count)
+                {
+
+
+                    string val = "";
+                    foreach (DataGridViewCell cell in dataGridView1.Rows[rowIndex].Cells)
+                        val += cell.Value.ToString() + ";";
+                    if (val.EndsWith(";")) val = val.Substring(0, val.Length - 1);
+                    Clipboard.SetText(val);
+                }
+            }
+            catch { }
+        }
+
+        private void copyAllRowsToClipboardcsvToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();
+            try
+            {
+                if (dataGridView1.Rows.Count > 0)
+                {
+                    string val = "";
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        foreach (DataGridViewCell cell in row.Cells)
+                            val += cell.Value.ToString() + ";";
+                        if (val.EndsWith(";")) val = val.Substring(0, val.Length - 1);
+                        val += "\r\n";
+
+                    }
+                    if (val.EndsWith("\r\n")) val = val.Substring(0, val.Length - 2);
+                    Clipboard.SetText(val);
+                }
+            }
+            catch { }
+        }
+
+        private void copyAllRowsToClipboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();
+            if (dataGridView1.Rows.Count > 0)
+                PROCKI.CopyDataGridToClipboard(dataGridView1);
         }
     }
 }

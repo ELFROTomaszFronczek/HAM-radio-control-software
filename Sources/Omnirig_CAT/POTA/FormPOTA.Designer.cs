@@ -64,10 +64,16 @@
             this.timerRefresh = new System.Windows.Forms.Timer(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.timerHideHelp = new System.Windows.Forms.Timer(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.copyCellcurrentValueToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyRowToClipboardcsvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyAllRowsToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyAllRowsToClipboardcsvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panelSP.SuspendLayout();
             this.panelPOTA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -302,6 +308,7 @@
             this.Spotter,
             this.Comments,
             this.Time});
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -336,6 +343,7 @@
             this.dataGridView1.TabIndex = 53;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
+            this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseUp);
             // 
             // Column1
             // 
@@ -436,6 +444,45 @@
             this.timerHideHelp.Interval = 5000;
             this.timerHideHelp.Tick += new System.EventHandler(this.timerHideHelp_Tick);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copyCellcurrentValueToClipboardToolStripMenuItem,
+            this.copyRowToClipboardcsvToolStripMenuItem,
+            this.copyAllRowsToClipboardToolStripMenuItem,
+            this.copyAllRowsToClipboardcsvToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(319, 128);
+            // 
+            // copyCellcurrentValueToClipboardToolStripMenuItem
+            // 
+            this.copyCellcurrentValueToClipboardToolStripMenuItem.Name = "copyCellcurrentValueToClipboardToolStripMenuItem";
+            this.copyCellcurrentValueToClipboardToolStripMenuItem.Size = new System.Drawing.Size(318, 24);
+            this.copyCellcurrentValueToClipboardToolStripMenuItem.Text = "Copy current Cell value to Clipboard";
+            this.copyCellcurrentValueToClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyCellcurrentValueToClipboardToolStripMenuItem_Click);
+            // 
+            // copyRowToClipboardcsvToolStripMenuItem
+            // 
+            this.copyRowToClipboardcsvToolStripMenuItem.Name = "copyRowToClipboardcsvToolStripMenuItem";
+            this.copyRowToClipboardcsvToolStripMenuItem.Size = new System.Drawing.Size(318, 24);
+            this.copyRowToClipboardcsvToolStripMenuItem.Text = "Copy Row to Clipboard (csv)";
+            this.copyRowToClipboardcsvToolStripMenuItem.Click += new System.EventHandler(this.copyRowToClipboardcsvToolStripMenuItem_Click);
+            // 
+            // copyAllRowsToClipboardToolStripMenuItem
+            // 
+            this.copyAllRowsToClipboardToolStripMenuItem.Name = "copyAllRowsToClipboardToolStripMenuItem";
+            this.copyAllRowsToClipboardToolStripMenuItem.Size = new System.Drawing.Size(318, 24);
+            this.copyAllRowsToClipboardToolStripMenuItem.Text = "Copy all Rows to Clipboard";
+            this.copyAllRowsToClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyAllRowsToClipboardToolStripMenuItem_Click);
+            // 
+            // copyAllRowsToClipboardcsvToolStripMenuItem
+            // 
+            this.copyAllRowsToClipboardcsvToolStripMenuItem.Name = "copyAllRowsToClipboardcsvToolStripMenuItem";
+            this.copyAllRowsToClipboardcsvToolStripMenuItem.Size = new System.Drawing.Size(318, 24);
+            this.copyAllRowsToClipboardcsvToolStripMenuItem.Text = "Copy all Rows to Clipboard (csv)";
+            this.copyAllRowsToClipboardcsvToolStripMenuItem.Click += new System.EventHandler(this.copyAllRowsToClipboardcsvToolStripMenuItem_Click);
+            // 
             // FormPOTA
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -455,6 +502,7 @@
             this.panelPOTA.ResumeLayout(false);
             this.panelPOTA.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -492,6 +540,11 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label labelHelp;
         private System.Windows.Forms.Timer timerHideHelp;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem copyCellcurrentValueToClipboardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyRowToClipboardcsvToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyAllRowsToClipboardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyAllRowsToClipboardcsvToolStripMenuItem;
     }
 }
 
