@@ -384,7 +384,7 @@ namespace POTA_To_CAT
                         break;
                 }
 
-                Clipboard.SetText(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
+                Clipboard.SetText(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
             }
 
         }
@@ -522,6 +522,17 @@ namespace POTA_To_CAT
         {
             timerHideHelp.Stop();
             labelHelp.Visible = false;
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+
+              
+
+                Clipboard.SetText(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            }
         }
     }
 }

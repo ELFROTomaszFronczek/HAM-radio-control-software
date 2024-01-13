@@ -44,6 +44,7 @@ namespace Omnirig_CAT.POTA
                     {
                         string n = el[0].ToLower().Trim();
                         string val = el[1].Trim();
+                        if (val == "null") val = "";
                         switch (n)
                         {
 
