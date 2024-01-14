@@ -61,12 +61,26 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="POTA\Countries.cs" />
     <Compile Include="POTA\DX_Cluster.cs" />
     <Compile Include="POTA\FormPOTA.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="POTA\FormPOTA.Designer.cs">
       <DependentUpon>FormPOTA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POTA\FormQRZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POTA\FormQRZ.Designer.cs">
+      <DependentUpon>FormQRZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POTA\QRZ.cs" />
+    <Compile Include="POTA\FormQRZInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POTA\FormQRZInfo.Designer.cs">
+      <DependentUpon>FormQRZInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="POTA\SOTA.cs" />
     <Compile Include="POTA\POTA.cs" />
@@ -86,6 +100,12 @@
     <EmbeddedResource Include="POTA\FormPOTA.resx">
       <DependentUpon>FormPOTA.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="POTA\FormQRZ.resx">
+      <DependentUpon>FormQRZ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POTA\FormQRZInfo.resx">
+      <DependentUpon>FormQRZInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -94,6 +114,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SevenSegment.resx">
       <DependentUpon>SevenSegment.cs</DependentUpon>
@@ -121,6 +142,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings-icon-14970.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

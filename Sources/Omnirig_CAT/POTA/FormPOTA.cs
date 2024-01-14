@@ -3,6 +3,10 @@ using Omnirig_CAT;
 using Omnirig_CAT.POTA;
 using System;
 using System.ComponentModel;
+using System.IO;
+using System.Linq.Expressions;
+using System.Net;
+using System.Security.Policy;
 using System.Windows.Forms;
 
 
@@ -35,7 +39,7 @@ namespace POTA_To_CAT
 
 
             comboBox1.SelectedIndex = Config.ReadIntValue(sect, "POTA_SOTA_WWFF", 0);
-
+            checkBoxAutoQRZ.Checked = Config.ReadBoolValue(sect, "AutoQRZ", true);
 
 
             comboBox1_SelectedIndexChanged(null, null);
@@ -81,6 +85,7 @@ namespace POTA_To_CAT
             Config.WriteValue(sect, "autoRefresh", timerRefresh.Enabled);
 
             Config.WriteValue(sect, "POTA_SOTA_WWFF", comboBox1.SelectedIndex);
+            Config.WriteValue(sect, "AutoQRZ", checkBoxAutoQRZ.Checked);
         }
 
         private void timerStart_Tick(object sender, EventArgs e)
@@ -90,6 +95,7 @@ namespace POTA_To_CAT
             labelNotLoaded.Visible = false;
 
             GetData();
+            Countries.Load();
             //textBox1.Text =GetPageSource();
         }
 
@@ -139,7 +145,7 @@ namespace POTA_To_CAT
                                         bool add = true;
                                         if (filtered)
                                         {
-                                            if (sj.activator.IndexOf(filter) < 0 && sj.reference.IndexOf(filter) < 0 && sj.name.IndexOf(filter) < 0 && sj.locationDesc.IndexOf(filter) < 0 && sj.spotter.IndexOf(filter) < 0) add = false;
+                                            if (sj.activator.IndexOf(filter) < 0 && sj.reference.IndexOf(filter) < 0 && sj.name.IndexOf(filter) < 0 && sj.locationDesc.IndexOf(filter) < 0 && sj.spotter.IndexOf(filter) < 0 && sj.mode.IndexOf(filter, StringComparison.OrdinalIgnoreCase)<0) add = false;
                                         }
 
                                         if (add) dataGridView1.Rows.Add(sj.activator, sj.reference, sj.name, sj.locationDesc, sj.frequency, sj.mode, SpotPOTA.getLocation(sj), sj.spotter, sj.comments, sj.spotTime);
@@ -161,7 +167,7 @@ namespace POTA_To_CAT
                                         bool add = true;
                                         if (filtered)
                                         {
-                                            if (sj.activator.IndexOf(filter) < 0 && sj.reference.IndexOf(filter) < 0 && sj.name.IndexOf(filter) < 0 && sj.locationDesc.IndexOf(filter) < 0) add = false;
+                                            if (sj.activator.IndexOf(filter) < 0 && sj.reference.IndexOf(filter) < 0 && sj.name.IndexOf(filter) < 0 && sj.locationDesc.IndexOf(filter) < 0 ) add = false;
                                         }
                                         if (add) dataGridView1.Rows.Add(sj.activator, sj.reference, sj.name, sj.locationDesc, sj.frequencies, "", "", "", sj.comments,
                                             sj.startDate + " " + sj.startTime + " / " + sj.endDate + " " + sj.endTime);
@@ -188,7 +194,7 @@ namespace POTA_To_CAT
                                         bool add = true;
                                         if (filtered)
                                         {
-                                            if (sj.activatorCallsign.IndexOf(filter) < 0 && refer.IndexOf(filter) < 0 && sj.summitDetails.IndexOf(filter) < 0 && sj.callsign.IndexOf(filter) < 0) add = false;
+                                            if (sj.activatorCallsign.IndexOf(filter) < 0 && refer.IndexOf(filter) < 0 && sj.summitDetails.IndexOf(filter) < 0 && sj.callsign.IndexOf(filter) < 0 && sj.mode.IndexOf(filter, StringComparison.OrdinalIgnoreCase) < 0) add = false;
                                         }
 
                                         if (add)
@@ -328,6 +334,17 @@ namespace POTA_To_CAT
         private int rowIndex = -1;
         private int colIndex = -1;
 
+        private volatile string query;
+        private volatile bool queryCompleted;
+        private volatile string otherRegion;
+
+        /*  private volatile string queryName;
+private volatile string queryCountry;
+private volatile string queryCountryFlag;
+private volatile bool queryCompleted;
+private volatile bool querySuccesed;*/
+
+
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
 
@@ -394,7 +411,8 @@ namespace POTA_To_CAT
 
                     Clipboard.SetText(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
                 }
-            } catch { }
+            }
+            catch { }
 
         }
 
@@ -541,6 +559,12 @@ namespace POTA_To_CAT
 
 
                 Clipboard.SetText(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+
+                textBoxQRZ.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                if (checkBoxAutoQRZ.Checked) buttonQueryQRZ_Click(null, null);
+
+
             }
         }
 
@@ -616,7 +640,7 @@ namespace POTA_To_CAT
             Clipboard.Clear();
             try
             {
-                if (rowIndex >= 0 && cellIDX >= 0) 
+                if (rowIndex >= 0 && cellIDX >= 0)
                     Clipboard.SetText(dataGridView1.Rows[rowIndex].Cells[cellIDX].Value.ToString());
             }
             catch { }
@@ -631,8 +655,276 @@ namespace POTA_To_CAT
         {
             if (!inCell)
             { rowIndex = -1; colIndex = -1; }
-            
+
             inCell = false;
+        }
+
+        private void buttonQueryQRZ_Click(object sender, EventArgs e)
+        {
+            textBoxQRZName.Text = "";
+            textBoxQRZCountry.Text = "";
+            panelQRZflag.BackgroundImage = null; panelQRZNowFlag.BackgroundImage = null;
+            Application.DoEvents();
+
+            if (!labelQRZLoading.Visible && !string.IsNullOrEmpty(textBoxQRZ.Text) && !backgroundWorker1.IsBusy)
+            {
+                query = textBoxQRZ.Text;
+                labelQRZLoading.Visible = true;
+                backgroundWorker2.RunWorkerAsync();
+                //  queryQRZ(); endQueryQRZ();
+            }
+        }
+
+        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                queryQRZ();
+            }
+            catch (Exception ex) { Log.AddException(ex); }
+        }
+
+
+
+        private void backgroundWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            try
+            {
+                endQueryQRZ();
+            }
+            catch (Exception ex) { Log.AddException(ex); }
+        }
+
+        private void queryQRZ()
+        {
+            queryCompleted = false;
+            QRZ.querySuccesed = false;
+            QRZ.queryCountryFlag = "";
+            QRZ.queryCountry = "";
+            QRZ.queryUserName = "";
+            otherRegion = "";
+            string nq = query.Trim().Replace("\\","/");
+            if (nq.IndexOf("/") > -1 && nq.IndexOf("/") < nq.Length / 2)
+            {
+                otherRegion = query.Substring(0, nq.IndexOf("/"));
+                nq = nq.Substring(nq.IndexOf("/") + 1);
+
+            }
+            if (nq.IndexOf("/") > -1)
+            {
+                nq = nq.Substring(0, nq.IndexOf("/"));
+            }
+
+            try
+            {
+
+
+
+                if (QRZ.logIn())
+                {
+                    QRZ.getCallsignData(nq, otherRegion);
+
+
+                }
+
+                queryCompleted = true;
+            }
+            catch { }
+        }
+        private void endQueryQRZ()
+        {
+            labelQRZLoading.Visible = false;
+            textBoxQRZName.Text = "... No data ...";
+
+            panelQRZflag.BackgroundImage = null;
+            panelQRZNowFlag.BackgroundImage = null;
+            textBoxQRZCountry.Text = "";
+
+            if (queryCompleted && QRZ.querySuccesed)
+            {
+                textBoxQRZName.Text = QRZ.queryUserName;
+
+
+
+                try
+                {
+                    string f = Path.GetFileName(QRZ.queryCountryFlag);
+                    string fDir = PROCKI.exePathB + "FlagsCache";
+                    if (!Directory.Exists(fDir))
+                        Directory.CreateDirectory(fDir);
+
+
+
+                    if (!string.IsNullOrEmpty(otherRegion))
+                    {
+                        textBoxQRZCountry.Text = "@Now:" + Countries.getCountryNameByCallSign(otherRegion) + " / @Home:" + QRZ.queryCountry; 
+
+
+                        string fn = PROCKI.addFolderSeparator(fDir) + f;
+                        if (File.Exists(fn))
+                        {
+
+                            panelQRZflag.BackgroundImage = PROCKI.ImageFromFile(fn);
+                        }
+
+
+                        f = Countries.getCountryCodeByCallSign(otherRegion) + ".png";
+                        fn = PROCKI.addFolderSeparator(fDir) + f;
+                        if (File.Exists(fn))
+                        {
+
+                            panelQRZNowFlag.BackgroundImage = PROCKI.ImageFromFile(fn);
+                        }
+
+
+                    }
+                    else
+                    {
+                        textBoxQRZCountry.Text = QRZ.queryCountry;
+                        string fn = PROCKI.addFolderSeparator(fDir) + f;
+                        if (File.Exists(fn))
+                        {
+
+                            panelQRZNowFlag.BackgroundImage = PROCKI.ImageFromFile(fn);
+                        }
+                    }
+
+
+                    //TO DO FLAG queryCountryFlag;
+
+
+
+
+
+
+                }
+                catch {  }
+
+            }
+            else
+            {
+
+                try
+                {
+                    string nq = query.Trim().Replace("\\", "/");
+                    if (nq.IndexOf("/") > -1 && nq.IndexOf("/") < nq.Length / 2)
+                    {
+                        otherRegion = query.Substring(0, nq.IndexOf("/"));
+                        nq = nq.Substring(nq.IndexOf("/") + 1);
+
+                    }
+                    if (nq.IndexOf("/") > -1)
+                    {
+                        nq = nq.Substring(0, nq.IndexOf("/"));
+                    }
+
+                    string f = Path.GetFileName(QRZ.queryCountryFlag);
+                    string fDir = PROCKI.exePathB + "FlagsCache";
+                    if (!Directory.Exists(fDir))
+                        Directory.CreateDirectory(fDir);
+
+                    if (!string.IsNullOrEmpty(otherRegion))
+                    {
+                        textBoxQRZCountry.Text = "@Now:" + Countries.getCountryNameByCallSign(otherRegion) + " / @Home:" + Countries.getCountryNameByCallSign(nq);
+
+                        string fn = tryDownloadFlag(otherRegion);
+                        if (!string.IsNullOrEmpty(fn) && File.Exists(fn))
+                            panelQRZflag.BackgroundImage = PROCKI.ImageFromFile(fn);
+                        else
+                            panelQRZflag.BackgroundImage = null;
+
+                        fn = tryDownloadFlag(nq);
+                        if (!string.IsNullOrEmpty(fn) && File.Exists(fn))
+                            panelQRZNowFlag.BackgroundImage = PROCKI.ImageFromFile(fn);
+                        else
+                            panelQRZNowFlag.BackgroundImage = null;
+
+
+                    }
+                    else
+                    {
+                        textBoxQRZCountry.Text = Countries.getCountryNameByCallSign(nq);
+                        string fn = tryDownloadFlag(nq);
+                        if (!string.IsNullOrEmpty(fn) && File.Exists(fn))
+                            panelQRZNowFlag.BackgroundImage = PROCKI.ImageFromFile(fn);
+                        else
+                        {
+                            panelQRZflag.BackgroundImage = null;
+                            panelQRZNowFlag.BackgroundImage = null;
+                        }
+                    }
+
+                }
+                catch { }
+                                
+            }
+        }
+
+        private string tryDownloadFlag(string callSign)
+        {
+            try
+            {
+                string queryCountryFlag=Countries.getCountryCodeByCallSign(callSign);
+
+                string f = queryCountryFlag + ".png";
+                string fDir = PROCKI.exePathB + "FlagsCache";
+                if (!Directory.Exists(fDir))
+                    Directory.CreateDirectory(fDir);
+
+                string fn = PROCKI.addFolderSeparator(fDir) + f;
+                if (!File.Exists(fn))
+                {
+                    ////https://static.qrz.com/static/flags-iso/flat/32/BR.png
+                    WebClient client = new WebClient();
+                    client.DownloadFile(new Uri("https://static.qrz.com/static/flags-iso/flat/32/" + f), fn);
+                    return fn;
+                }
+                else return fn;
+            }
+            catch { }
+            return "";
+        }
+
+        private void panelCFG_Click(object sender, EventArgs e)
+        {
+            //. MessageBox.ShowWarning("In future ...");
+            new FormQRZ().ShowDialog();
+        }
+
+        private void buttonMoreQrzInfo_Click(object sender, EventArgs e)
+        {
+            if (textBoxQRZName.Text != "... No data ...")
+            {
+                new FormQRZInfo(textBoxQRZ.Text).ShowDialog();
+            }
+        }
+
+        private void showInQRZcomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (rowIndex >= 0)
+                {
+                    string callSign = dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
+                    string nq = callSign.Trim().Replace("\\", "/");
+                    if (nq.IndexOf("/") > -1 && nq.IndexOf("/") < nq.Length / 2)
+                    {
+                        otherRegion = query.Substring(0, nq.IndexOf("/"));
+                        nq = nq.Substring(nq.IndexOf("/") + 1);
+
+                    }
+                    if (nq.IndexOf("/") > -1)
+                    {
+                        nq = nq.Substring(0, nq.IndexOf("/"));
+                    }
+                    if (!string.IsNullOrEmpty(nq))
+                    {
+                        string url = "https://www.qrz.com/db/" + nq;
+                        System.Diagnostics.Process.Start(url);
+                    }
+                }
+            }
+            catch { }
         }
     }
 }

@@ -34,6 +34,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelQRZNowFlag = new System.Windows.Forms.Panel();
+            this.buttonMoreQrzInfo = new System.Windows.Forms.Button();
+            this.panelCFG = new System.Windows.Forms.Panel();
+            this.panelCFGImg = new System.Windows.Forms.Panel();
+            this.labelQRZLoading = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panelQRZflag = new System.Windows.Forms.Panel();
+            this.textBoxQRZCountry = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxQRZName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.buttonQueryQRZ = new System.Windows.Forms.Button();
+            this.textBoxQRZ = new System.Windows.Forms.TextBox();
+            this.checkBoxAutoQRZ = new System.Windows.Forms.CheckBox();
             this.labelHelp = new System.Windows.Forms.Label();
             this.panelSP = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -61,6 +76,9 @@
             this.Comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.copyCallSignToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyFrequencyToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.copyCellcurrentValueToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyRowToClipboardcsvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyAllRowsToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,10 +87,12 @@
             this.timerRefresh = new System.Windows.Forms.Timer(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.timerHideHelp = new System.Windows.Forms.Timer(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.copyCallSignToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyFrequencyToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.showInQRZcomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panelCFG.SuspendLayout();
             this.panelSP.SuspendLayout();
             this.panelPOTA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -82,6 +102,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.labelHelp);
             this.panel1.Controls.Add(this.panelSP);
             this.panel1.Controls.Add(this.labelLoading);
@@ -95,6 +116,163 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1746, 656);
             this.panel1.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panelQRZNowFlag);
+            this.panel2.Controls.Add(this.buttonMoreQrzInfo);
+            this.panel2.Controls.Add(this.panelCFG);
+            this.panel2.Controls.Add(this.labelQRZLoading);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.panelQRZflag);
+            this.panel2.Controls.Add(this.textBoxQRZCountry);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.textBoxQRZName);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.buttonQueryQRZ);
+            this.panel2.Controls.Add(this.textBoxQRZ);
+            this.panel2.Controls.Add(this.checkBoxAutoQRZ);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.panel2.Location = new System.Drawing.Point(0, 617);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1746, 39);
+            this.panel2.TabIndex = 70;
+            // 
+            // panelQRZNowFlag
+            // 
+            this.panelQRZNowFlag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelQRZNowFlag.Location = new System.Drawing.Point(1515, 3);
+            this.panelQRZNowFlag.Name = "panelQRZNowFlag";
+            this.panelQRZNowFlag.Size = new System.Drawing.Size(32, 32);
+            this.panelQRZNowFlag.TabIndex = 71;
+            // 
+            // buttonMoreQrzInfo
+            // 
+            this.buttonMoreQrzInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonMoreQrzInfo.Location = new System.Drawing.Point(1591, 4);
+            this.buttonMoreQrzInfo.Name = "buttonMoreQrzInfo";
+            this.buttonMoreQrzInfo.Size = new System.Drawing.Size(96, 29);
+            this.buttonMoreQrzInfo.TabIndex = 67;
+            this.buttonMoreQrzInfo.Text = "More info";
+            this.buttonMoreQrzInfo.UseVisualStyleBackColor = true;
+            this.buttonMoreQrzInfo.Click += new System.EventHandler(this.buttonMoreQrzInfo_Click);
+            // 
+            // panelCFG
+            // 
+            this.panelCFG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelCFG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCFG.Controls.Add(this.panelCFGImg);
+            this.panelCFG.Location = new System.Drawing.Point(1693, 3);
+            this.panelCFG.Name = "panelCFG";
+            this.panelCFG.Padding = new System.Windows.Forms.Padding(2);
+            this.panelCFG.Size = new System.Drawing.Size(32, 32);
+            this.panelCFG.TabIndex = 66;
+            this.panelCFG.Click += new System.EventHandler(this.panelCFG_Click);
+            // 
+            // panelCFGImg
+            // 
+            this.panelCFGImg.BackgroundImage = global::Omnirig_CAT.Properties.Resources.settings_icon_14970;
+            this.panelCFGImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelCFGImg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCFGImg.Location = new System.Drawing.Point(2, 2);
+            this.panelCFGImg.Name = "panelCFGImg";
+            this.panelCFGImg.Size = new System.Drawing.Size(26, 26);
+            this.panelCFGImg.TabIndex = 66;
+            this.panelCFGImg.Click += new System.EventHandler(this.panelCFG_Click);
+            // 
+            // labelQRZLoading
+            // 
+            this.labelQRZLoading.BackColor = System.Drawing.Color.Olive;
+            this.labelQRZLoading.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelQRZLoading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.labelQRZLoading.Location = new System.Drawing.Point(943, 9);
+            this.labelQRZLoading.Name = "labelQRZLoading";
+            this.labelQRZLoading.Size = new System.Drawing.Size(98, 23);
+            this.labelQRZLoading.TabIndex = 65;
+            this.labelQRZLoading.Text = "Loading ...";
+            this.labelQRZLoading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelQRZLoading.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(256, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 20);
+            this.label4.TabIndex = 63;
+            this.label4.Text = "Callsign:";
+            // 
+            // panelQRZflag
+            // 
+            this.panelQRZflag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelQRZflag.Location = new System.Drawing.Point(1553, 3);
+            this.panelQRZflag.Name = "panelQRZflag";
+            this.panelQRZflag.Size = new System.Drawing.Size(32, 32);
+            this.panelQRZflag.TabIndex = 62;
+            // 
+            // textBoxQRZCountry
+            // 
+            this.textBoxQRZCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxQRZCountry.Location = new System.Drawing.Point(1125, 5);
+            this.textBoxQRZCountry.Name = "textBoxQRZCountry";
+            this.textBoxQRZCountry.Size = new System.Drawing.Size(385, 27);
+            this.textBoxQRZCountry.TabIndex = 61;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1047, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 20);
+            this.label3.TabIndex = 60;
+            this.label3.Text = "Country:";
+            // 
+            // textBoxQRZName
+            // 
+            this.textBoxQRZName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxQRZName.Location = new System.Drawing.Point(760, 5);
+            this.textBoxQRZName.Name = "textBoxQRZName";
+            this.textBoxQRZName.Size = new System.Drawing.Size(281, 27);
+            this.textBoxQRZName.TabIndex = 59;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(696, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 20);
+            this.label2.TabIndex = 58;
+            this.label2.Text = "Name:";
+            // 
+            // buttonQueryQRZ
+            // 
+            this.buttonQueryQRZ.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonQueryQRZ.Location = new System.Drawing.Point(593, 5);
+            this.buttonQueryQRZ.Name = "buttonQueryQRZ";
+            this.buttonQueryQRZ.Size = new System.Drawing.Size(75, 29);
+            this.buttonQueryQRZ.TabIndex = 57;
+            this.buttonQueryQRZ.Text = "Query";
+            this.buttonQueryQRZ.UseVisualStyleBackColor = true;
+            this.buttonQueryQRZ.Click += new System.EventHandler(this.buttonQueryQRZ_Click);
+            // 
+            // textBoxQRZ
+            // 
+            this.textBoxQRZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxQRZ.Location = new System.Drawing.Point(353, 5);
+            this.textBoxQRZ.Name = "textBoxQRZ";
+            this.textBoxQRZ.Size = new System.Drawing.Size(217, 27);
+            this.textBoxQRZ.TabIndex = 56;
+            // 
+            // checkBoxAutoQRZ
+            // 
+            this.checkBoxAutoQRZ.AutoSize = true;
+            this.checkBoxAutoQRZ.Location = new System.Drawing.Point(14, 6);
+            this.checkBoxAutoQRZ.Name = "checkBoxAutoQRZ";
+            this.checkBoxAutoQRZ.Size = new System.Drawing.Size(181, 24);
+            this.checkBoxAutoQRZ.TabIndex = 0;
+            this.checkBoxAutoQRZ.Text = "Automatic QRZ info.";
+            this.checkBoxAutoQRZ.UseVisualStyleBackColor = true;
             // 
             // labelHelp
             // 
@@ -342,7 +520,7 @@
             this.dataGridView1.ShowCellToolTips = false;
             this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1711, 592);
+            this.dataGridView1.Size = new System.Drawing.Size(1711, 559);
             this.dataGridView1.TabIndex = 53;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
@@ -439,9 +617,30 @@
             this.copyCellcurrentValueToClipboardToolStripMenuItem,
             this.copyRowToClipboardcsvToolStripMenuItem,
             this.copyAllRowsToClipboardToolStripMenuItem,
-            this.copyAllRowsToClipboardcsvToolStripMenuItem});
+            this.copyAllRowsToClipboardcsvToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.showInQRZcomToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(319, 154);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(319, 212);
+            // 
+            // copyCallSignToClipboardToolStripMenuItem
+            // 
+            this.copyCallSignToClipboardToolStripMenuItem.Name = "copyCallSignToClipboardToolStripMenuItem";
+            this.copyCallSignToClipboardToolStripMenuItem.Size = new System.Drawing.Size(318, 24);
+            this.copyCallSignToClipboardToolStripMenuItem.Text = "Copy CallSign to Clipboard";
+            this.copyCallSignToClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyCallSignToClipboardToolStripMenuItem_Click);
+            // 
+            // copyFrequencyToClipboardToolStripMenuItem
+            // 
+            this.copyFrequencyToClipboardToolStripMenuItem.Name = "copyFrequencyToClipboardToolStripMenuItem";
+            this.copyFrequencyToClipboardToolStripMenuItem.Size = new System.Drawing.Size(318, 24);
+            this.copyFrequencyToClipboardToolStripMenuItem.Text = "Copy Frequency to Clipboard";
+            this.copyFrequencyToClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyFrequencyToClipboardToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(315, 6);
             // 
             // copyCellcurrentValueToClipboardToolStripMenuItem
             // 
@@ -490,24 +689,22 @@
             this.timerHideHelp.Interval = 5000;
             this.timerHideHelp.Tick += new System.EventHandler(this.timerHideHelp_Tick);
             // 
-            // toolStripMenuItem1
+            // backgroundWorker2
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(315, 6);
+            this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
+            this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
             // 
-            // copyCallSignToClipboardToolStripMenuItem
+            // toolStripMenuItem2
             // 
-            this.copyCallSignToClipboardToolStripMenuItem.Name = "copyCallSignToClipboardToolStripMenuItem";
-            this.copyCallSignToClipboardToolStripMenuItem.Size = new System.Drawing.Size(318, 24);
-            this.copyCallSignToClipboardToolStripMenuItem.Text = "Copy CallSign to Clipboard";
-            this.copyCallSignToClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyCallSignToClipboardToolStripMenuItem_Click);
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(315, 6);
             // 
-            // copyFrequencyToClipboardToolStripMenuItem
+            // showInQRZcomToolStripMenuItem
             // 
-            this.copyFrequencyToClipboardToolStripMenuItem.Name = "copyFrequencyToClipboardToolStripMenuItem";
-            this.copyFrequencyToClipboardToolStripMenuItem.Size = new System.Drawing.Size(318, 24);
-            this.copyFrequencyToClipboardToolStripMenuItem.Text = "Copy Frequency to Clipboard";
-            this.copyFrequencyToClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyFrequencyToClipboardToolStripMenuItem_Click);
+            this.showInQRZcomToolStripMenuItem.Name = "showInQRZcomToolStripMenuItem";
+            this.showInQRZcomToolStripMenuItem.Size = new System.Drawing.Size(318, 24);
+            this.showInQRZcomToolStripMenuItem.Text = "Show in QRZ.com";
+            this.showInQRZcomToolStripMenuItem.Click += new System.EventHandler(this.showInQRZcomToolStripMenuItem_Click);
             // 
             // FormPOTA
             // 
@@ -523,6 +720,9 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panelCFG.ResumeLayout(false);
             this.panelSP.ResumeLayout(false);
             this.panelSP.PerformLayout();
             this.panelPOTA.ResumeLayout(false);
@@ -574,6 +774,24 @@
         private System.Windows.Forms.ToolStripMenuItem copyCallSignToClipboardToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem copyFrequencyToClipboardToolStripMenuItem;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelQRZflag;
+        private System.Windows.Forms.TextBox textBoxQRZCountry;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxQRZName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonQueryQRZ;
+        private System.Windows.Forms.TextBox textBoxQRZ;
+        private System.Windows.Forms.CheckBox checkBoxAutoQRZ;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelQRZLoading;
+        private System.Windows.Forms.Panel panelCFG;
+        private System.Windows.Forms.Panel panelCFGImg;
+        private System.Windows.Forms.Button buttonMoreQrzInfo;
+        private System.Windows.Forms.Panel panelQRZNowFlag;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem showInQRZcomToolStripMenuItem;
     }
 }
 
