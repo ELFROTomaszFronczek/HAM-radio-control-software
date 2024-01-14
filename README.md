@@ -19,6 +19,7 @@ link to dxAtlas omnirig: https://www.dxatlas.com/omnirig/
 - Program can work with frequency offset (ex.for sattelite transmisions)
 - Added TRX custom commands controll based on Yaesu manuals.
 - Added POTA/SOTA/WWFF/DXCluster program window. You can use frequencies directly from POTA etc. spots and activations(by double click on grid row). Callsign is copied to clipboard.
+- Added QRZ.com queries and country detection by callsign.
 - Added "doppler module" this is an experimental module that changes frequency over time (ex.for sattelite transmisions). I'm not sure if this is a sensible solution.
 
 
