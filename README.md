@@ -27,4 +27,4 @@ link to dxAtlas omnirig: https://www.dxatlas.com/omnirig/
 
 I am providing these modules with source code in C# enyoy.
 
-Tomasz Fronczek SP4THK
+Tomasz Fronczek SP4THK  tomek (at) elfro.pl
