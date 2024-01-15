@@ -15,6 +15,12 @@ The right mouse button opens the menu.
 An example of a simple radio control program. Requires omnirig to be installed. It allows you to change the frequency, mode, and the ability to transmit.
 link to dxAtlas omnirig: https://www.dxatlas.com/omnirig/
 
+Program tested on Yaesu FTDX101D.
+Basic functions work with most radios that Omnirig works with.
+Also tested on Icom705 (except functions for Yaesu).
+For proper operation, Icom requires appropriate port settings in the radio menu.
+
+
 - Automatic NTP clock synchronize
 - Program can work with frequency offset (ex.for sattelite transmisions)
 - Added TRX custom commands controll based on Yaesu manuals.
