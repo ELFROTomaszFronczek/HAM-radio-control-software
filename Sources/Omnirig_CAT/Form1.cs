@@ -1,5 +1,6 @@
 ﻿using ADMIN;
 using OmniRig;
+using POTA_To_CAT;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -100,8 +101,36 @@ namespace Omnirig_CAT
         long transponderOffset = 0;
 
 
+        public delegate void OmnirigDelegate(int RigNumber, object Command, object Reply);
+        public OmnirigDelegate OminRigDel;
+
+
+        private int UDP_PORT = 5432;
+        UDPServer udp;
+
+        public delegate void MyDelegate(string msg);
+        public MyDelegate del;
+
+        int lv = 100;
+
+
+        POTA_To_CAT.FormPOTA pota;
+
+        public bool VFO_A { get; private set; }
+
+        private string vfo;
+        private int timerReadYaesuCntr = -1;
+        private Font fontBold;
+        private Font fontRegular;
+
+        int sx, sy, lx, ly;
+        bool dwn = false;
+        //  private volatile bool stopWorker = false;
+
         private void Form1_Load(object sender, EventArgs e)
         {
+
+
             buttonHide_Click(null, null);
 
             longPanel2Width = panel2.Width;
@@ -126,9 +155,12 @@ namespace Omnirig_CAT
 
 
             UDP_PORT = Config.ReadIntValue(sect, "UDP_PORT", UDP_PORT);
-          
 
-       
+
+            vFOAMainToolStripMenuItem.Checked = Config.ReadBoolValue(sect, "VFOA", true);
+            vFOBSubToolStripMenuItem.Checked = !vFOAMainToolStripMenuItem.Checked;
+            VFO_A = vFOAMainToolStripMenuItem.Checked;
+            setVfo();
 
 
             if (runCameraModuleToolStripMenuItem.Checked)
@@ -165,8 +197,18 @@ namespace Omnirig_CAT
 
             Application.DoEvents();
             omniRigEngine = new OmniRigX();
+            omniRigEngine.CustomReply += OmniRigEngine_CustomReply;
 
             rig1 = Config.ReadBoolValue(sect, "rig1", true);
+
+            if (OminRigDel == null)
+            {
+                OminRigDel = new OmnirigDelegate(OmnirigGetCommand);
+
+            }
+            fontBold = new Font(offAntenaTunerToolStripMenuItem.Font, FontStyle.Bold);
+            fontRegular = new Font(offAntenaTunerToolStripMenuItem.Font, FontStyle.Regular);
+
 
             if (rig1)
             {
@@ -181,8 +223,11 @@ namespace Omnirig_CAT
                 selectRig2ToolStripMenuItem.Checked = true;
             }
 
+
+
+
             Application.DoEvents();
-            timer1.Start();
+            timerGetFrequency.Start();
             labelRig.Text = currentRig.RigType;
 
             s0.MouseWheel += new MouseEventHandler(s0_MouseWheel);
@@ -201,7 +246,7 @@ namespace Omnirig_CAT
 
             loading = false;
             configureControlUDPPortToolStripMenuItem.Text += UDP_PORT;
-       
+
 
 
 
@@ -210,16 +255,112 @@ namespace Omnirig_CAT
 
         }
 
-        UDPServer udp;
+        bool closed = false;
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+            timerDoppler.Stop();
+            //stopWorker = true;
+            Application.DoEvents();
 
-        public delegate void MyDelegate(string msg);
-        public MyDelegate del;
+            try
+            {
+
+                if (runCameraModuleToolStripMenuItem.Checked)
+                {
+                    Process[] p = Process.GetProcessesByName("CAT_CAMERA");
+                    if (p != null || p.Length > 0)
+                    {
+
+                        foreach (Process proc in p)
+                        {
+
+                            proc.Kill();
+                        }
+                    }
+
+
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Log.AddException(ex);
+                labelErr.Visible = true;
+            }
+
+            try
+            {
+                timerGetFrequency.Stop();
+                timer2.Stop();
+                Application.DoEvents();
+                stopTX();
+                Application.DoEvents();
+
+
+
+            }
+            catch (Exception ex)
+            {
+                Log.AddException(ex);
+                labelErr.Visible = true;
+            }
+            PROCKI.saveFormSizeAndLog(this);
+
+            SAVE(); closed = true;
+         
+            INIT.UNLOAD();
+        }
+
+        private void SAVE()
+        {
+            try
+            {
+                if (loading || closed) return;
+                Config.WriteValue(sect, "hideInTaskBar", hideInTaskBarToolStripMenuItem.Checked);
+                Config.WriteValue(sect, "onTop", alwaysOnTopToolStripMenuItem.Checked);
+                Config.WriteValue(sect, "rig1", rig1);
+
+                Config.WriteValue(sect, "txOnChar", tXOnCharToolStripMenuItem.Checked);
+                Config.WriteValue(sect, "txWhenPressed", tXOnlyWhenPressedToolStripMenuItem.Checked);
+
+                Config.WriteValue(sect, "chngModeOnBandChng", onBandChangedSlelectDefaultSSBModeToolStripMenuItem.Checked);
+                Config.WriteValue(sect, "hideBar", hideWindowHeaderToolStripMenuItem.Checked);
+                Config.WriteValue(sect, "runCameraModule", runCameraModuleToolStripMenuItem.Checked);
+                Config.WriteValue(sect, "UDP_PORT", UDP_PORT);
+
+
+                Config.WriteValue(sect, "runNTPModule", runNTPTimeSyncOnStartToolStripMenuItem.Checked);
+                Config.WriteValue(sect, "display12Digit", displayToolStripMenuItem.Checked);
+
+                Config.WriteValue(sect, "workWithTransponder", workWithTransponderToolStripMenuItem.Checked);
+
+                Config.WriteValue(sect, "transponderOffset", transponderOffset);
+
+                Config.WriteValue(sect, "dopplerVisible", showDoplerEffectModuleToolStripMenuItem.Checked);
+
+                Config.WriteValue(sect, "dopplerFrequency", trackBarDopplerFrequency.Value);
+                Config.WriteValue(sect, "dopplerTime", trackBarDopplerTime.Value);
+
+                bool ps = true;
+                if (pota == null | FormPOTA.isClosed) ps=false;
+
+                Config.WriteValue(sect, "potaShow", ps);
+                Config.ReadBoolValue(sect, "VFOA", vFOAMainToolStripMenuItem.Checked);
+
+
+                Config.WriteConfig();
+            }
+            catch { }
+        }
+
+
 
         private void startUDP_SERVER()
         {
             if (del == null || udp == null)
             {
-                del = new MyDelegate(MethodA);
+                del = new MyDelegate(receiveUDP_Camera);
 
                 udp = new UDPServer();
                 udp.Initialize(this, del, UDP_PORT);
@@ -230,7 +371,7 @@ namespace Omnirig_CAT
         }
 
 
-        private void MethodA(string msg)
+        private void receiveUDP_Camera(string msg)
         {
             inClicked = true;
             if (msg == "UP") { frequency += 1000; }
@@ -240,24 +381,15 @@ namespace Omnirig_CAT
 
         }
 
-     
 
-
-
-
-
-
-
-
-
-
-
-        private void stopUDP_SERVER()
+        long getFrequency()
         {
-
+            if (VFO_A) return currentRig.FreqA;
+            else return currentRig.FreqB;
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+
+        private void timerGetFrequency_Tick(object sender, EventArgs e)
         {
             try
             {
@@ -269,11 +401,11 @@ namespace Omnirig_CAT
                 }
                 if (!workWithTransponderToolStripMenuItem.Checked)
                 {
-                    frequency = currentRig.FreqA;
+                    frequency = getFrequency();
                 }
                 else
                 {
-                    frequency = currentRig.FreqA + transponderOffset;
+                    frequency = getFrequency() + transponderOffset;
                 }
 
 
@@ -409,6 +541,13 @@ namespace Omnirig_CAT
 
         }
 
+        void writeVFO(long freq)
+        {
+            if (VFO_A) currentRig.FreqA = (int)freq;
+            else
+                currentRig.FreqB = (int)freq;
+        }
+
         private void writeFrequency()
         {
             try
@@ -418,13 +557,14 @@ namespace Omnirig_CAT
 
                 if (!workWithTransponderToolStripMenuItem.Checked)
                 {
-                    currentRig.FreqA = (int)frequency;
+                    writeVFO(frequency);
                 }
 
                 else
                 {
                     long fq = frequency - transponderOffset;
-                    currentRig.FreqA = (int)fq;
+                    //currentRig.FreqA = (int)fq;
+                    writeVFO(fq);
                 }
 
                 showFreq();
@@ -438,9 +578,6 @@ namespace Omnirig_CAT
         }
 
 
-
-
-
         private void startT2()
         {
             t2Cntr = 0;
@@ -448,7 +585,6 @@ namespace Omnirig_CAT
             timer2.Start();
             timer2_Tick(null, null);
         }
-
 
         private void timer2_Tick(object sender, EventArgs e)
         {
@@ -469,8 +605,6 @@ namespace Omnirig_CAT
             inClicked = false;
             timer2.Start();
         }
-
-
 
 
         private void stopT2()
@@ -497,8 +631,6 @@ namespace Omnirig_CAT
         }
 
 
-
-
         private void s0_MouseWheel(object sender, MouseEventArgs e)
         {
             int d = e.Delta;
@@ -515,6 +647,22 @@ namespace Omnirig_CAT
             inClicked = false;
 
         }
+
+
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dwn)
+            {
+                int dx = sx - MousePosition.X;
+                int dy = sy - MousePosition.Y;
+
+                this.Left = lx - dx;
+                this.Top = ly - dy;
+            }
+
+        }
+
 
         private void comboBoxBand_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -581,101 +729,7 @@ namespace Omnirig_CAT
             }
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            timerDoppler.Stop();
-            //stopWorker = true;
-            Application.DoEvents();
-            stopUDP_SERVER();
-            try
-            {
 
-                if (runCameraModuleToolStripMenuItem.Checked)
-                {
-                    Process[] p = Process.GetProcessesByName("CAT_CAMERA");
-                    if (p != null || p.Length > 0)
-                    {
-
-                        foreach (Process proc in p)
-                        {
-
-                            proc.Kill();
-                        }
-                    }
-
-
-                }
-            }
-
-            catch (Exception ex)
-            {
-                Log.AddException(ex);
-                labelErr.Visible = true;
-            }
-
-            try
-            {
-                timer1.Stop();
-                timer2.Stop();
-                Application.DoEvents();
-                stopTX();
-                Application.DoEvents();
-
-
-
-            }
-            catch (Exception ex)
-            {
-                Log.AddException(ex);
-                labelErr.Visible = true;
-            }
-            PROCKI.saveFormSizeAndLog(this);
-            SAVE();
-
-            INIT.UNLOAD();
-        }
-
-
-
-        private void SAVE()
-        {
-            try
-            {
-                if (loading) return;
-                Config.WriteValue(sect, "hideInTaskBar", hideInTaskBarToolStripMenuItem.Checked);
-                Config.WriteValue(sect, "onTop", alwaysOnTopToolStripMenuItem.Checked);
-                Config.WriteValue(sect, "rig1", rig1);
-
-                Config.WriteValue(sect, "txOnChar", tXOnCharToolStripMenuItem.Checked);
-                Config.WriteValue(sect, "txWhenPressed", tXOnlyWhenPressedToolStripMenuItem.Checked);
-
-                Config.WriteValue(sect, "chngModeOnBandChng", onBandChangedSlelectDefaultSSBModeToolStripMenuItem.Checked);
-                Config.WriteValue(sect, "hideBar", hideWindowHeaderToolStripMenuItem.Checked);
-                Config.WriteValue(sect, "runCameraModule", runCameraModuleToolStripMenuItem.Checked);
-                Config.WriteValue(sect, "UDP_PORT", UDP_PORT);
-
-
-                Config.WriteValue(sect, "runNTPModule", runNTPTimeSyncOnStartToolStripMenuItem.Checked);
-                Config.WriteValue(sect, "display12Digit", displayToolStripMenuItem.Checked);
-
-                Config.WriteValue(sect, "workWithTransponder", workWithTransponderToolStripMenuItem.Checked);
-
-                Config.WriteValue(sect, "transponderOffset", transponderOffset);
-
-                Config.WriteValue(sect, "dopplerVisible", showDoplerEffectModuleToolStripMenuItem.Checked);
-
-                Config.WriteValue(sect, "dopplerFrequency", trackBarDopplerFrequency.Value);
-                Config.WriteValue(sect, "dopplerTime", trackBarDopplerTime.Value);
-
-
-
-                Config.WriteValue(sect, "potaShow", !(pota == null | pota.isClosed));
-
-
-                Config.WriteConfig();
-            }
-            catch  { }
-        }
 
 
         private void selectRig1ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -732,7 +786,7 @@ namespace Omnirig_CAT
                 tx = false;
                 currentRig.Tx = RigParamX.PM_RX;
                 buttonTX.BackColor = Color.Green;
-                timer3.Stop();
+                timerStopTx.Stop();
             }
             catch (Exception ex)
             {
@@ -748,7 +802,7 @@ namespace Omnirig_CAT
                 tx = true;
                 currentRig.Tx = RigParamX.PM_TX;
                 buttonTX.BackColor = Color.Red;
-                timer3.Start();
+                timerStopTx.Start();
             }
             catch (Exception ex)
             {
@@ -757,9 +811,10 @@ namespace Omnirig_CAT
             }
         }
 
-        private void timer3_Tick(object sender, EventArgs e)
+        private void timerStopTx_Tick(object sender, EventArgs e)
         {
             stopTX();
+
         }
 
         private void alwaysOnTopToolStripMenuItem_Click(object sender, EventArgs e)
@@ -772,18 +827,18 @@ namespace Omnirig_CAT
             ShowInTaskbar = !hideInTaskBarToolStripMenuItem.Checked; SAVE();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonMenu_Click(object sender, EventArgs e)
         {
             contextMenuStrip1.Show(MousePosition.X, MousePosition.Y);
         }
 
-        private void button1_MouseDown(object sender, MouseEventArgs e)
+        private void buttonTX_MouseDown(object sender, MouseEventArgs e)
         {
             if (!tXOnlyWhenPressedToolStripMenuItem.Checked) return;
             startTX();
         }
 
-        private void button1_MouseUp(object sender, MouseEventArgs e)
+        private void buttonTX_MouseUp(object sender, MouseEventArgs e)
         {
             if (!tXOnlyWhenPressedToolStripMenuItem.Checked) return;
             stopTX();
@@ -843,12 +898,6 @@ namespace Omnirig_CAT
         }
 
 
-
- 
-        int sx, sy, lx, ly;
-        bool dwn = false;
-      //  private volatile bool stopWorker = false;
-
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
             if (sender is Form || sender is Panel || sender is Label)
@@ -862,73 +911,31 @@ namespace Omnirig_CAT
             }
         }
 
+
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        {
+            dwn = false;
+        }
+
+        private void Form1_MouseLeave(object sender, EventArgs e)
+        {
+            dwn = false;
+        }
+
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
         }
 
 
-
-
-
-        private void s3_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void configureControlUDPPortToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int i = -1;
             if (InputBox.ShowDialog("Enter UDP Port", "Enter UDP Port", UDP_PORT.ToString(), 1, 65535, out i) == DialogResult.OK)
             {
-               
+
                 UDP_PORT = i;
             }
-        }
-
-        private void timerNTP_Tick(object sender, EventArgs e)
-        {
-            timerNTP.Stop();
-            if (runNTPTimeSyncOnStartToolStripMenuItem.Checked)
-            {
-
-                try
-                {
-                    bool wasWritten = false;
-
-
-                    string s = Config.ReadValue(sect, "lastNTPTime");
-                    long l = -1;
-                    if (!string.IsNullOrEmpty(s))
-                    {
-                        if (long.TryParse(s, out l))
-                        {
-                            DateTime n = new DateTime(l);
-                            TimeSpan ts = DateTime.Now - n;
-
-                            if (ts.TotalMinutes < 600) wasWritten = true;
-                        }
-
-                    }
-
-
-                    if (!wasWritten)
-                    {
-                        runNTPTimeSyncNowToolStripMenuItem1_Click(null, null);
-                        Config.WriteValue(sect, "lastNTPTime", DateTime.Now.Ticks.ToString());
-
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Log.AddException(ex);
-
-
-                }
-
-
-            }
-
         }
 
 
@@ -1058,300 +1065,69 @@ namespace Omnirig_CAT
             }
         }
 
-        private void antenaTunerToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void readValuesToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-
-
-
+            timerReadYaesuCntr = 0;
+            readNextYaesuValue();
 
         }
 
 
-
-        private void offTRXToolStripMenuItem_Click(object sender, EventArgs e)
+        private void vFOAMainToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (FastQuestion.ShowQuestion("Are You sure to switch off TRX\r\nTurning On back isn't possible in program.\r\nYou must do it manually on TRX ", "Attention !!!", ImageType.Warning, IloscPrzyciskow.trzy, "YES", "NO", "Cancel") == FastQuestionResult.button1)
-                currentRig.SendCustomCommand("PS0;", 0, "");
-        }
-
-        private void oNTToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("PS1;", 0, "");
-        }
-
-        private void antena1ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("AN01;", 0, "");
-        }
-
-        private void antena2ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("AN02;", 0, "");
-        }
-
-        private void antena3ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("AN03;", 0, "");
-        }
-
-        private void ipoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("PA00;", 0, "");
-        }
-
-        private void aMP1ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("PA01;", 0, "");
-        }
-
-        private void aMP2ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("PA02;", 0, "");
-        }
-
-
-        private void oFFToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("RA00;", 0, "");
-        }
-
-        private void dBToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("RA01;", 0, "");
-        }
-
-        private void dBToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("RA02;", 0, "");
-        }
-
-        private void dBToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("RA03;", 0, "");
-        }
-
-        private void agcOFFToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("GT00;", 0, "");
-        }
-
-        private void aGCFASTToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("GT01;", 0, "");
-        }
-
-        private void aGCMIDToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("GT02;", 0, "");
-        }
-
-        private void aGCSLOWToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("GT03;", 0, "");
-        }
-
-        private void aGCAUTOToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("GT04;", 0, "");
-        }
-
-        private void toolStripMenuItem12kHz_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("RF01;", 0, "");
-        }
-
-        private void ToolStripMenuItem3kHz_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("RF02;", 0, "");
-        }
-
-        private void ToolStripMenuItem1_2kHz_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("RF03;", 0, "");
-        }
-
-        private void ToolStripMenuItem600Hz_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("RF04;", 0, "");
-        }
-
-        private void ToolStripMenuItem300Hz_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("RF05;", 0, "");
-        }
-
-        private void OnAntenaTunerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("AC001;", 0, "");
-        }
-
-        private void offAntenaTunerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("AC000;", 0, "");
-        }
-
-        private void tuningNownotWorkedToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            currentRig.SendCustomCommand("AC002;", 0, "AC002;");
-        }
-
-        private void wToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            setPower(5);
-        }
-
-        private void wToolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-            setPower(25);
-        }
-
-        private void wToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            setPower(50);
-        }
-
-        private void wToolStripMenuItem4_Click(object sender, EventArgs e)
-        {
-            setPower(75);
-        }
-
-        private void wToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            setPower(100);
-        }
-
-        int lv = 100;
-        private int UDP_PORT = 5432;
-
-
-        private void fixedToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            int i = -1;
-            if (InputBox.ShowDialog("Enter power value (5-100)", "Enter Power Value", lv.ToString(), 5, 100, out i) == DialogResult.OK)
-            {
-                setPower(i);
-            }
-
+            vFOAMainToolStripMenuItem.Checked = true;
+            vFOBSubToolStripMenuItem.Checked = false;
+            VFO_A = vFOAMainToolStripMenuItem.Checked;
+            setVfo();
 
         }
 
-        private void setPower(int i)
+        private void setVfo()
         {
-            lv = i;
-            string s = i.ToString();
-            while (s.Length < 3) s = "0" + s;
-            currentRig.SendCustomCommand("PC" + s + ";", 0, "");
+            vfo = "0";
+            if (!VFO_A) vfo = "1";
 
         }
 
-        private void runNTPTimeSyncNowToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void vFOBSubToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string fn = PROCKI.exePathB + "SET_NTP_TIME.exe";
-                if (File.Exists(fn))
-                {
-                    if (!IsRunAsAdmin())
-                    {
-                        ProcessStartInfo proc = new ProcessStartInfo();
-                        proc.UseShellExecute = true;
-                        proc.WorkingDirectory = PROCKI.exePath;
-                        proc.FileName = fn;
-                        proc.Verb = "runas";
-                        proc.Arguments = "/AUTO_SYNC";
-                        Process p = Process.Start(proc);
-
-                    }
-                    else
-                        Process.Start(fn, "/AUTO_SYNC");
-                }
-            }
-            catch (Exception ex) { Log.AddException(ex); }
+            vFOAMainToolStripMenuItem.Checked = false;
+            vFOBSubToolStripMenuItem.Checked = true;
+            VFO_A = vFOAMainToolStripMenuItem.Checked;
+            setVfo();
         }
 
-        private void runCameraModuleNowToolStripMenuItem_Click(object sender, EventArgs e)
+        private void showOmnirigDialogToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (File.Exists(PROCKI.exePathB + "CAT_CAMERA.exe"))
-                {
-                    Process[] p = Process.GetProcessesByName("CAT_CAMERA");
-                    if (p == null || p.Length < 1)
-                    {
-                        System.Diagnostics.Process.Start(PROCKI.exePathB + "CAT_CAMERA.exe", "/UDP:" + UDP_PORT);
-
-                    }
-                }
-                startUDP_SERVER();
-            }
-            catch (Exception ex) { Log.AddException(ex); }
+            omniRigEngine.DialogVisible = true;
         }
 
-        private void configureControlUDPPortrestartNeededToolStripMenuItem_Click(object sender, EventArgs e)
+        private void showOmniRigDialogToRestartToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
-        }
-
-        private void runPOTAModuleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
+            omniRigEngine.DialogVisible = true;
         }
 
 
-        POTA_To_CAT.FormPOTA pota;
-
-        private void pOTAModuleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (pota == null || pota.isClosed)
-            {
-                pota = new POTA_To_CAT.FormPOTA(this);
-                pota.Show();
-            }
-        }
-
-        private void Form1_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (dwn)
-            {
-                int dx = sx - MousePosition.X;
-                int dy = sy - MousePosition.Y;
-
-                this.Left = lx - dx;
-                this.Top = ly - dy;
-            }
-
-        }
-
-        private void Form1_MouseUp(object sender, MouseEventArgs e)
-        {
-            dwn = false;
-        }
-
-        private void Form1_MouseLeave(object sender, EventArgs e)
-        {
-            dwn = false;
-        }
-
-        
         internal void updateFrequency(string freq, string mode)
         {
             mode = mode.ToUpper().Trim();
             freq = PROCKI.ConvDotToDecimalSep(freq).ToUpper().Trim();
 
-            
-            
 
-                string f = "";
+
+
+            string f = "";
             /*    foreach (char c in freq)
                 {
                     if ((c >= '0' && c <= '9') || c == '.' || c == ',') f += c;
                     else break;
                 }*/
-            f = freq.Replace("MHZ", "").Replace("KHZ", "").Replace(")","").Replace("(","").Trim();
+            f = freq.Replace("MHZ", "").Replace("KHZ", "").Replace(")", "").Replace("(", "").Trim();
 
 
-                if (!string.IsNullOrEmpty(f))
+            if (!string.IsNullOrEmpty(f))
             {
                 double i = -1;
                 if (double.TryParse(f, out i))
@@ -1361,11 +1137,12 @@ namespace Omnirig_CAT
                     if (freq.IndexOf("MHZ") > 0) i = i * 1000000;
                     else
                     {
-                        if (i < 1000) i = i * 1000000; else
+                        if (i < 1000) i = i * 1000000;
+                        else
                         if (i < 1000000) i = i * 1000;
-                        
-                            }
-                        
+
+                    }
+
 
                     long fq = (long)i;
                     int sx = comboBoxMode.SelectedIndex;
@@ -1402,7 +1179,548 @@ namespace Omnirig_CAT
             }
         }
 
+
+        // OMNIRIG COMMAND READED
+        private void OmnirigGetCommand(int RigNumber, object Command, object Reply)
+        {
+            string reply = "";
+            string command = "";
+            if (Reply is byte[]) reply = PROCKI.bytesToString((byte[])Reply);
+            if (Command is byte[]) command = PROCKI.bytesToString((byte[])Command);
+
+            if (!string.IsNullOrEmpty(reply) && reply.Length > 2)
+            {
+
+                string r = reply.Substring(0, 2);
+                string val = reply.Substring(2).Replace(";", "");
+                char lVal = val[val.Length - 1];
+                char mVal = ' ';
+                if (val.Length > 2) mVal = val[val.Length - 2];
+                switch (r)
+                {
+                    case "PC": setBoldPowerValues(val); break; //POWER VALUE
+                    case "RF": setBoldRFValues(lVal); break; //ROOFING FILTER
+                    case "AC": setBoldAntenaTuner(lVal); break; //ANTENA TUNER
+                    case "AN": setBoldAntenaNumber(mVal); break; //ANTENA NUMBER
+                    case "PA": setBoldPreamp(lVal); break; //PREAMP
+                    case "RA": setBoldATT(lVal); break; //RF ATT
+                    case "GT": setBoldAGC(lVal); break; //AGC
+                }
+
+            }
+            if (timerReadYaesuCntr > -1)
+                readNextYaesuValue();
+
+        }
+
+
+        //REPLY FROM TRX
+        private void OmniRigEngine_CustomReply(int RigNumber, object Command, object Reply)
+        {
+            BeginInvoke(OminRigDel, new object[] { RigNumber, Command, Reply });
+        }
+
+        void sendCustomCommandVFO(string command, int value)
+        {
+
+            currentRig.SendCustomCommand(command + vfo + value + ";", 0, "");
+            wait();
+            currentRig.SendCustomCommand(command + vfo + ";", 0, "");
+
+
+
+        }
+
+
+        #region YAESU
+
+        #region ANTENA_NUMBER
+
+        private void setBoldAntenaNumber(char lVal)
+        {
+            antena1ToolStripMenuItem.Font = fontRegular;
+            antena2ToolStripMenuItem.Font = fontRegular;
+            antena3ToolStripMenuItem.Font = fontRegular;
+
+
+            switch (lVal)
+            {
+                case '1': antena1ToolStripMenuItem.Font = fontBold; break;
+                case '2': antena2ToolStripMenuItem.Font = fontBold; break;
+                case '3': antena3ToolStripMenuItem.Font = fontBold; break;
+            }
+        }
+
+        private void antena1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            sendCustomCommandVFO("AN", 1);
+        }
+
+        private void antena2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            sendCustomCommandVFO("AN", 2);
+        }
+
+        private void antena3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            sendCustomCommandVFO("AN", 3);
+        }
+        #endregion
+
+        #region PRE_AMP
+
+        private void setBoldPreamp(char lVal)
+        {
+            ipoToolStripMenuItem.Font = fontRegular;
+            aMP1ToolStripMenuItem.Font = fontRegular;
+            aMP2ToolStripMenuItem.Font = fontRegular;
+
+
+            switch (lVal)
+            {
+                case '0': ipoToolStripMenuItem.Font = fontBold; break;
+                case '1': aMP1ToolStripMenuItem.Font = fontBold; break;
+                case '2': aMP2ToolStripMenuItem.Font = fontBold; break;
+            }
+        }
+        private void ipoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sendCustomCommandVFO("PA", 0);
+        }
+
+        private void aMP1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sendCustomCommandVFO("PA", 1);
+        }
+
+
+
+        private void aMP2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sendCustomCommandVFO("PA", 2);
+        }
+        #endregion
+
+        #region RF_ATTENUATOR
+
+        private void setBoldATT(char lVal)
+        {
+            ATT_OFF_ToolStripMenuItem.Font = fontRegular;
+            ATT_6_ToolStripMenuItem.Font = fontRegular;
+            ATT_12_ToolStripMenuItem.Font = fontRegular;
+            ATT_18_ToolStripMenuItem.Font = fontRegular;
+
+
+            switch (lVal)
+            {
+                case '0': ATT_OFF_ToolStripMenuItem.Font = fontBold; break;
+                case '1': ATT_6_ToolStripMenuItem.Font = fontBold; break;
+                case '2': ATT_12_ToolStripMenuItem.Font = fontBold; break;
+                case '3': ATT_18_ToolStripMenuItem.Font = fontBold; break;
+            }
+        }
+
+        private void oFFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sendCustomCommandVFO("RA", 0);
+        }
+
+        private void dBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sendCustomCommandVFO("RA", 1);
+        }
+
+        private void dBToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            sendCustomCommandVFO("RA", 2);
+        }
+
+        private void dBToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            sendCustomCommandVFO("RA", 3);
+        }
+
+        #endregion
+
+        #region AGC
+
+        private void setBoldAGC(char lVal)
+        {
+            agcOFF_ToolStripMenuItem.Font = fontRegular;
+            agcFAST_ToolStripMenuItem.Font = fontRegular;
+            agcMID_ToolStripMenuItem.Font = fontRegular;
+            agcSLOW_ToolStripMenuItem.Font = fontRegular;
+            agcAUTO_ToolStripMenuItem.Font = fontRegular;
+            switch (lVal)
+            {
+                case '0': agcOFF_ToolStripMenuItem.Font = fontBold; break;
+                case '1': agcFAST_ToolStripMenuItem.Font = fontBold; break;
+                case '2': agcMID_ToolStripMenuItem.Font = fontBold; break;
+                case '4': agcSLOW_ToolStripMenuItem.Font = fontBold; break;
+                case '5': agcAUTO_ToolStripMenuItem.Font = fontBold; agcAUTO_ToolStripMenuItem.Text = "AUTO - FAST"; break;
+                case '6': agcAUTO_ToolStripMenuItem.Font = fontBold; agcAUTO_ToolStripMenuItem.Text = "AUTO - MID"; break;
+                case '7': agcAUTO_ToolStripMenuItem.Font = fontBold; agcAUTO_ToolStripMenuItem.Text = "AUTO - SLOW"; break;
+
+            }
+        }
+
+        private void agcOFFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sendCustomCommandVFO("GT", 0);
+        }
+
+        private void aGCFASTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sendCustomCommandVFO("GT", 1);
+        }
+
+        private void aGCMIDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sendCustomCommandVFO("GT", 2);
+        }
+
+        private void aGCSLOWToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sendCustomCommandVFO("GT", 3);
+        }
+
+        private void aGCAUTOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sendCustomCommandVFO("GT", 4);
+        }
+
+        #endregion
+
+
+
+        #region Roofing_Filter
+
+        private void setBoldRFValues(char lVal)
+        {
+
+
+
+            toolStripMenuItem12kHz.Font = fontRegular;
+            ToolStripMenuItem3kHz.Font = fontRegular;
+            ToolStripMenuItem1_2kHz.Font = fontRegular;
+            ToolStripMenuItem600Hz.Font = fontRegular;
+            ToolStripMenuItem300Hz.Font = fontRegular;
+
+            switch (lVal)
+            {
+                case '6': toolStripMenuItem12kHz.Font = fontBold; break;
+                case '7': ToolStripMenuItem3kHz.Font = fontBold; break;
+                case '8': ToolStripMenuItem1_2kHz.Font = fontBold; break;
+                case '9': ToolStripMenuItem600Hz.Font = fontBold; break;
+                case 'A': ToolStripMenuItem300Hz.Font = fontBold; break;
+            }
+        }
+
+        private void toolStripMenuItem12kHz_Click(object sender, EventArgs e)
+        {
+            sendCustomCommandVFO("RF", 1);
+        }
+
+        private void ToolStripMenuItem3kHz_Click(object sender, EventArgs e)
+        {
+            sendCustomCommandVFO("RF", 2);
+        }
+
+        private void ToolStripMenuItem1_2kHz_Click(object sender, EventArgs e)
+        {
+            sendCustomCommandVFO("RF", 3);
+        }
+
+        private void ToolStripMenuItem600Hz_Click(object sender, EventArgs e)
+        {
+            sendCustomCommandVFO("RF", 4);
+        }
+
+        private void ToolStripMenuItem300Hz_Click(object sender, EventArgs e)
+        {
+            sendCustomCommandVFO("RF", 5);
+        }
+
+        #endregion
+
+
+        #region ANTENA_TUNNER
+        private void setBoldAntenaTuner(char val)
+        {
+
+
+            offAntenaTunerToolStripMenuItem.Font = fontRegular;
+            OnAntenaTunerToolStripMenuItem.Font = fontRegular;
+
+            if (val == '0') offAntenaTunerToolStripMenuItem.Font = fontBold;
+            else OnAntenaTunerToolStripMenuItem.Font = fontBold;
+
+        }
+        private void OnAntenaTunerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("AC001;", 0, "");
+            System.Threading.Thread.Sleep(100);
+            currentRig.SendCustomCommand("AC;", 0, "");
+        }
+
+        private void offAntenaTunerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("AC000;", 0, "");
+            System.Threading.Thread.Sleep(100);
+            currentRig.SendCustomCommand("AC;", 0, "");
+        }
+
+        private void tuningNownotWorkedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentRig.SendCustomCommand("AC002;", 0, "AC002;");
+        }
+        #endregion
+
+        #region TRX_Power
+        private void setBoldPowerValues(string val)
+        {
+            int i = -1;
+
+
+            w5ToolStripMenuItem.Font = fontRegular;
+            w25ToolStripMenuItem.Font = fontRegular;
+            w50ToolStripMenuItem.Font = fontRegular;
+            w75ToolStripMenuItem.Font = fontRegular;
+            w100ToolStripMenuItem.Font = fontRegular;
+            wFixedToolStripMenuItem.Font = fontRegular;
+            wFixedToolStripMenuItem.Text = "Fixed:";
+
+
+
+            if (int.TryParse(val, out i))
+            {
+                switch (i)
+                {
+                    case 5: w5ToolStripMenuItem.Font = fontBold; break;
+                    case 25: w25ToolStripMenuItem.Font = fontBold; break;
+                    case 50: w50ToolStripMenuItem.Font = fontBold; break;
+                    case 75: w75ToolStripMenuItem.Font = fontBold; break;
+                    case 100: w100ToolStripMenuItem.Font = fontBold; break;
+                    default: wFixedToolStripMenuItem.Font = fontBold; wFixedToolStripMenuItem.Text = "Fixed: " + i + "W"; break;
+                }
+
+            }
+
+        }
+
+        private void w5ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            setPower(5);
+        }
+
+        private void w25ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            setPower(25);
+        }
+
+        private void w50ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            setPower(50);
+        }
+
+        private void w75ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            setPower(75);
+        }
+
+        private void w100ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            setPower(100);
+        }
+
+
+
+
+        private void wFixedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int i = -1;
+            if (InputBox.ShowDialog("Enter power value (5-100)", "Enter Power Value", lv.ToString(), 5, 100, out i) == DialogResult.OK)
+            {
+                setPower(i);
+            }
+
+
+        }
+
+        private void setPower(int i)
+        {
+            lv = i;
+            string s = i.ToString();
+            while (s.Length < 3) s = "0" + s;
+            currentRig.SendCustomCommand("PC" + s + ";", 0, "");
+            System.Threading.Thread.Sleep(100);
+            currentRig.SendCustomCommand("PC;", 0, "");
+
+        }
+        #endregion
+
+
+        private void onTRXToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            currentRig.SendCustomCommand("PS1;", 0, "");
+            for (int i = 0; i < 12; i++) wait();
+            currentRig.SendCustomCommand("PS1;", 0, "");
+
+        }
+
+
+        private void offTRXToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (FastQuestion.ShowQuestion("Are You sure to switch off TRX\r\nTurning On back may not be possible in the program.\r\nThen You must do it manually on TRX ", "Attention !!!", ImageType.Warning, IloscPrzyciskow.trzy, "YES", "NO", "Cancel") == FastQuestionResult.button1)
+                currentRig.SendCustomCommand("PS0;", 0, "");
+        }
+
+
+        private void readNextYaesuValue()
+        {
+            wait();
+            timerReadYaesuCntr++;
+            switch (timerReadYaesuCntr)
+            {
+                case 1: currentRig.SendCustomCommand("PC;", 0, ""); break;//GET POWER
+                case 2: currentRig.SendCustomCommand("RF" + vfo + ";", 0, ""); break;// GET ROOFING FILTER
+                case 3: currentRig.SendCustomCommand("AC;", 0, ""); break; //ANTENA TUNNER SETTINGS
+                case 4: currentRig.SendCustomCommand("AN" + vfo + ";", 0, ""); break; // ANTENA NUMBER
+                case 5: currentRig.SendCustomCommand("PA" + vfo + ";", 0, ""); break; // PRE AMP
+                case 6: currentRig.SendCustomCommand("RA" + vfo + ";", 0, ""); break; // RF ATTENUATOR
+                case 7: currentRig.SendCustomCommand("GT" + vfo + ";", 0, ""); break; // AGC
+                default: timerReadYaesuCntr = -1; break;
+
+            }
+        }
+
+        #endregion
+
+
+
+        private void wait()
+        {
+            for (int i = 0; i < 12; i++)
+            {
+                Application.DoEvents();
+                System.Threading.Thread.Sleep(10);
+            }
+        }
+
+        #region NTP
+
+
+        private void timerNTP_Tick(object sender, EventArgs e)
+        {
+            timerNTP.Stop();
+            if (runNTPTimeSyncOnStartToolStripMenuItem.Checked)
+            {
+
+                try
+                {
+                    bool wasWritten = false;
+
+
+                    string s = Config.ReadValue(sect, "lastNTPTime");
+                    long l = -1;
+                    if (!string.IsNullOrEmpty(s))
+                    {
+                        if (long.TryParse(s, out l))
+                        {
+                            DateTime n = new DateTime(l);
+                            TimeSpan ts = DateTime.Now - n;
+
+                            if (ts.TotalMinutes < 600) wasWritten = true;
+                        }
+
+                    }
+
+
+                    if (!wasWritten)
+                    {
+                        runNTPTimeSyncNowToolStripMenuItem1_Click(null, null);
+                        Config.WriteValue(sect, "lastNTPTime", DateTime.Now.Ticks.ToString());
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.AddException(ex);
+
+
+                }
+
+
+            }
+
+        }
+        private void runNTPTimeSyncNowToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string fn = PROCKI.exePathB + "SET_NTP_TIME.exe";
+                if (File.Exists(fn))
+                {
+                    if (!IsRunAsAdmin())
+                    {
+                        ProcessStartInfo proc = new ProcessStartInfo();
+                        proc.UseShellExecute = true;
+                        proc.WorkingDirectory = PROCKI.exePath;
+                        proc.FileName = fn;
+                        proc.Verb = "runas";
+                        proc.Arguments = "/AUTO_SYNC";
+                        Process p = Process.Start(proc);
+
+                    }
+                    else
+                        Process.Start(fn, "/AUTO_SYNC");
+                }
+            }
+            catch (Exception ex) { Log.AddException(ex); }
+        }
+
+        #endregion
+
+        #region CAMERA
+        private void runCameraModuleNowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (File.Exists(PROCKI.exePathB + "CAT_CAMERA.exe"))
+                {
+                    Process[] p = Process.GetProcessesByName("CAT_CAMERA");
+                    if (p == null || p.Length < 1)
+                    {
+                        System.Diagnostics.Process.Start(PROCKI.exePathB + "CAT_CAMERA.exe", "/UDP:" + UDP_PORT);
+
+                    }
+                }
+                startUDP_SERVER();
+            }
+            catch (Exception ex) { Log.AddException(ex); }
+        }
+        #endregion
+
+
+        private void pOTAModuleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (pota == null || FormPOTA.isClosed)
+            {
+                pota = new POTA_To_CAT.FormPOTA(this);
+                pota.Show();
+            }
+        }
+
+     
+
+
+
     }
 }
+
 
 

@@ -1,0 +1,12 @@
+ DATE 	 TIME 	 MESSAGE
+2024-01-16 23:17:06	 START PROGRAMU .... [INIT.INITIALIZE OK!!!]
+2024-01-16 23:17:06	 [Form1] - LOAD
+2024-01-16 23:17:41	 [FAST QUESTION SHOW]- title :Attention !!!
+2024-01-16 23:17:41	 [FAST QUESTION ]- mesage :Are You sure to switch off TRX
+Turning On back may not be possible in the program.
+Then You must do it manually on TRX 
+2024-01-16 23:17:42	 FAST QUESTION CLOSE ->button1
+2024-01-16 23:18:19	 [Form1] - CLOSE
+2024-01-16 23:18:19	 Zakończenie działania programu
+======================
+

@@ -25,7 +25,7 @@ namespace POTA_To_CAT
         string sect = "pota";
         bool loading = true;
 
-        public bool isClosed = false;
+        public static bool isClosed = true;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -61,7 +61,7 @@ namespace POTA_To_CAT
                 Config.WriteValue(sect, "helpShown", true);
                 timerHideHelp.Start();
             }
-
+            isClosed = false;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -75,6 +75,7 @@ namespace POTA_To_CAT
             timerRefresh.Enabled = false;
 
             timerStart.Enabled = false;
+            FormPOTA.isClosed = true;
 
         }
 
